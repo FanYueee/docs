@@ -1,7 +1,0 @@
-{
-  "title": "服務商店",
-  "description": "選購、付款與管理你的服務",
-  "icon": "ShoppingCart",
-  "root": true,
-  "pages": ["start", "products", "buy", "billing", "services"]
-}

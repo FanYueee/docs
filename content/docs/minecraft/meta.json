@@ -1,7 +1,0 @@
-{
-  "title": "Minecraft",
-  "description": "Minecraft 伺服器相關教學",
-  "icon": "Gamepad2",
-  "root": true,
-  "pages": ["domain"]
-}

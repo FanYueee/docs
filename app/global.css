@@ -2,69 +2,40 @@
 @import "fumadocs-ui/css/neutral.css";
 @import "fumadocs-ui/css/preset.css";
 
-/* vProxy Cloud 品牌色：Portal 的藍色為主色，搭配微帶藍調的背景 */
+/* 中性配色（與舊版文檔站相同的白底黑字），只保留品牌紫藍色作為連結與強調色 */
 :root {
-	--color-fd-background: hsl(248, 40%, 98%);
-	--color-fd-foreground: hsl(250, 30%, 10%);
-	--color-fd-muted: hsl(248, 35%, 95.5%);
-	--color-fd-muted-foreground: hsl(250, 10%, 42%);
-	--color-fd-popover: hsl(0, 0%, 100%);
-	--color-fd-popover-foreground: hsl(222, 30%, 14%);
-	--color-fd-card: hsl(0, 0%, 100%);
-	--color-fd-card-foreground: hsl(250, 30%, 10%);
-	--color-fd-border: hsla(248, 30%, 70%, 35%);
 	--color-fd-primary: hsl(246, 80%, 58%);
 	--color-fd-primary-foreground: hsl(0, 0%, 100%);
-	--color-fd-secondary: hsl(248, 45%, 95%);
-	--color-fd-secondary-foreground: hsl(222, 30%, 14%);
-	--color-fd-accent: hsla(246, 90%, 60%, 10%);
-	--color-fd-accent-foreground: hsl(246, 70%, 44%);
 	--color-fd-ring: hsl(246, 85%, 62%);
 }
 
 .dark {
-	--color-fd-background: hsl(250, 24%, 8%);
-	--color-fd-foreground: hsl(250, 20%, 92%);
-	--color-fd-muted: hsl(250, 20%, 13%);
-	--color-fd-muted-foreground: hsl(250, 12%, 68%);
-	--color-fd-popover: hsl(250, 22%, 12%);
-	--color-fd-popover-foreground: hsl(250, 20%, 90%);
-	--color-fd-card: hsl(250, 22%, 11%);
-	--color-fd-card-foreground: hsl(250, 20%, 96%);
-	--color-fd-border: hsla(250, 30%, 60%, 20%);
 	--color-fd-primary: hsl(246, 95%, 74%);
 	--color-fd-primary-foreground: hsl(250, 40%, 8%);
-	--color-fd-secondary: hsl(250, 20%, 15%);
-	--color-fd-secondary-foreground: hsl(250, 20%, 92%);
-	--color-fd-accent: hsla(246, 90%, 66%, 16%);
-	--color-fd-accent-foreground: hsl(246, 95%, 84%);
 	--color-fd-ring: hsl(246, 90%, 70%);
 }
 
-.dark #nd-sidebar {
-	--color-fd-muted: hsl(250, 20%, 16%);
-	--color-fd-secondary: hsl(250, 20%, 17%);
-	--color-fd-muted-foreground: hsl(250, 12%, 72%);
-}
-
-/* 頁面頂部淡淡的品牌色光暈 */
-body {
-	background-image:
-		radial-gradient(60rem 28rem at 70% -8rem, hsla(246, 90%, 62%, 0.12), transparent 70%),
-		radial-gradient(40rem 22rem at 5% -6rem, hsla(210, 90%, 60%, 0.08), transparent 70%);
-	background-repeat: no-repeat;
-}
-
-/* 頁面標題下方加一條品牌色細線 */
+/* 頁面標題：黑色粗體，與內文標題層級分明 */
 #nd-page h1 {
-	background: linear-gradient(90deg, hsl(246, 80%, 58%), hsl(280, 70%, 58%));
-	-webkit-background-clip: text;
-	background-clip: text;
-	color: transparent;
-	width: fit-content;
+	font-size: 1.75rem;
+	line-height: 1.2;
+	font-weight: 700;
+	letter-spacing: -0.01em;
 }
-.dark #nd-page h1 {
-	background: linear-gradient(90deg, hsl(246, 95%, 78%), hsl(280, 85%, 78%));
-	-webkit-background-clip: text;
-	background-clip: text;
+@media (min-width: 768px) {
+	#nd-page h1 {
+		font-size: 2.25rem;
+	}
+}
+
+/* 手機：Steps 內的截圖也撐滿螢幕寬度（抵銷 Steps 左側縮排與頁面左右留白） */
+@media (max-width: 639px) {
+	.fd-steps figure {
+		margin-inline-start: calc(-1 * (0.5rem + 1.5rem + 1px + 1rem));
+	}
+}
+@media (min-width: 640px) and (max-width: 767px) {
+	.fd-steps figure {
+		margin-inline-start: calc(-1 * (1rem + 1.75rem + 1px + 1rem));
+	}
 }

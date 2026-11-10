@@ -1,7 +1,0 @@
-{
-  "title": "其他產品",
-  "description": "虛擬主機、實體主機、vClaw 與機房託管",
-  "icon": "Boxes",
-  "root": true,
-  "pages": ["virtual-host", "dedicated", "vclaw", "colocation"]
-}

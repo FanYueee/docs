@@ -7,7 +7,7 @@ export function baseOptions(): BaseLayoutProps {
 				<>
 					{/* eslint-disable-next-line @next/next/no-img-element */}
 					<img src="/brand/logo.png" alt="vProxy Cloud" className="h-7 w-auto" />
-					<span className="rounded-md bg-fd-accent px-1.5 py-0.5 text-xs font-medium text-fd-accent-foreground">
+					<span className="text-sm font-medium text-fd-muted-foreground">
 						文檔中心
 					</span>
 				</>
