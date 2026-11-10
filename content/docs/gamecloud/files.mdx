@@ -1,0 +1,41 @@
+---
+title: 檔案
+description: 在網頁上瀏覽、上傳與編輯伺服器檔案。
+icon: FolderOpen
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+<Shot src="/images/gamecloud/files-01.png" alt="檔案管理" />
+
+## 編輯檔案
+
+<Steps>
+<Step>
+點選檔案右側的鉛筆圖示。
+</Step>
+<Step>
+修改後按「**儲存**」。
+
+<Shot src="/images/gamecloud/files-editor-01.png" alt="編輯檔案" />
+</Step>
+</Steps>
+
+<Callout title="設定需要重新啟動" type="info">
+`server.properties` 等設定檔修改後，請到[主控台](/docs/gamecloud/console)重新啟動才會生效。
+</Callout>
+
+## 更多選項
+
+點選「⋯」可以移動、調整檔案權限或刪除。
+
+<Shot src="/images/gamecloud/files-menu.png" alt="更多選項" />
+
+## 批次操作
+
+勾選多個項目，上方會出現批次操作列，可以壓縮、移動或刪除。
+
+<Shot src="/images/gamecloud/files-batch.png" alt="批次操作" />
+
+大型檔案或整個資料夾，建議使用 [SFTP](/docs/gamecloud/sftp)。

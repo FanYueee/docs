@@ -1,9 +1,24 @@
 ---
-title: 關於我們
-description: 關於我們
+title: 歡迎來到 vProxy Cloud 文檔中心
+description: 這裡有帳號、服務商店、遊戲主機與 Minecraft 伺服器的使用教學。
+icon: Home
 ---
+import { UserRound, ShoppingCart, Gamepad2, Server, LifeBuoy, Headset, Boxes } from 'lucide-react';
 
-# 我們的使命與願景
+## 我們的使命與願景
+
 vProxy Cloud 成立於 2022 年，我們致力於為亞洲區玩家提供最穩定、低延遲的遊戲伺服器託管服務。我們相信，每一個熱愛遊戲的玩家都應該擁有流暢的遊戲體驗，而不受地理位置的限制。
 
 我們的願景是成為亞洲區最受信賴的遊戲伺服器託管平台，讓每一位創作者和玩家都能輕鬆實現自己的遊戲夢想。通過不斷創新和優化的技術，我們持續改進我們的服務，確保每一位客戶都能獲得最佳體驗。
+
+## 從哪裡開始？
+
+<Cards>
+  <Card icon={<UserRound className="text-violet-500" />} href="/docs/account/login" title="帳號與登入" description="使用 AtomRoute 帳號登入，並完成個人資料設定。" />
+  <Card icon={<ShoppingCart className="text-emerald-500" />} href="/docs/store/start" title="服務商店" description="選購方案、付款、管理服務與帳單。" />
+  <Card icon={<Gamepad2 className="text-indigo-500" />} href="/docs/gamecloud" title="遊戲主機" description="主控台、檔案、備份、排程、使用者與啟動設定。" />
+  <Card icon={<Headset className="text-pink-500" />} href="/docs/support/tickets" title="客戶支援" description="建立客服單，並了解各支援等級。" />
+  <Card icon={<Boxes className="text-amber-500" />} href="/docs/products/virtual-host" title="其他產品" description="虛擬主機、實體主機、vClaw 與機房託管。" />
+  <Card icon={<Server className="text-lime-600" />} href="/docs/minecraft/domain" title="Minecraft" description="綁定網域等 Minecraft 伺服器相關教學。" />
+  <Card icon={<LifeBuoy className="text-red-500" />} href="/docs/troubleshooting/tracert" title="障礙排除" description="連線測試與常見問題處理。" />
+</Cards>

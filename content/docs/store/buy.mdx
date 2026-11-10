@@ -1,74 +1,52 @@
 ---
 title: 購買服務
-description: 這篇文檔將引導您購買 vProxy Cloud 的服務。
+description: 從選擇方案到建立帳單的購買流程。
 icon: ShoppingCart
 ---
-import { Step, Steps } from 'fumadocs-ui/components/steps';
+
 import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+<Callout title="開始之前" type="info">
+請先[完成個人資料](/docs/account/profile)。
+</Callout>
 
 <Steps>
 <Step>
-### 進入服務列表
-進入客戶中心後，點選上方列表的服務，再點選訂購新服務。
-![buy1](/images/store/buy/buy1.png)
-</Step>
-<Step>
-### 選擇欲購買的服務
-1. 可先於左側選單選擇服務類型
-2. 確定好後可在右側選擇方案
-3. 最後點選**立即購買**按鈕。
-![buy2](/images/store/buy/buy2.png)
-</Step>
-<Step>
-### 服務內容
-進入後可以看到圖片上的這些資訊
-1. 藍色框為您選擇的服務相關資訊
-2. 紅色框為一次訂購的週期，週期越長會有額外優惠唷，目前支援月繳、季繳、半年繳!
-3. 黃色框為目前選擇服務的帳單應繳金額，但請注意這不含金流手續費。
-![buy3](/images/store/buy/buy3.png)
-</Step>
-<Step>
-### 服務選項
-緊接著往下後，可以看到兩個部分
-1. 紅色框為服務的細節選項，可選擇是否需要加購資源或配置量。
-2. 藍色框為一些服務的注意資訊，務必打勾才能購買。
-3. 最後選擇完成後，可以看到右側的綠色框的「**繼續**」按鈕，點下去。
-![buy4](/images/store/buy/buy4.png)
-</Step>
-<Step>
-### 購買確認
-現在可以看到以下圖片的資訊
-1. 紅色框是您目前選購的內容和價格。
-2. 綠色框的部分是如果您有「**優惠代碼**」可以在此填入。
-3. 確定完成後右側有統計的金額，確定沒問題點選藍色框「**結帳**」。
-![buy5](/images/store/buy/buy5.png)
-</Step>
-<Step>
-### 訂單結帳確認
-![buy6](/images/store/buy/buy6.png)
-1. 如果您目前帳戶有餘額，您可以看到紅色框的部分，選擇是否優先使用餘額付款。
-2. 綠色框為選擇付款的方式。
-<Callout title="注意" type="warn">
-	此頁面並不會顯示金流手續費，完成帳單生成後才會顯示(下一個頁面)，因此此價格可能與應繳金額不同。
-</Callout>
-* 付款方式
-    * 【台灣限定】銀行轉帳 __+ 13 元手續費__
-    * 【台灣限定】711/萊爾富 超商代碼 __+ 35 元手續費__
-    * 【台灣限定】全家超商代碼 __+ 30 元手續費__
-    * 【台灣限定】四大超商條碼（需等待2~3天銷帳）__+ 25 元手續費__
-    * 【台灣**除外**】PayPal __不加收手續費__
-</Step>
-<Step>
-### 確認完成
-選擇完付款方式後，往下會看到以下欄位，如果您有任何想要告訴我們的資訊，可以直接填入「額外備註」欄位。
+### 選擇方案
 
-如果沒有問題，請勾選「**我已詳閱並同意 服務條款**」，即代表您同意[服務條款](https://vproxy.cloud/tos)。
+進入「服務商店」→「**商品**」，選好產品線、地點與方案，按「**選擇配置**」。
 
-接著點擊下方的「**完成訂購**」按鈕進行生成繳費資訊。
-![buy7](/images/store/buy/buy7.png)
+<Shot src="/images/store/catalog.png" alt="選擇方案" />
 </Step>
 <Step>
-### 繳費資訊
-經過系統處理後，會將您導向帳單頁面，現在您會在帳單頁面上看到繳費資訊。
+### 配置規格
+
+設定付款週期、端口、備份與資料庫。右側「費用預覽」會即時更新，確認後按「**加入購物車**」。
+
+<Shot src="/images/store/configure-01.png" alt="配置規格" />
+</Step>
+<Step>
+### 加入購物車
+
+可以「繼續選購」其他商品，或「前往購物車」結帳。
+
+<Shot src="/images/store/cart-01.png" alt="已加入購物車" />
+</Step>
+<Step>
+### 確認訂單
+
+檢查商品，有優惠碼請在這裡輸入，再按「**確認下單並建立帳單**」。
+
+<Shot src="/images/store/cart-02.png" alt="確認訂單" />
+</Step>
+<Step>
+### 付款
+
+在帳單明細選擇付款方式並付款，詳見[帳單與付款](/docs/store/billing)。
+
+<Shot src="/images/store/order-01.png" alt="帳單明細" />
 </Step>
 </Steps>
+
+付款完成後會收到「服務已開通」通知，遊戲主機可到左側的「[遊戲主機](/docs/gamecloud)」管理。

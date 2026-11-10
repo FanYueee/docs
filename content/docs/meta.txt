@@ -1,9 +1,0 @@
-{
-    "title": "主頁",
-    "defaultOpen": false,
-    "pages": [
-      "index",
-      "---快速開始---",
-      "test/asdas"
-    ]
-  }

@@ -1,40 +1,54 @@
 ---
-title: 開始使用
-description: 本篇將教您如何使用 vProxy Cloud 客戶中心，客戶中心將處理購買、管理、續約、升級的功能，因此使用服務前需要註冊客戶中心的帳號。
-icon: Play
+title: 服務商店簡介
+description: 認識服務商店，並跟著導覽開始購買。
+icon: Store
 ---
+
 import { Step, Steps } from 'fumadocs-ui/components/steps';
-import { ImageZoom } from 'fumadocs-ui/components/image-zoom';
-import defaultMdxComponents from 'fumadocs-ui/mdx';
 import { Callout } from 'fumadocs-ui/components/callout';
 
+登入並[完成個人資料](/docs/account/profile)後，從左側選單進入「**服務商店**」。
+
+<Shot src="/images/store/overview.png" alt="服務商店總覽" />
+
+| 分頁 | 用途 |
+| --- | --- |
+| 總覽 | 待付款、服務狀態與帳務摘要 |
+| 商品 | 選購新服務 |
+| 我的服務 | 管理已購買的服務 |
+| 帳單 | 查看與支付帳單 |
+| 通知 | 帳單與服務通知 |
+
+## 新手導覽
+
+第一次進入時，系統會用 5 個步驟帶你操作：
 
 <Steps>
 <Step>
- 
-### 註冊帳號
-進入客戶中心網站 [client.vproxy.cloud](https://client.vproxy.cloud/)，選擇左方**帳戶**後點選**註冊**。
-![register](/images/panel/account/register.png)
+選擇產品。
 
+<Shot src="/images/store/tour-01.png" alt="選擇產品" />
 </Step>
 <Step>
-### 填寫資料
-請務必填寫**真實且正確**資料，另外可以直接點選上方的「**使用 Google 帳號登入**」這樣一來之後可以直接使用 Google 帳號進入客戶中心。
-![account1](/images/panel/account/account1.png)
+選擇遊戲、地區與方案。
 
+<Shot src="/images/store/tour-02.png" alt="選擇方案" />
 </Step>
 <Step>
-1. 接著請填入客戶中心的登入密碼
-2. 通過機器人驗證
-3. 勾選「**我已詳閱並同意 服務條款**」請務必同意[服務條款](https://vproxy.cloud/tos)後才勾選
-![account2](/images/panel/account/account2.png)
+按「選擇配置」，設定後加入購物車。
+
+<Shot src="/images/store/tour-03.png" alt="設定方案" />
 </Step>
 <Step>
-### 完成註冊
-![account3](/images/panel/account/account3.png)
+在購物車確認金額並送出訂單，再依帳單付款。
 
-<Callout title="注意" type="warn">
-	註冊完成後請務必至電子信箱查收驗證信件，進行郵箱驗證。
-</Callout>
+<Shot src="/images/store/tour-04.png" alt="購物車結帳" />
+</Step>
+<Step>
+購買後，在「我的服務」與「帳單」查看狀態。
+
+<Shot src="/images/store/tour-05.png" alt="管理服務與帳單" />
 </Step>
 </Steps>
+
+完整流程請看[購買服務](/docs/store/buy)。

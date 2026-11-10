@@ -1,8 +1,4 @@
 {
-    "title": "服務管理",
-    "defaultOpen": false,
-    "pages": [
-        "upgrade",
-        "cancel"
-    ]
-  }
+  "title": "我的服務",
+  "pages": ["index", "cancel"]
+}

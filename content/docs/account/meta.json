@@ -1,0 +1,7 @@
+{
+  "title": "帳號與登入",
+  "description": "註冊、登入與個人資料設定",
+  "icon": "UserRound",
+  "root": true,
+  "pages": ["login", "profile"]
+}

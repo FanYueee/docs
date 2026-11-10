@@ -1,0 +1,29 @@
+---
+title: 排程
+description: 讓伺服器在固定時間自動執行任務。
+icon: CalendarClock
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+排程時間使用「**台北標準時間（UTC+8）**」。
+
+<Steps>
+<Step>
+按「**新增排程**」，填寫名稱、頻率與時間，再按「**儲存**」。
+
+<Shot src="/images/gamecloud/schedules-new.png" alt="新增排程" />
+</Step>
+<Step>
+在排程下方按「**新增任務**」，設定動作與內容。
+
+<Shot src="/images/gamecloud/schedules-list.png" alt="排程列表" />
+</Step>
+<Step>
+選擇動作（預設為「傳送指令」）、填寫內容，按「**儲存**」。一個排程可以有多個任務，會依序執行。
+
+<Shot src="/images/gamecloud/schedules-task.png" alt="新增任務" />
+</Step>
+</Steps>
+
+可以用左側開關啟用或停用排程，也能「立即執行」、編輯或刪除。

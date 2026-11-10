@@ -1,0 +1,38 @@
+---
+title: 主控台
+description: 開關機、輸入指令與查看日誌。
+icon: SquareTerminal
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+<Shot src="/images/gamecloud/console.png" alt="主控台" />
+
+<Callout title="輸入指令不需要斜線" type="info">
+例如要使用 `/help`，直接輸入 `help` 即可。
+</Callout>
+
+<Callout title="盡量避免強制終止" type="warn">
+強制終止不會等遊戲存檔，請先使用「停止」。
+</Callout>
+
+## 第一次啟動
+
+<Steps>
+<Step>
+按「**啟動**」，第一次需要下載遊戲檔案。
+
+<Shot src="/images/gamecloud/tour-01.png" alt="啟動伺服器" />
+</Step>
+<Step>
+複製「**連線位址**」，在 Minecraft 的「多人遊戲」→「新增伺服器」貼上。想用自己的網域請看[自訂域名](/docs/minecraft/domain)。
+
+<Shot src="/images/gamecloud/tour-02.png" alt="連線位址" />
+</Step>
+<Step>
+到「[使用者](/docs/gamecloud/users)」邀請朋友一起管理。
+
+<Shot src="/images/gamecloud/tour-03.png" alt="邀請朋友" />
+</Step>
+</Steps>

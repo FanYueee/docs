@@ -1,46 +1,25 @@
 ---
 title: 取消服務
-description: 如果您不再需要使用服務，可以透過客戶中心上的取消服務功能，如此一來您在到期前將不會收到繳款帳單。
+description: 申請在目前這一期結束後取消服務。
+icon: CircleX
 ---
 
-import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Callout } from 'fumadocs-ui/components/callout';
-
-<Callout title="注意" type="info">
-    申請取消服務即表示您知道並同意取消服務的相關免責聲明。
-</Callout>
-
+import { Step, Steps } from 'fumadocs-ui/components/steps';
 
 <Steps>
 <Step>
-### 登入客戶中心
-登入[客戶中心](https://client.vproxy.cloud)後，點選上方選單中的「**服務**」下的「**我的服務**」
-![cancel1](/images/store/services/cancel/cancel1.png)
-<Callout title="注意" type="info">
-    需要先登入客戶中心，才會看到選單中有服務選項。
-</Callout>
+進入「服務商店」→「**我的服務**」，點選服務右側的「**管理**」。
 </Step>
 <Step>
-### 點選欲取消的服務
-本篇以下圖橘色框服務為例，直接點下去。
-![cancel2](/images/store/services/cancel/cancel2.png)
-</Step>
-<Step>
-### 點選要求撤銷
-進入後，點選左側「**動作**」下的「**要求撤銷**」。
-![cancel3](/images/store/services/cancel/cancel3.png)
-</Step>
-<Step>
-1. 橘色框的部分，可以輸入取消原因或是提供意見給我們。
-2. 藍色框是選擇取消的時間，可選擇**立即**或是**等待帳單周期結束**。
-<Callout title="注意" type="warn">
-    如果選擇**立即**，您的服務會在 24 小時內中斷並且刪除，即視同您同意提前解除契約，並且不退款還請注意。
+在「**取消服務**」確認使用期限，按「**申請期末取消**」。
 
-    如果選擇**等待帳單周期結束**，則會在您到期當天自動中斷和刪除服務，也不會寄發停權和繳費通知。
-</Callout>
-![cancel4](/images/store/services/cancel/cancel4.png)
-</Step>
-<Step>
-最後點擊下方的「**要求撤銷**」按鈕，即會依照您的選擇送出請求。
+<Shot src="/images/store/service.png" alt="取消服務" pick={[4]} />
 </Step>
 </Steps>
+
+<Callout title="請注意" type="warn">
+- 只支援當期結束後取消，期限內仍可使用
+- 已付款的費用不退款
+- 建議到期前先備份重要資料
+</Callout>

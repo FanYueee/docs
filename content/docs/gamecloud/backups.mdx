@@ -1,0 +1,26 @@
+---
+title: 備份
+description: 建立備份，出問題時還原。
+icon: Archive
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+<Steps>
+<Step>
+進入「**備份**」分頁，確認上方的備份額度。
+</Step>
+<Step>
+填寫備份名稱（可留空），重要的備份可勾選「**建立時鎖定備份**」，再按「**建立備份**」。
+</Step>
+<Step>
+備份會出現在下方列表，可以「下載」「鎖定」「還原」或「刪除」。
+
+<Shot src="/images/gamecloud/backups.png" alt="備份" />
+</Step>
+</Steps>
+
+<Callout title="還原前請先確認" type="warn">
+還原會讓伺服器回到備份當時的狀態。目前的資料也很重要的話，請先另外建立備份。
+</Callout>

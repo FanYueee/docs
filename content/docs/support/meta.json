@@ -1,0 +1,7 @@
+{
+  "title": "客戶支援",
+  "description": "客服單與支援等級",
+  "icon": "Headset",
+  "root": true,
+  "pages": ["tickets", "levels"]
+}

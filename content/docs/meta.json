@@ -1,22 +1,4 @@
 {
-    "title": "主頁",
-    "defaultOpen": false,
-    "pages": [
-        "index",
-        "---客戶中心---",
-        "store/start",
-        "store/buy",
-        "store/discord",
-        "store/services",
-        "store/payment",
-        "---控制面板---",
-        "panel/server",
-        "panel/account",
-        "panel/password",
-        "---Minecraft---",
-        "minecraft/domain",
-        "---障礙排除---",
-        "troubleshooting/tracert",
-        "troubleshooting/ai"
-    ]
-  }
+  "title": "vProxy Cloud 文檔中心",
+  "pages": ["index", "account", "store", "gamecloud", "support", "products", "minecraft", "troubleshooting"]
+}

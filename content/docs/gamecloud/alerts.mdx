@@ -1,0 +1,29 @@
+---
+title: 告警
+description: 資源使用過高時，透過 Discord 或 Telegram 通知你。
+icon: Bell
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+<Steps>
+<Step>
+填寫 **Discord Webhook 網址**，或 **Telegram Bot Token** 與 **Chat ID**，按「**測試**」確認收得到。
+</Step>
+<Step>
+開啟 CPU 或記憶體的開關，設定門檻、持續時間與重發間隔。
+
+<Shot src="/images/gamecloud/alerts.png" alt="告警" />
+</Step>
+</Steps>
+
+| 欄位 | 說明 |
+| --- | --- |
+| 門檻（%） | 超過這個百分比視為異常 |
+| 持續（分鐘） | 持續超過才通知，避免誤報 |
+| 重發間隔（分鐘） | 問題持續時多久再通知，0 表示不重複 |
+
+<Callout title="Webhook 與 Token 屬於機密" type="warn">
+請勿貼在公開的地方。
+</Callout>

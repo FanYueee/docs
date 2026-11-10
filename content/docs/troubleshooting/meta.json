@@ -1,0 +1,7 @@
+{
+  "title": "障礙排除",
+  "description": "連線問題與常見狀況處理",
+  "icon": "LifeBuoy",
+  "root": true,
+  "pages": ["tracert", "ai"]
+}
