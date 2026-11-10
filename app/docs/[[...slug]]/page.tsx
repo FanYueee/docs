@@ -1,65 +1,59 @@
-import { Edit } from "lucide-react";
-import { getPage, getPages } from "@/app/source";
-import type { Metadata } from "next";
-import { DocsPage, DocsBody } from "fumadocs-ui/page";
-import { notFound } from "next/navigation";
-import { cn } from "@/app/utils/cn";
-import { buttonVariants } from "@/app/components/ui/button";
+import { source } from "@/lib/source";
+import {
+	DocsPage,
+	DocsBody,
+	DocsDescription,
+	DocsTitle,
+	PageLastUpdate,
+} from "fumadocs-ui/layouts/docs/page";
 import { Card, Cards } from "fumadocs-ui/components/card";
-import { utils, type Page } from "@/app/source";
+import { notFound } from "next/navigation";
+import { getMDXComponents } from "@/mdx-components";
+import type { Metadata } from "next";
 
-export default async function Page({
-	params,
-}: {
-	params: { slug?: string[] };
+export default async function Page(props: {
+	params: Promise<{ slug?: string[] }>;
 }) {
-	const page = getPage(params.slug);
+	const { slug } = await props.params;
+	const page = source.getPage(slug);
+	if (!page) notFound();
 
-	if (page == null) {
-		notFound();
-	}
-
-	const MDX = page.data.exports.default;
-
+	const MDX = page.data.body;
 
 	return (
 		<DocsPage
-			toc={page.data.exports.toc}
+			toc={page.data.toc}
 			full={page.data.full}
-			lastUpdate={page.data.exports.lastModified}
-			tableOfContent={{
-				enabled: Boolean(page.data.exports.toc.length),
-			}}
 		>
+			<DocsTitle>{page.data.title}</DocsTitle>
+			<DocsDescription>{page.data.description}</DocsDescription>
 			<DocsBody>
-				<h1>{page.data.title}</h1>
-				<p className="mb-8 text-lg text-muted-foreground">
-					{page.data.description}
-				</p>
-				<MDX />
-				{page.file.name == "index" && page.slugs.length ? (
-					<Category page={page} />
+				<MDX components={getMDXComponents()} />
+				{page.path.endsWith("index.mdx") && page.slugs.length > 0 ? (
+					<Category slugs={page.slugs} />
 				) : null}
 			</DocsBody>
+			{page.data.lastModified ? (
+				<PageLastUpdate date={page.data.lastModified} />
+			) : null}
 		</DocsPage>
 	);
 }
 
-function Category({ page }: { page: Page }): React.ReactElement {
-	const filtered = utils
+// 資料夾的 index 頁面底部自動列出同層級頁面的卡片
+function Category({ slugs }: { slugs: string[] }) {
+	const prefix = `/docs/${slugs.join("/")}/`;
+	const items = source
 		.getPages()
-		.filter(
-			(item) =>
-				item.file.dirname === page.file.dirname && item.file.name !== "index"
-		);
+		.filter((p) => p.url.startsWith(prefix) && p.slugs.length === slugs.length + 1);
 
 	return (
 		<Cards>
-			{filtered.map((item) => (
+			{items.map((item) => (
 				<Card
 					key={item.url}
 					title={item.data.title}
-					description={item.data.description ?? "Unknow"}
+					description={item.data.description}
 					href={item.url}
 				/>
 			))}
@@ -67,19 +61,19 @@ function Category({ page }: { page: Page }): React.ReactElement {
 	);
 }
 
-export async function generateStaticParams() {
-	return getPages().map((page) => ({
-		slug: page.slugs,
-	}));
+export function generateStaticParams() {
+	return source.generateParams();
 }
 
-export function generateMetadata({ params }: { params: { slug?: string[] } }) {
-	const page = getPage(params.slug);
-
-	if (page == null) notFound();
+export async function generateMetadata(props: {
+	params: Promise<{ slug?: string[] }>;
+}): Promise<Metadata> {
+	const { slug } = await props.params;
+	const page = source.getPage(slug);
+	if (!page) notFound();
 
 	return {
 		title: page.data.title,
 		description: page.data.description,
-	} satisfies Metadata;
+	};
 }
