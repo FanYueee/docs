@@ -1,4 +1,4 @@
-import { source } from "@/lib/source";
+import { listedPages } from "@/lib/source";
 import { SITE_DESCRIPTION, SITE_NAME, absoluteUrl, seoDescription } from "@/lib/seo";
 
 export const revalidate = false;
@@ -12,9 +12,7 @@ export function GET() {
 		"",
 		"## 文檔",
 		"",
-		...source
-			.getPages()
-			.map((p) => `- [${p.data.title}](${absoluteUrl(p.url)}): ${seoDescription(p.slugs, p.data.description)}`),
+		...listedPages().map((p) => `- [${p.data.title}](${absoluteUrl(p.url)}): ${seoDescription(p.slugs, p.data.description)}`),
 		"",
 	];
 	return new Response(lines.join("\n"), {

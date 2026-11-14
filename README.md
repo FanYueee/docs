@@ -43,6 +43,15 @@ python3 scripts/import-tutorials.py /path/to/tutorials            # 全部
 python3 scripts/import-tutorials.py /path/to/tutorials backups    # 只更新一個
 ```
 
+### 尚未上線的功能頁（unlisted）
+
+`datapacks`（資料包）、`newworld`（建立新世界）、`migrate`（從其他主機搬家）三頁的 frontmatter 有 `unlisted: true`：可以用網址直接開啟，但**不在側邊欄與上下頁導覽**、不進 sitemap／站內搜尋／`llms.txt`，並帶有 `noindex`，也不產生專屬預覽圖。
+
+功能正式上線時：
+1. 刪掉該頁 frontmatter 的 `unlisted: true`。
+2. 把頁面加進 `content/docs/meta.json`：資料包放在 `gamecloud/modpacks` 後、建立新世界放在 `gamecloud/worlds` 後、從其他主機搬家放在 `gamecloud/files` 後。
+3. （選用）到 `lib/seo.ts` 的 `SEO_DESCRIPTIONS` 補搜尋描述，並執行 `scripts/gen-og.mjs` 產生預覽圖。
+
 ## 分享預覽圖（Open Graph）
 
 每個頁面都有專屬的 1200×630 預覽圖（`public/og/docs/…`，純色版面，PNG 已無損壓縮）。新增頁面或修改標題／描述後重新產生：

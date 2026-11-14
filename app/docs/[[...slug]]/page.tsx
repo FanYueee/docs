@@ -1,4 +1,4 @@
-import { source } from "@/lib/source";
+import { listedPages, source } from "@/lib/source";
 import {
 	DocsPage,
 	DocsBody,
@@ -45,9 +45,7 @@ export default async function Page(props: {
 // 資料夾的 index 頁面底部自動列出同層級頁面的卡片
 function Category({ slugs }: { slugs: string[] }) {
 	const prefix = `/docs/${slugs.join("/")}/`;
-	const items = source
-		.getPages()
-		.filter((p) => p.url.startsWith(prefix) && p.slugs.length === slugs.length + 1);
+	const items = listedPages().filter((p) => p.url.startsWith(prefix) && p.slugs.length === slugs.length + 1);
 
 	return (
 		<Cards>
@@ -80,6 +78,7 @@ export async function generateMetadata(props: {
 		title: page.data.title,
 		description: page.data.description,
 		modified: page.data.lastModified,
+		unlisted: page.data.unlisted,
 	});
 }
 

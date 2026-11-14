@@ -38,6 +38,8 @@ def mdx_text(s: str) -> str:
 
 def alt_text(title: str, n: int, caption: str) -> str:
     first = re.split(r"[。！？]", caption)[0]
+    if first.count("「") > first.count("」"):  # 句子在引號中間被切開時補上右引號
+        first += "」"
     return f"{title} 步驟 {n}：{first}".replace('"', "'")[:90]
 
 

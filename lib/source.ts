@@ -12,3 +12,11 @@ export const source = loader({
 		}
 	},
 });
+
+/** 已公開的頁面（排除 frontmatter 標示 unlisted 的頁面），給 sitemap、搜尋、llms.txt 與卡片列表使用 */
+export function listedPages() {
+	return source.getPages().filter((p) => !p.data.unlisted);
+}
+
+/** 站內搜尋用：與 source 相同，但只含已公開的頁面 */
+export const listedSource: typeof source = { ...source, getPages: () => listedPages() };

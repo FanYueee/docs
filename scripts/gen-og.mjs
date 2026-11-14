@@ -46,14 +46,17 @@ function walk(dir) {
 function frontmatter(file) {
 	const m = fs.readFileSync(file, "utf8").match(/^---\n([\s\S]*?)\n---/);
 	const get = (k) => m?.[1].match(new RegExp(`^${k}:\\s*(.*)$`, "m"))?.[1].trim();
-	return { title: get("title"), description: get("description") };
+	return { title: get("title"), description: get("description"), unlisted: get("unlisted") === "true" };
 }
 
-const pages = walk(CONTENT).map((file) => {
-	const rel = path.relative(CONTENT, file).replace(/\.mdx$/, "").split(path.sep);
-	if (rel.at(-1) === "index") rel.pop();
-	return { slugs: rel, ...frontmatter(file) };
-});
+// 未公開（unlisted）的頁面不產生專屬預覽圖
+const pages = walk(CONTENT)
+	.map((file) => {
+		const rel = path.relative(CONTENT, file).replace(/\.mdx$/, "").split(path.sep);
+		if (rel.at(-1) === "index") rel.pop();
+		return { slugs: rel, ...frontmatter(file) };
+	})
+	.filter((p) => !p.unlisted);
 
 const fontFace = process.env.OG_FONT
 	? `@font-face{font-family:OGFont;src:url("file://${path.resolve(process.env.OG_FONT)}");font-weight:100 900}`

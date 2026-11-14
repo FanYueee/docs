@@ -1,0 +1,78 @@
+---
+title: 從其他主機搬家
+description: 用 SFTP 把舊主機上的檔案搬到這台伺服器。
+icon: Truck
+unlisted: true
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+在「檔案 → 從其他主機搬家」可以透過 SFTP，把舊主機上的檔案直接搬到這台伺服器，不需要先下載到電腦再上傳。
+
+<Callout title="舊主機不會被動到" type="info">
+我們只會讀取舊主機的檔案，不會改動或刪除。搬過來時被換掉的檔案，也會先移到備份資料夾，不會刪除。
+</Callout>
+
+搬家前，請先在舊主機找到「SFTP 詳細資料」：主機位址、連接埠、使用者名稱與密碼。
+
+{/* tutorial:start */}
+<Steps>
+<Step>
+
+<Shot src="/images/tutorials/migrate/01.webp" alt="從其他主機搬家 步驟 1：在伺服器頁面上方點「檔案」" width={2800} height={1800} caption="在伺服器頁面上方點「檔案」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/migrate/02.webp" alt="從其他主機搬家 步驟 2：在檔案頁按「從其他主機搬家」" width={2800} height={1800} caption="在檔案頁按「從其他主機搬家」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/migrate/03.webp" alt="從其他主機搬家 步驟 3：先到舊主機的控制台找到「SFTP 詳細資料」（通常在 Settings 設定頁），會有主機位址、連接埠和使用者名稱" width={2800} height={1800} caption="先到舊主機的控制台找到「SFTP 詳細資料」（通常在 Settings 設定頁），會有主機位址、連接埠和使用者名稱。我們只會讀取舊主機的檔案，不會改動或刪除。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/migrate/04.webp" alt="從其他主機搬家 步驟 4：填入舊主機的位址、連接埠、使用者名稱和密碼" width={2800} height={1800} caption="填入舊主機的位址、連接埠、使用者名稱和密碼。也可以直接把 sftp://… 整串貼到「主機位址」，會自動拆開。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/migrate/05.webp" alt="從其他主機搬家 步驟 5：按「測試連線」" width={2800} height={1800} caption="按「測試連線」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/migrate/06.webp" alt="從其他主機搬家 步驟 6：連線成功後，上方會顯示連到哪台主機，下方列出舊主機上的檔案" width={2800} height={1800} caption="連線成功後，上方會顯示連到哪台主機，下方列出舊主機上的檔案。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/migrate/07.webp" alt="從其他主機搬家 步驟 7：勾選要搬的項目（預設全選）" width={2800} height={1800} caption="勾選要搬的項目（預設全選）。點資料夾名稱可以進入子資料夾。這裡示範只搬幾個設定檔。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/migrate/08.webp" alt="從其他主機搬家 步驟 8：按「下一步」，系統會先計算要搬的檔案數量和大小" width={2800} height={1800} caption="按「下一步」，系統會先計算要搬的檔案數量和大小。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/migrate/09.webp" alt="從其他主機搬家 步驟 9：選擇放到哪裡：「取代目前的伺服器檔案」適合整台搬家；「合併」只換同名檔案；「放到新資料夾」不動現有檔案，之後再自己挑" width={2800} height={1800} caption="選擇放到哪裡：「取代目前的伺服器檔案」適合整台搬家；「合併」只換同名檔案；「放到新資料夾」不動現有檔案，之後再自己挑。不管哪一種，被換掉的檔案都會移到備份資料夾，不會刪除。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/migrate/10.webp" alt="從其他主機搬家 步驟 10：這裡示範「放到新資料夾」，可以自己取資料夾名稱，留空會自動命名" width={2800} height={1800} caption="這裡示範「放到新資料夾」，可以自己取資料夾名稱，留空會自動命名。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/migrate/11.webp" alt="從其他主機搬家 步驟 11：確認後按「開始搬家」" width={2800} height={1800} caption="確認後按「開始搬家」。伺服器需要先停止，還在運作的話這裡會出現「停止伺服器」按鈕。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/migrate/12.webp" alt="從其他主機搬家 步驟 12：看到「搬家完成」就好了，會顯示搬了幾個檔案、放在哪個資料夾，以及接下來要做的事" width={2800} height={1800} caption="看到「搬家完成」就好了，會顯示搬了幾個檔案、放在哪個資料夾，以及接下來要做的事。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/migrate/13.webp" alt="從其他主機搬家 步驟 13：按「查看檔案」，就能在檔案頁看到搬過來的資料夾" width={2800} height={1800} caption="按「查看檔案」，就能在檔案頁看到搬過來的資料夾。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/migrate/14.webp" alt="從其他主機搬家 步驟 14：搬過來的檔案都在這個資料夾裡，可以再移到需要的位置" width={2800} height={1800} caption="搬過來的檔案都在這個資料夾裡，可以再移到需要的位置。" />
+</Step>
+</Steps>
+{/* tutorial:end */}

@@ -1,0 +1,60 @@
+---
+title: 資料包
+description: 上傳資料包的 .zip 並一鍵安裝，不需要自己找資料夾。
+icon: Layers
+unlisted: true
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+在「軟體 → 資料包」可以安裝與移除資料包。系統會自動放到正確的位置，不需要自己找資料夾。基岩版伺服器這裡會顯示「附加包」。
+
+<Callout title="什麼時候生效" type="info">
+伺服器關機時，下次啟動會自動載入資料包。伺服器正在運作時，安裝完成後會多一個「執行 /minecraft:reload」按鈕，按一下就能立即生效，不用重開。
+</Callout>
+
+{/* tutorial:start */}
+<Steps>
+<Step>
+
+<Shot src="/images/tutorials/datapacks/01.webp" alt="安裝資料包 步驟 1：在伺服器頁面上方點「軟體」打開選單" width={2800} height={1800} caption="在伺服器頁面上方點「軟體」打開選單。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/datapacks/02.webp" alt="安裝資料包 步驟 2：選「資料包」（基岩版伺服器這裡會顯示「附加包」）" width={2800} height={1800} caption="選「資料包」（基岩版伺服器這裡會顯示「附加包」）。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/datapacks/03.webp" alt="安裝資料包 步驟 3：上方會列出資料包要放的位置、Minecraft 版本與生效方式，不需要自己找資料夾" width={2800} height={1800} caption="上方會列出資料包要放的位置、Minecraft 版本與生效方式，不需要自己找資料夾。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/datapacks/04.webp" alt="安裝資料包 步驟 4：把資料包的 .zip 拖進虛線框，或按「選擇檔案」挑選" width={2800} height={1800} caption="把資料包的 .zip 拖進虛線框，或按「選擇檔案」挑選。可以一次放好幾個。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/datapacks/05.webp" alt="安裝資料包 步驟 5：系統會先在瀏覽器裡檢查檔案，列出資料包名稱、說明和支援的版本" width={2800} height={1800} caption="系統會先在瀏覽器裡檢查檔案，列出資料包名稱、說明和支援的版本。確認無誤後按「安裝」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/datapacks/06.webp" alt="安裝資料包 步驟 6：看到「已安裝」就完成了" width={2800} height={1800} caption="看到「已安裝」就完成了。伺服器關機時，下次啟動會自動載入；如果伺服器正在運作，這裡會多一個「執行 /minecraft:reload」按鈕，按一下就能立即生效，不用重開。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/datapacks/07.webp" alt="安裝資料包 步驟 7：剛裝好的資料包會出現在下方「已安裝的資料包」清單" width={2800} height={1800} caption="剛裝好的資料包會出現在下方「已安裝的資料包」清單。要再裝其他資料包，按「繼續安裝」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/datapacks/08.webp" alt="安裝資料包 步驟 8：不需要時，在那一列按「移除」" width={2800} height={1800} caption="不需要時，在那一列按「移除」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/datapacks/09.webp" alt="安裝資料包 步驟 9：確認要移除哪個資料包，再按「移除」" width={2800} height={1800} caption="確認要移除哪個資料包，再按「移除」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/datapacks/10.webp" alt="安裝資料包 步驟 10：看到「已移除」，資料包就從世界拿掉了，清單也會跟著更新" width={2800} height={1800} caption="看到「已移除」，資料包就從世界拿掉了，清單也會跟著更新。" />
+</Step>
+</Steps>
+{/* tutorial:end */}

@@ -137,6 +137,8 @@ export function pageMetadata(opts: {
 	title: string;
 	description?: string;
 	modified?: Date;
+	/** 未公開頁面：不讓搜尋引擎收錄 */
+	unlisted?: boolean;
 }): Metadata {
 	const isHome = opts.slugs.length === 0;
 	const title = isHome ? HOME_TITLE : seoTitle(opts.title, opts.slugs);
@@ -147,6 +149,7 @@ export function pageMetadata(opts: {
 		title: isHome ? { absolute: HOME_TITLE } : title,
 		description,
 		alternates: { canonical: opts.url },
+		...(opts.unlisted ? { robots: { index: false, follow: false, nocache: true } } : {}),
 		openGraph: {
 			type: isHome ? "website" : "article",
 			url: opts.url,
