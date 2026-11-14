@@ -1,36 +1,58 @@
 ---
 title: 告警
-description: 資源使用過高時，透過 Discord 或 Telegram 通知你。
+description: 當機或資源使用過高時，透過 Discord 或 Telegram 通知你。
 icon: Bell
 ---
 
 import { Callout } from 'fumadocs-ui/components/callout';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 
-在「**紀錄**」→「**告警**」設定通知方式，CPU、記憶體或硬碟使用過高時，系統會透過 Discord 或 Telegram 通知你。
+伺服器當機，或 CPU、記憶體、硬碟使用過高時，系統會透過 Discord 或 Telegram 通知你。
 
+<Callout title="當機通知為實驗功能" type="info">
+「當機通知」在畫面上標示為「實驗功能」，內容之後可能調整。
+</Callout>
+
+{/* tutorial:start */}
 <Steps>
 <Step>
 
-### 設定通知管道
-
-填寫 **Discord Webhook 網址**，或 **Telegram Bot Token** 與 **Chat ID**，按「**測試**」確認收得到。
+<Shot src="/images/tutorials/alerts/01.webp" alt="當機與資源用量通知 步驟 1：在伺服器頁面上方點「紀錄」，打開選單" width={2800} height={1800} caption="在伺服器頁面上方點「紀錄」，打開選單。" />
 </Step>
 <Step>
 
-### 設定告警條件
+<Shot src="/images/tutorials/alerts/02.webp" alt="當機與資源用量通知 步驟 2：選「告警」" width={2800} height={1800} caption="選「告警」。" />
+</Step>
+<Step>
 
-開啟 CPU 或記憶體的開關，設定門檻、持續時間與重發間隔。
+<Shot src="/images/tutorials/alerts/03.webp" alt="當機與資源用量通知 步驟 3：先設定「通知方式」" width={2800} height={1800} caption="先設定「通知方式」。使用 Discord 的話，在 Discord 頻道設定 → 整合 → Webhook 建立一個 Webhook，複製網址貼到這裡。" />
+</Step>
+<Step>
 
-<Shot src="/images/gamecloud/alerts.png" alt="告警" />
+<Shot src="/images/tutorials/alerts/04.webp" alt="當機與資源用量通知 步驟 4：按旁邊的「測試」，Discord 頻道會收到一則測試訊息，確認設定正確" width={2800} height={1800} caption="按旁邊的「測試」，Discord 頻道會收到一則測試訊息，確認設定正確。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/alerts/05.webp" alt="當機與資源用量通知 步驟 5：使用 Telegram 的話，填入機器人的 Bot Token（向 @BotFather 建立機器人取得）與 Chat ID，同樣可以按「測試」" width={2800} height={1800} caption="使用 Telegram 的話，填入機器人的 Bot Token（向 @BotFather 建立機器人取得）與 Chat ID，同樣可以按「測試」。兩種設定其中一種即可。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/alerts/06.webp" alt="當機與資源用量通知 步驟 6：填好後按「儲存」" width={2800} height={1800} caption="填好後按「儲存」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/alerts/07.webp" alt="當機與資源用量通知 步驟 7：儲存通知方式後，就能開啟「當機通知」：伺服器意外當機，或因記憶體不足停止時通知你" width={2800} height={1800} caption="儲存通知方式後，就能開啟「當機通知」：伺服器意外當機，或因記憶體不足停止時通知你。你自己停止、排程或重新安裝不會通知。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/alerts/08.webp" alt="當機與資源用量通知 步驟 8：「資源用量」可以在 CPU、記憶體或硬碟用量持續過高時通知你" width={2800} height={1800} caption="「資源用量」可以在 CPU、記憶體或硬碟用量持續過高時通知你。打開開關，設定門檻（%）與持續幾分鐘才通知。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/alerts/09.webp" alt="當機與資源用量通知 步驟 9：「重發間隔」設定問題持續時多久再提醒一次，填 0 代表只通知一次" width={2800} height={1800} caption="「重發間隔」設定問題持續時多久再提醒一次，填 0 代表只通知一次。設定完按最下方的「儲存」。" />
 </Step>
 </Steps>
-
-| 欄位 | 說明 |
-| --- | --- |
-| 門檻（%） | 超過這個百分比視為異常 |
-| 持續（分鐘） | 持續超過才通知，避免誤報 |
-| 重發間隔（分鐘） | 問題持續時多久再通知，0 表示不重複 |
+{/* tutorial:end */}
 
 <Callout title="Webhook 與 Token 屬於機密" type="warn">
 請勿貼在公開的地方。

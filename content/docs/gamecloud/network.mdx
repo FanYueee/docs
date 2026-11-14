@@ -1,25 +1,45 @@
 ---
 title: 網路
-description: 查看內網主機名稱與網路流量。
+description: 查看連線位址與網路流量。
 icon: Network
 ---
 
+import { Callout } from 'fumadocs-ui/components/callout';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 
-在「**網路**」→「**網路**」可以查看內網主機名稱、網路流量與連線位址。
+在「網路 → 網路」可以查看伺服器的連線位址與網路流量。
 
+{/* tutorial:start */}
 <Steps>
 <Step>
 
-### 查看網路資訊
+<Shot src="/images/tutorials/network/01.webp" alt="查看連線位址與流量 步驟 1：在伺服器頁面上方點「網路」，打開選單" width={2800} height={1800} caption="在伺服器頁面上方點「網路」，打開選單。" />
+</Step>
+<Step>
 
-<Shot src="/images/gamecloud/network.png" alt="網路" />
+<Shot src="/images/tutorials/network/02.webp" alt="查看連線位址與流量 步驟 2：選「網路」" width={2800} height={1800} caption="選「網路」。" />
+</Step>
+<Step>
 
-- **內網主機名稱**：外掛需要綁定位址時使用，可點選複製
-- **網路流量歷史**：可看 3 小時、24 小時、7 天、30 天
-- **月流量計算**：本月上下載總量與是否有限制
-- **連線位址**：伺服器的主要連線位址，可以編輯備註
+<Shot src="/images/tutorials/network/03.webp" alt="查看連線位址與流量 步驟 3：最下方「網路」列出伺服器的連線位址，標「主要」的就是給玩家連線用的位址" width={2800} height={1800} caption="最下方「網路」列出伺服器的連線位址，標「主要」的就是給玩家連線用的位址。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/network/04.webp" alt="查看連線位址與流量 步驟 4：按「編輯備註」可以替位址加上說明，例如「主要連線位址」、「語音伺服器用」" width={2800} height={1800} caption="按「編輯備註」可以替位址加上說明，例如「主要連線位址」、「語音伺服器用」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/network/05.webp" alt="查看連線位址與流量 步驟 5：輸入備註後按儲存即可；不想修改就按取消" width={2800} height={1800} caption="輸入備註後按儲存即可；不想修改就按取消。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/network/06.webp" alt="查看連線位址與流量 步驟 6：「網路流量歷史」顯示伺服器的上傳與下載流量，可以切換 3 小時、24 小時、7 天、30 天" width={2800} height={1800} caption="「網路流量歷史」顯示伺服器的上傳與下載流量，可以切換 3 小時、24 小時、7 天、30 天。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/network/07.webp" alt="查看連線位址與流量 步驟 7：「月流量計算」顯示這個月累計的上下載總量與方案上限" width={2800} height={1800} caption="「月流量計算」顯示這個月累計的上下載總量與方案上限。" />
 </Step>
 </Steps>
+{/* tutorial:end */}
 
 剛開通時可能顯示「尚無資料」，系統每分鐘取樣一次，稍後再看即可。

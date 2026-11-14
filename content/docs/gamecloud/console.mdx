@@ -9,7 +9,38 @@ import { Step, Steps } from 'fumadocs-ui/components/steps';
 
 主控台是控制伺服器運行的地方，可以開機、關機、重新啟動，也能輸入指令並即時查看日誌與資源用量。
 
-<Shot src="/images/gamecloud/console.png" alt="主控台" />
+{/* tutorial:start */}
+<Steps>
+<Step>
+
+<Shot src="/images/tutorials/console/01.webp" alt="主控台與開關機 步驟 1：進入伺服器後預設就是「主控台」" width={2800} height={1800} caption="進入伺服器後預設就是「主控台」。按右上角的「啟動」開機。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/console/02.webp" alt="主控台與開關機 步驟 2：啟動後狀態會變成「運行中」，下方主控台會即時顯示伺服器訊息" width={2800} height={1800} caption="啟動後狀態會變成「運行中」，下方主控台會即時顯示伺服器訊息。看到 Done 就代表伺服器已經可以連線。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/console/03.webp" alt="主控台與開關機 步驟 3：在下方輸入框輸入指令（不用加斜線），例如 list 查看線上玩家，按 Enter 送出" width={2800} height={1800} caption="在下方輸入框輸入指令（不用加斜線），例如 list 查看線上玩家，按 Enter 送出。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/console/04.webp" alt="主控台與開關機 步驟 4：指令的結果會出現在主控台最下方" width={2800} height={1800} caption="指令的結果會出現在主控台最下方。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/console/05.webp" alt="主控台與開關機 步驟 5：上方卡片會顯示 CPU、記憶體、磁碟、網路用量與運行時間，小圖表是最近的變化" width={2800} height={1800} caption="上方卡片會顯示 CPU、記憶體、磁碟、網路用量與運行時間，小圖表是最近的變化。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/console/06.webp" alt="主控台與開關機 步驟 6：按連線位址旁的複製按鈕，就能把位址貼給朋友，在 Minecraft「多人遊戲」→「新增伺服器」加入" width={2800} height={1800} caption="按連線位址旁的複製按鈕，就能把位址貼給朋友，在 Minecraft「多人遊戲」→「新增伺服器」加入。不知道怎麼加入的話，按右邊的「怎麼加入」或主控台上方的「查看加入教學」，會用遊戲畫面一步步示範。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/console/07.webp" alt="主控台與開關機 步驟 7：要關機或重開時，使用「停止」或「重新啟動」" width={2800} height={1800} caption="要關機或重開時，使用「停止」或「重新啟動」。伺服器沒有回應時才使用「強制終止」。" />
+</Step>
+</Steps>
+{/* tutorial:end */}
 
 <Callout title="輸入指令不需要斜線" type="info">
 例如要使用 `/help`，直接輸入 `help` 即可。
@@ -18,40 +49,3 @@ import { Step, Steps } from 'fumadocs-ui/components/steps';
 <Callout title="盡量避免強制終止" type="warn">
 強制終止不會等遊戲存檔，請先使用「停止」。
 </Callout>
-
-## 第一次啟動
-
-<Steps>
-<Step>
-
-### 啟動伺服器
-
-按「**啟動**」，第一次需要下載遊戲檔案，請等候幾分鐘。
-
-<Shot src="/images/gamecloud/tour-01.png" alt="啟動伺服器" />
-</Step>
-<Step>
-
-### 複製連線位址
-
-複製「**連線位址**」，在 Minecraft 的「多人遊戲」→「新增伺服器」貼上。想用自己的網域請看[自訂域名](/docs/minecraft/domain)。
-
-<Shot src="/images/gamecloud/tour-02.png" alt="連線位址" />
-</Step>
-<Step>
-
-### 邀請朋友
-
-到「[使用者](/docs/gamecloud/users)」邀請朋友一起管理。
-
-<Shot src="/images/gamecloud/tour-03.png" alt="邀請朋友" />
-</Step>
-</Steps>
-
-## 輸入指令
-
-在主控台下方的輸入框輸入指令後按 Enter，例如查看指令說明：
-
-```
-help
-```

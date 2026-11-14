@@ -7,49 +7,73 @@ icon: CalendarClock
 import { Callout } from 'fumadocs-ui/components/callout';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 
-排程可以讓伺服器在固定時間自動執行任務，例如每天凌晨重新啟動、定時公告。
+排程可以讓伺服器在固定時間自動執行任務，例如每週備份後重新啟動。一個排程可以有多個任務，會依序執行。
 
 <Callout title="時間以台北時間為準" type="info">
 排程時間使用「**台北標準時間（UTC+8）**」。
 </Callout>
 
+{/* tutorial:start */}
 <Steps>
 <Step>
 
-### 新增排程
-
-按「**新增排程**」，填寫名稱、頻率與時間，再按「**儲存**」。
-
-<Shot src="/images/gamecloud/schedules-new.png" alt="新增排程" />
+<Shot src="/images/tutorials/schedules/01.webp" alt="建立排程 步驟 1：在伺服器頁面上方點「排程」分頁" width={2800} height={1800} caption="在伺服器頁面上方點「排程」分頁。" />
 </Step>
 <Step>
 
-### 新增任務
-
-建立好的排程會列在頁面上，可以用左側開關啟用或停用。在排程下方按「**新增任務**」。
-
-<Shot src="/images/gamecloud/schedules-list.png" alt="排程列表" />
+<Shot src="/images/tutorials/schedules/02.webp" alt="建立排程 步驟 2：點右側的「新增排程」" width={2800} height={1800} caption="點右側的「新增排程」。" />
 </Step>
 <Step>
 
-### 設定任務內容
+<Shot src="/images/tutorials/schedules/03.webp" alt="建立排程 步驟 3：輸入排程名稱，方便之後辨識" width={2800} height={1800} caption="輸入排程名稱，方便之後辨識。" />
+</Step>
+<Step>
 
-選擇動作（預設為「傳送指令」），填寫內容；「**延遲時間**」是與上一個任務間隔幾秒，「**失敗時仍繼續後續任務**」決定上一步出錯時要不要繼續。完成後按「**儲存**」。一個排程可以有多個任務，會依序執行。
+<Shot src="/images/tutorials/schedules/04.webp" alt="建立排程 步驟 4：選擇執行頻率，例如「每週」" width={2800} height={1800} caption="選擇執行頻率，例如「每週」。也可以選「進階（cron）」自行輸入 Cron 規則。" />
+</Step>
+<Step>
 
-<Shot src="/images/gamecloud/schedules-task.png" alt="新增任務" />
+<Shot src="/images/tutorials/schedules/05.webp" alt="建立排程 步驟 5：選擇星期與時間" width={2800} height={1800} caption="選擇星期與時間。時間以台北時間（UTC+8）計算，可按「新增時間」加入多個時段。" />
+</Step>
+<Step>
 
-例如先公告，60 秒後再重新啟動：任務 1 選「傳送指令」，內容填：
+<Shot src="/images/tutorials/schedules/06.webp" alt="建立排程 步驟 6：打開「僅在伺服器上線時執行」，伺服器關機時就不會執行這個排程" width={2800} height={1800} caption="打開「僅在伺服器上線時執行」，伺服器關機時就不會執行這個排程。" />
+</Step>
+<Step>
 
-```
-say 伺服器將在 1 分鐘後自動重啟，請先下線
-```
+<Shot src="/images/tutorials/schedules/07.webp" alt="建立排程 步驟 7：確認無誤後按「儲存」" width={2800} height={1800} caption="確認無誤後按「儲存」。" />
+</Step>
+<Step>
 
-任務 2 選「電源動作」，延遲 60 秒，內容填：
+<Shot src="/images/tutorials/schedules/08.webp" alt="建立排程 步驟 8：排程建立好了" width={2800} height={1800} caption="排程建立好了。接著點這個排程下方的「新增任務」，設定排程要做的事。" />
+</Step>
+<Step>
 
-```
-restart
-```
+<Shot src="/images/tutorials/schedules/09.webp" alt="建立排程 步驟 9：第一個任務：「動作」選「建立備份」" width={2800} height={1800} caption="第一個任務：「動作」選「建立備份」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/schedules/10.webp" alt="建立排程 步驟 10：按「儲存」加入任務" width={2800} height={1800} caption="按「儲存」加入任務。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/schedules/11.webp" alt="建立排程 步驟 11：再點一次「新增任務」加入第二個任務" width={2800} height={1800} caption="再點一次「新增任務」加入第二個任務。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/schedules/12.webp" alt="建立排程 步驟 12：「動作」選「電源動作」，下方選「重新啟動」" width={2800} height={1800} caption="「動作」選「電源動作」，下方選「重新啟動」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/schedules/13.webp" alt="建立排程 步驟 13：「延遲時間」填 300 秒，代表上一個任務完成後等 5 分鐘再重新啟動" width={2800} height={1800} caption="「延遲時間」填 300 秒，代表上一個任務完成後等 5 分鐘再重新啟動。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/schedules/14.webp" alt="建立排程 步驟 14：按「儲存」" width={2800} height={1800} caption="按「儲存」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/schedules/15.webp" alt="建立排程 步驟 15：完成" width={2800} height={1800} caption="完成！排程會依序執行列出的任務。想馬上測試可以按「立即執行」，要修改時間按「編輯」。" />
 </Step>
 </Steps>
-
-排程可以「**立即執行**」、編輯或刪除。
+{/* tutorial:end */}

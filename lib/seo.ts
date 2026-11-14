@@ -86,6 +86,16 @@ export const SEO_DESCRIPTIONS: Record<string, string> = {
 		"使用 FileZilla 以 SFTP 連線遊戲伺服器，上傳與下載大型檔案或整個資料夾，包含取得連線資訊與重設 SFTP 密碼。",
 	"gamecloud/databases":
 		"查看遊戲主機的 MySQL 資料庫額度，說明尚未購買額度時如何加購，供外掛與模組使用。",
+	"gamecloud/versions":
+		"一步步安裝或更換 Minecraft 伺服器版本：選擇官方原版、Paper、Purpur、Forge 或 Fabric，並自動切換 Java，世界與設定檔都會保留。",
+	"gamecloud/plugins":
+		"在遊戲主機搜尋並一鍵安裝外掛：從 Modrinth、Hangar 或 CurseForge 選擇版本，自動安裝前置外掛，也能停用與移除。",
+	"gamecloud/modpacks":
+		"從 Modrinth 或 CurseForge 一鍵安裝 Minecraft 模組包，自動切換對應的伺服器版本與 Java，並說明玩家端需要安裝的內容。",
+	"gamecloud/worlds":
+		"把電腦上的 Minecraft 世界上傳到伺服器、換回上一個世界，或把伺服器的世界打包下載，換世界前會自動保存備份。",
+	"gamecloud/players":
+		"在遊戲主機管理 Minecraft 玩家：新增白名單、設定管理員（OP）權限等級，以及封鎖玩家或 IP。",
 	"gamecloud/schedules":
 		"設定遊戲伺服器排程：每天固定時間自動公告、重新啟動或執行指令，並說明任務順序、延遲時間與失敗處理。",
 	"gamecloud/backups":
@@ -101,7 +111,7 @@ export const SEO_DESCRIPTIONS: Record<string, string> = {
 	"gamecloud/analytics":
 		"在遊戲主機的「紀錄 → 分析」查看 CPU、記憶體、硬碟與網路使用量的歷史變化，判斷是否需要升級方案。",
 	"gamecloud/alerts":
-		"設定遊戲主機告警：CPU、記憶體或硬碟使用量過高時，透過 Discord Webhook 或 Telegram 立即通知你。",
+		"設定遊戲主機告警：伺服器當機，或 CPU、記憶體、硬碟使用量過高時，透過 Discord Webhook 或 Telegram 通知你。",
 	"gamecloud/activity":
 		"在遊戲主機的「紀錄 → 操作紀錄」查看伺服器的操作歷史，包含時間、操作帳號、操作內容與狀態。",
 	"support/tickets":

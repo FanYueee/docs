@@ -7,39 +7,37 @@ icon: Rocket
 import { Callout } from 'fumadocs-ui/components/callout';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 
-在下拉選單「**設定**」→「**啟動設定**」可以查看伺服器的啟動指令，並調整 Java 版本與遊戲版本。
+在「啟動設定」可以查看伺服器的啟動指令，並調整 Java 版本與遊戲版本。
 
+{/* tutorial:start */}
 <Steps>
 <Step>
 
-### 查看啟動指令
-
-「**啟動指令**」是伺服器開機時執行的指令，例如：
-
-```
-java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar server.jar
-```
-
-<Shot src="/images/gamecloud/startup.png" alt="啟動指令" pick={[1]} />
+<Shot src="/images/tutorials/startup/01.webp" alt="調整啟動設定 步驟 1：在伺服器頁面上方點「設定」，打開選單" width={2800} height={1800} caption="在伺服器頁面上方點「設定」，打開選單。" />
 </Step>
 <Step>
 
-### 選擇執行環境
-
-「**執行環境**」是 Java 版本。遊戲版本不同需要的 Java 版本也不同，啟動失敗時請先檢查這裡。
-
-<Shot src="/images/gamecloud/startup.png" alt="執行環境" pick={[2]} />
+<Shot src="/images/tutorials/startup/02.webp" alt="調整啟動設定 步驟 2：選「啟動設定」" width={2800} height={1800} caption="選「啟動設定」。" />
 </Step>
 <Step>
 
-### 更換遊戲版本
+<Shot src="/images/tutorials/startup/03.webp" alt="調整啟動設定 步驟 3：最上方是伺服器實際使用的啟動指令，會依下面的設定自動產生，不需要手動修改" width={2800} height={1800} caption="最上方是伺服器實際使用的啟動指令，會依下面的設定自動產生，不需要手動修改。" />
+</Step>
+<Step>
 
-在「**Minecraft Version**」填入版本號，填 `latest` 會一律使用最新版。「**Build Number**」是 Paper 的建置編號，同樣可填 `latest`，「**Server Jar File**」是啟動的檔案名稱。修改後按該列右側的「**儲存**」。
+<Shot src="/images/tutorials/startup/04.webp" alt="調整啟動設定 步驟 4：「執行環境」可以切換 Java 版本" width={2800} height={1800} caption="「執行環境」可以切換 Java 版本。新版 Minecraft（1.20.5 以上）需要 Java 21，舊版模組包可能需要 Java 8 或 17。改完會立即儲存，下次啟動生效。" />
+</Step>
+<Step>
 
-<Shot src="/images/gamecloud/startup.png" alt="遊戲版本" pick={[3]} />
+<Shot src="/images/tutorials/startup/05.webp" alt="調整啟動設定 步驟 5：下面是這個伺服器類型可以調整的變數，例如 Minecraft 版本、Build 編號、啟動檔名稱" width={2800} height={1800} caption="下面是這個伺服器類型可以調整的變數，例如 Minecraft 版本、Build 編號、啟動檔名稱。修改輸入框後，按同一行右邊的「儲存」，重新啟動伺服器後生效。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/startup/06.webp" alt="調整啟動設定 步驟 6：小提醒：只想換 Minecraft 版本或伺服器類型的話，用「軟體 → 版本安裝」更簡單，會自動下載正確檔案並切換 Java" width={2800} height={1800} caption="小提醒：只想換 Minecraft 版本或伺服器類型的話，用「軟體 → 版本安裝」更簡單，會自動下載正確檔案並切換 Java。" />
 </Step>
 </Steps>
+{/* tutorial:end */}
 
-<Callout title="需要重新安裝才會生效" type="warn">
-更換版本後，請到「[伺服器設定](/docs/gamecloud/settings)」按「重新安裝伺服器」。請先[建立備份](/docs/gamecloud/backups)。
+<Callout title="只想換版本？用版本安裝更簡單" type="info">
+要更換 Minecraft 版本或伺服器類型，請用「軟體 → [版本安裝](/docs/gamecloud/versions)」，會自動下載正確檔案並切換 Java。
 </Callout>

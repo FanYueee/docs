@@ -9,28 +9,42 @@ import { Step, Steps } from 'fumadocs-ui/components/steps';
 
 備份可以保存伺服器目前的狀態，出問題時還原。每台伺服器的備份數量有上限，額度已滿時需要先刪除舊的備份。
 
+{/* tutorial:start */}
 <Steps>
 <Step>
 
-### 確認備份額度
-
-進入「**備份**」分頁，確認上方的備份額度。
+<Shot src="/images/tutorials/backups/01.webp" alt="建立與還原備份 步驟 1：在伺服器頁面上方點「備份」分頁" width={2800} height={1800} caption="在伺服器頁面上方點「備份」分頁。這裡會顯示目前的備份額度。" />
 </Step>
 <Step>
 
-### 建立備份
-
-填寫備份名稱（可留空），重要的備份可勾選「**建立時鎖定備份**」，再按「**建立備份**」。
+<Shot src="/images/tutorials/backups/02.webp" alt="建立與還原備份 步驟 2：（選用）幫備份取個名字，例如「改版前備份」，之後比較好找" width={2800} height={1800} caption="（選用）幫備份取個名字，例如「改版前備份」，之後比較好找。" />
 </Step>
 <Step>
 
-### 管理備份
+<Shot src="/images/tutorials/backups/03.webp" alt="建立與還原備份 步驟 3：（選用）在「忽略的檔案」輸入不想備份的檔案或資料夾，每行一個，例如 logs/" width={2800} height={1800} caption="（選用）在「忽略的檔案」輸入不想備份的檔案或資料夾，每行一個，例如 logs/。留空會使用預設規則。" />
+</Step>
+<Step>
 
-備份會出現在下方列表，可以「下載」「鎖定」「還原」或「刪除」。
+<Shot src="/images/tutorials/backups/04.webp" alt="建立與還原備份 步驟 4：按「建立備份」開始備份" width={2800} height={1800} caption="按「建立備份」開始備份。備份期間伺服器可以照常運作。" />
+</Step>
+<Step>
 
-<Shot src="/images/gamecloud/backups.png" alt="備份" />
+<Shot src="/images/tutorials/backups/05.webp" alt="建立與還原備份 步驟 5：備份完成後會出現在列表中，並顯示大小與建立時間" width={2800} height={1800} caption="備份完成後會出現在列表中，並顯示大小與建立時間。按「下載」可以把備份存到電腦。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/backups/06.webp" alt="建立與還原備份 步驟 6：按「鎖定」可以防止這個備份被刪除或被新的備份覆蓋" width={2800} height={1800} caption="按「鎖定」可以防止這個備份被刪除或被新的備份覆蓋。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/backups/07.webp" alt="建立與還原備份 步驟 7：需要回到備份時的狀態時，按「還原」" width={2800} height={1800} caption="需要回到備份時的狀態時，按「還原」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/backups/08.webp" alt="建立與還原備份 步驟 8：確認視窗會提醒目前的檔案會被備份內容覆蓋" width={2800} height={1800} caption="確認視窗會提醒目前的檔案會被備份內容覆蓋。如果想先清空伺服器再還原，可以勾選「還原前刪除伺服器上的所有檔案」。確認後按「還原」；這裡示範先按「取消」。" />
 </Step>
 </Steps>
+{/* tutorial:end */}
 
 <Callout title="還原前請先確認" type="warn">
 還原會讓伺服器回到備份當時的狀態。目前的資料也很重要的話，請先另外建立備份。

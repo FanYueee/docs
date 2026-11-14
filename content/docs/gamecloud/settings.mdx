@@ -7,33 +7,44 @@ icon: Settings
 import { Callout } from 'fumadocs-ui/components/callout';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 
-在下拉選單「**設定**」→「**伺服器設定**」可以修改伺服器名稱、取得 SFTP 連線資訊，或重新安裝伺服器。
+在「設定 → 伺服器設定」可以修改伺服器名稱、取得 SFTP 連線資訊，或重新安裝伺服器。
 
+{/* tutorial:start */}
 <Steps>
 <Step>
 
-### 修改名稱與說明
-
-修改後按「**儲存**」。
-
-<Shot src="/images/gamecloud/settings.png" alt="重新命名" pick={[1]} />
+<Shot src="/images/tutorials/settings/01.webp" alt="伺服器名稱、SFTP 與重新安裝 步驟 1：在伺服器頁面上方點「設定」，打開選單" width={2800} height={1800} caption="在伺服器頁面上方點「設定」，打開選單。" />
 </Step>
 <Step>
 
-### 查看連線與除錯資訊
-
-- **SFTP 連線**：位址與使用者名稱，用法見 [SFTP](/docs/gamecloud/sftp)
-- **除錯資訊**：節點與伺服器 ID，聯絡客服時請提供
-
-<Shot src="/images/gamecloud/settings.png" alt="SFTP 與除錯資訊" pick={[2, 3]} />
+<Shot src="/images/tutorials/settings/02.webp" alt="伺服器名稱、SFTP 與重新安裝 步驟 2：選「伺服器設定」" width={2800} height={1800} caption="選「伺服器設定」。" />
 </Step>
 <Step>
 
-### 重新安裝伺服器
+<Shot src="/images/tutorials/settings/03.webp" alt="伺服器名稱、SFTP 與重新安裝 步驟 3：在「名稱」和「說明」輸入新的內容，例如伺服器用途，方便在伺服器清單裡分辨" width={2800} height={1800} caption="在「名稱」和「說明」輸入新的內容，例如伺服器用途，方便在伺服器清單裡分辨。" />
+</Step>
+<Step>
 
-頁面最下方的「**重新安裝伺服器**」會重新執行安裝腳本，部分檔案可能被刪除或重置。
+<Shot src="/images/tutorials/settings/04.webp" alt="伺服器名稱、SFTP 與重新安裝 步驟 4：改好後按「儲存」，左上角的伺服器名稱會馬上更新" width={2800} height={1800} caption="改好後按「儲存」，左上角的伺服器名稱會馬上更新。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/settings/05.webp" alt="伺服器名稱、SFTP 與重新安裝 步驟 5：「SFTP 連線」列出用 FileZilla、WinSCP 等軟體連線時需要的位址與使用者名稱，點右邊的圖示可以複製" width={2800} height={1800} caption="「SFTP 連線」列出用 FileZilla、WinSCP 等軟體連線時需要的位址與使用者名稱，點右邊的圖示可以複製。大量上傳檔案時用 SFTP 比網頁快。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/settings/06.webp" alt="伺服器名稱、SFTP 與重新安裝 步驟 6：忘記 SFTP 密碼時，按「重設 SFTP 密碼」產生新密碼" width={2800} height={1800} caption="忘記 SFTP 密碼時，按「重設 SFTP 密碼」產生新密碼。新密碼只會顯示一次，請馬上複製保存。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/settings/07.webp" alt="伺服器名稱、SFTP 與重新安裝 步驟 7：聯絡客服時，可以提供「除錯資訊」裡的節點與伺服器 ID，方便查詢" width={2800} height={1800} caption="聯絡客服時，可以提供「除錯資訊」裡的節點與伺服器 ID，方便查詢。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/settings/08.webp" alt="伺服器名稱、SFTP 與重新安裝 步驟 8：「重新安裝伺服器」會重新執行安裝程序，部分檔案可能被刪除或重置" width={2800} height={1800} caption="「重新安裝伺服器」會重新執行安裝程序，部分檔案可能被刪除或重置。除非客服建議，一般不需要使用；使用前請先到「備份」建立備份。" />
 </Step>
 </Steps>
+{/* tutorial:end */}
 
 <Callout title="重新安裝前請先備份" type="error">
 重新安裝可能刪除或重置部分檔案。請先[建立備份](/docs/gamecloud/backups)。

@@ -24,10 +24,18 @@ export function Shot({
 	src,
 	alt,
 	pick,
+	caption,
+	width,
+	height,
 }: {
 	src: string;
 	alt: string;
 	pick?: number[];
+	/** 圖片下方的說明（逐步教學用） */
+	caption?: ReactNode;
+	/** 圖片尺寸；沒有填時讀取 PNG 檔頭 */
+	width?: number;
+	height?: number;
 }) {
 	const all = REGISTRY[src]?.marks ?? [];
 	const labels: ReactNode[] = (pick ? pick.map((n) => all[n - 1]) : all)
@@ -35,13 +43,14 @@ export function Shot({
 		.map((m) => m.label);
 
 	const finalSrc = bakedSrc(src, labels.length ? pick : undefined);
-	const size = pngSize(finalSrc);
+	const size = width && height ? { width, height } : pngSize(finalSrc);
 
 	return (
 		<figure className="not-prose my-5 max-md:-mx-4">
 			<div className="overflow-hidden border-y bg-fd-card md:rounded-lg md:border">
 				<ZoomImage src={finalSrc} alt={alt} width={size?.width} height={size?.height} />
 			</div>
+			{caption ? <figcaption className="mt-3 text-[0.95rem] leading-7 max-md:px-4">{caption}</figcaption> : null}
 			{labels.length > 0 ? (
 				<ol className="mt-3 space-y-1.5 text-sm max-md:px-4">
 					{labels.map((label, i) => (
