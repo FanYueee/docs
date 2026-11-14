@@ -6,7 +6,8 @@
   框線座標：lib/shot-marks.json（原始像素 [x, y, 寬, 高]）
   輸出：    public/images/**（同樣路徑；<Shot pick={[2]}> 這類變體會輸出成 xxx.p2.png）
 
-用法：python3 scripts/bake-shots.py   （需要 Pillow）
+用法：python3 scripts/bake-shots.py [路徑片段 …]   （需要 Pillow）
+      不帶參數會重新輸出全部圖片（會蓋掉已壓縮的檔案）；只改一張時請帶路徑片段，例如 network.png
       輸出後請再做無損壓縮：
       find public/images -name '*.png' | xargs -P 6 -I{} zopflipng -y -m --iterations=20 {} {}
 """
@@ -113,8 +114,9 @@ def bake(src, pick):
 
 def main():
     n = 0
+    only = sys.argv[1:]
     for src, picks in sorted(variants().items()):
-        if src not in MARKS:
+        if src not in MARKS or (only and not any(o in src for o in only)):
             continue
         for pick in sorted(picks, key=lambda p: (p is not None, p)):
             dest = OUT / out_name(src, pick).lstrip("/")
