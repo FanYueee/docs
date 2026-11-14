@@ -1,3 +1,5 @@
+import fs from "node:fs";
+import path from "node:path";
 import type { Metadata } from "next";
 
 /** 正式網址（Vercel 預覽環境可用 NEXT_PUBLIC_SITE_URL 覆蓋） */
@@ -14,6 +16,20 @@ export const OG_IMAGE = {
 	height: 630,
 	alt: SITE_NAME,
 };
+
+/**
+ * 頁面專屬的預覽圖（scripts/gen-og.mjs 產生在 public/og/docs/）；
+ * 還沒有對應圖片的頁面使用預設圖。
+ */
+export function ogImage(slugs: string[], alt?: string) {
+	if (slugs.length > 0) {
+		const url = `/og/docs/${slugs.join("/")}.png`;
+		if (fs.existsSync(path.join(process.cwd(), "public", url))) {
+			return { url, width: 1200, height: 630, alt: alt ?? SITE_NAME };
+		}
+	}
+	return OG_IMAGE;
+}
 
 /** 網址路徑 → 絕對網址 */
 export function absoluteUrl(path: string) {
@@ -116,6 +132,7 @@ export function pageMetadata(opts: {
 	const title = isHome ? HOME_TITLE : seoTitle(opts.title, opts.slugs);
 	const fullTitle = isHome ? HOME_TITLE : `${title} | ${SITE_NAME}`;
 	const description = seoDescription(opts.slugs, opts.description);
+	const image = ogImage(opts.slugs, fullTitle);
 	return {
 		title: isHome ? { absolute: HOME_TITLE } : title,
 		description,
@@ -127,14 +144,14 @@ export function pageMetadata(opts: {
 			description,
 			siteName: SITE_NAME,
 			locale: "zh_TW",
-			images: [OG_IMAGE],
+			images: [image],
 			...(opts.modified ? { modifiedTime: opts.modified.toISOString() } : {}),
 		},
 		twitter: {
 			card: "summary_large_image",
 			title: fullTitle,
 			description,
-			images: [OG_IMAGE.url],
+			images: [image.url],
 		},
 	};
 }

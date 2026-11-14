@@ -10,7 +10,7 @@ import { Card, Cards } from "fumadocs-ui/components/card";
 import { notFound } from "next/navigation";
 import { getMDXComponents } from "@/mdx-components";
 import type { Metadata } from "next";
-import { BRAND_NAME, SITE_NAME, absoluteUrl, pageMetadata, seoDescription, seoTitle } from "@/lib/seo";
+import { BRAND_NAME, SITE_NAME, absoluteUrl, ogImage, pageMetadata, seoDescription, seoTitle } from "@/lib/seo";
 
 export default async function Page(props: {
 	params: Promise<{ slug?: string[] }>;
@@ -133,7 +133,7 @@ function JsonLd({ page }: { page: DocPage }) {
 			url,
 			mainEntityOfPage: url,
 			inLanguage: "zh-TW",
-			image: absoluteUrl("/og/default.png"),
+			image: absoluteUrl(ogImage(page.slugs).url),
 			author: publisher,
 			publisher,
 			...(page.data.lastModified ? { dateModified: page.data.lastModified.toISOString() } : {}),
