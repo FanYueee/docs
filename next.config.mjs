@@ -17,6 +17,7 @@ const config = {
 			{ source: "/docs/store/discord", destination: "/docs/account/login", permanent: true },
 			{ source: "/docs/store/payment/:path*", destination: "/docs/store/billing", permanent: true },
 			{ source: "/docs/store/payment", destination: "/docs/store/billing", permanent: true },
+			{ source: "/docs/products/:path*", destination: "/docs", permanent: false },
 			{ source: "/docs/store/services/upgrade", destination: "/docs/store/services", permanent: true },
 		];
 	},
