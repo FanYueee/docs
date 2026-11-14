@@ -16,7 +16,7 @@ AI 工具如 ChatGPT 可以協助您快速診斷和解決各種技術問題。�
 <Step>
 ### 註冊 ChatGPT 帳戶
 前往 [ChatGPT 官網](https://chat.openai.com/) 註冊或登入帳戶，並進入對話介面。
-![chatgpt1](/images/troubleshooting/ai/1.png)
+![ChatGPT 對話介面](/images/troubleshooting/ai/1.png)
 </Step>
 
 <Step>
@@ -25,7 +25,7 @@ AI 工具如 ChatGPT 可以協助您快速診斷和解決各種技術問題。�
 ```
 請使用繁體中文回答我的問題
 ```
-![chatgpt2](/images/troubleshooting/ai/2.png)
+![要求 AI 使用繁體中文回答](/images/troubleshooting/ai/2.png)
 </Step>
 
 <Step>
@@ -43,15 +43,19 @@ container~ java -version
 openjdk version "21.0.13" 2026-10-20 LTS
 OpenJDK Runtime Environment Temurin-21.0.13+9 (build 21.0.13+9-LTS)
 OpenJDK 64-Bit Server VM Temurin-21.0.13+9 (build 21.0.13+9-LTS, mixed mode, sharing)
-container~ java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar server.jar
+container~ java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar ${SERVER_JARFILE}
 Error: Unable to access jarfile server.jar
 ```
-![chatgpt3](/images/troubleshooting/ai/3.png)
+![主控台的錯誤訊息，已選取要複製的內容](/images/troubleshooting/ai/3.webp)
 </Step>
 
 <Step>
 ### 了解 AI 回答
 AI 會分析錯誤訊息並提供可能的解決方案或總結。您將可以依照 AI 的建議進行操作。
-![chatgpt4](/images/troubleshooting/ai/4.png)
+![AI 回答範例](/images/troubleshooting/ai/4.webp)
+
+<Callout type="info">
+    回答內容僅為範例，實際內容會依 AI 工具而不同。
+</Callout>
 </Step>
 </Steps>
