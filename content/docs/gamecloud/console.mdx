@@ -7,6 +7,8 @@ icon: SquareTerminal
 import { Callout } from 'fumadocs-ui/components/callout';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 
+主控台是控制伺服器運行的地方，可以開機、關機、重新啟動，也能輸入指令並即時查看日誌與資源用量。
+
 <Shot src="/images/gamecloud/console.png" alt="主控台" />
 
 <Callout title="輸入指令不需要斜線" type="info">
@@ -21,18 +23,35 @@ import { Step, Steps } from 'fumadocs-ui/components/steps';
 
 <Steps>
 <Step>
-按「**啟動**」，第一次需要下載遊戲檔案。
+
+### 啟動伺服器
+
+按「**啟動**」，第一次需要下載遊戲檔案，請等候幾分鐘。
 
 <Shot src="/images/gamecloud/tour-01.png" alt="啟動伺服器" />
 </Step>
 <Step>
+
+### 複製連線位址
+
 複製「**連線位址**」，在 Minecraft 的「多人遊戲」→「新增伺服器」貼上。想用自己的網域請看[自訂域名](/docs/minecraft/domain)。
 
 <Shot src="/images/gamecloud/tour-02.png" alt="連線位址" />
 </Step>
 <Step>
+
+### 邀請朋友
+
 到「[使用者](/docs/gamecloud/users)」邀請朋友一起管理。
 
 <Shot src="/images/gamecloud/tour-03.png" alt="邀請朋友" />
 </Step>
 </Steps>
+
+## 輸入指令
+
+在主控台下方的輸入框輸入指令後按 Enter，例如查看指令說明：
+
+```
+help
+```

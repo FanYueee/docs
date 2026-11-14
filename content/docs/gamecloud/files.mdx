@@ -7,16 +7,24 @@ icon: FolderOpen
 import { Callout } from 'fumadocs-ui/components/callout';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 
+在「檔案」可以瀏覽伺服器內的檔案，直接在網頁上上傳、編輯、移動或刪除。
+
 <Shot src="/images/gamecloud/files-01.png" alt="檔案管理" />
 
 ## 編輯檔案
 
 <Steps>
 <Step>
-點選檔案右側的鉛筆圖示。
+
+### 開啟檔案
+
+點選檔案右側的鉛筆圖示，開啟編輯器。
 </Step>
 <Step>
-修改後按「**儲存**」。
+
+### 修改並儲存
+
+修改後按「**儲存**」。不儲存就按「**關閉**」。
 
 <Shot src="/images/gamecloud/files-editor-01.png" alt="編輯檔案" />
 </Step>
@@ -28,14 +36,28 @@ import { Step, Steps } from 'fumadocs-ui/components/steps';
 
 ## 更多選項
 
-點選「⋯」可以移動、調整檔案權限或刪除。
+<Steps>
+<Step>
 
-<Shot src="/images/gamecloud/files-menu.png" alt="更多選項" />
+### 開啟選單
+
+點選項目右側的「⋯」，可以複製、移動、調整檔案權限或刪除。壓縮檔還會多出「解壓縮」。
+
+<Shot src="/images/gamecloud/files-01.png" alt="更多選項" pick={[4, 5]} />
+</Step>
+</Steps>
 
 ## 批次操作
+
+<Steps>
+<Step>
+
+### 勾選項目
 
 勾選多個項目，上方會出現批次操作列，可以壓縮、移動或刪除。
 
 <Shot src="/images/gamecloud/files-batch.png" alt="批次操作" />
+</Step>
+</Steps>
 
 大型檔案或整個資料夾，建議使用 [SFTP](/docs/gamecloud/sftp)。

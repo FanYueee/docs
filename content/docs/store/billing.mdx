@@ -7,11 +7,20 @@ icon: Receipt
 import { Callout } from 'fumadocs-ui/components/callout';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 
+在「服務商店」可以查看所有帳單、選擇付款方式並接收通知。
+
 ## 帳單列表
+
+<Steps>
+<Step>
+
+### 查看帳單
 
 「服務商店」→「**帳單**」會列出所有帳單。待付款的帳單可以「付款」「取消」「檢視」。
 
 <Shot src="/images/store/orders.png" alt="帳單列表" />
+</Step>
+</Steps>
 
 <Callout title="取消續費帳單不會停止服務" type="info">
 只會取消該次續費帳單，服務會使用到原本的到期日。不想續用請[取消服務](/docs/store/services/cancel)。
@@ -21,26 +30,42 @@ import { Step, Steps } from 'fumadocs-ui/components/steps';
 
 在帳單明細選擇付款方式，付款由 SHOPLINE 處理。實際可用的方式以帳單頁面顯示為準。
 
+<Steps>
+<Step>
+
 ### 信用卡
 
 填寫卡號、持卡人姓名、有效期與安全碼，按「**確認付款**」。
 
 <Shot src="/images/store/pay-card.png" alt="信用卡付款" />
+</Step>
+<Step>
 
 ### Apple Pay
 
 按「**使用 Apple Pay 付款**」。
 
 <Shot src="/images/store/pay-applepay.png" alt="Apple Pay 付款" />
+</Step>
+<Step>
 
 ### ATM 轉帳
 
 按「**前往付款**」取得轉帳資訊。可能加收手續費，請先確認應付合計。
 
 <Shot src="/images/store/pay-atm.png" alt="ATM 轉帳" />
+</Step>
+</Steps>
 
 ## 通知
+
+<Steps>
+<Step>
+
+### 查看通知
 
 「服務商店」→「**通知**」會顯示服務與帳單通知。
 
 <Shot src="/images/store/notifications.png" alt="通知" />
+</Step>
+</Steps>

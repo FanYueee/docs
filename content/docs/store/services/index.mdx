@@ -4,12 +4,27 @@ description: 查看服務狀態、到期日，並進入服務詳情。
 icon: Boxes
 ---
 
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+在「我的服務」可以查看已購買的服務，並進入詳情管理。
+
+<Steps>
+<Step>
+
+### 查看服務列表
+
 「服務商店」→「**我的服務**」會列出你的所有服務，點選「**管理**」進入詳情。
 
 <Shot src="/images/store/services.png" alt="我的服務" />
+</Step>
+<Step>
 
-服務詳情可以查看費用、到期日與計費週期，也能前往原始帳單、聯絡客服或[取消服務](/docs/store/services/cancel)。
+### 查看服務詳情
+
+可以查看費用、到期日與計費週期，也能前往原始帳單、聯絡客服或[取消服務](/docs/store/services/cancel)。
 
 <Shot src="/images/store/service.png" alt="服務詳情" pick={[1, 2, 3]} />
+</Step>
+</Steps>
 
 遊戲主機開通後，請到「[遊戲主機](/docs/gamecloud)」管理。

@@ -5,17 +5,41 @@ icon: Rocket
 ---
 
 import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
 
-<Shot src="/images/gamecloud/startup.png" alt="啟動設定" />
+在「啟動設定」可以查看伺服器的啟動指令，並調整 Java 版本與遊戲版本。
 
-修改欄位後，按該列右側的「**儲存**」才會套用。
+<Steps>
+<Step>
 
-## 更換遊戲版本
+### 查看啟動指令
 
-在「Server Version」填入版本號，`latest` 為最新正式版，`snapshot` 為最新快照。
+「**啟動指令**」是伺服器開機時執行的指令，例如：
+
+```
+java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar server.jar
+```
+
+<Shot src="/images/gamecloud/startup.png" alt="啟動指令" pick={[1]} />
+</Step>
+<Step>
+
+### 選擇執行環境
+
+「**執行環境**」是 Java 版本。遊戲版本不同需要的 Java 版本也不同，啟動失敗時請先檢查這裡。
+
+<Shot src="/images/gamecloud/startup.png" alt="執行環境" pick={[2]} />
+</Step>
+<Step>
+
+### 更換遊戲版本
+
+在「**Minecraft Version**」填入版本號，填 `latest` 會一律使用最新版。「**Build Number**」是 Paper 的建置編號，同樣可填 `latest`，「**Server Jar File**」是啟動的檔案名稱。修改後按該列右側的「**儲存**」。
+
+<Shot src="/images/gamecloud/startup.png" alt="遊戲版本" pick={[3]} />
+</Step>
+</Steps>
 
 <Callout title="需要重新安裝才會生效" type="warn">
-儲存後，請到「[設定](/docs/gamecloud/settings)」按「重新安裝伺服器」。請先[建立備份](/docs/gamecloud/backups)。
+更換版本後，請到「[設定](/docs/gamecloud/settings)」按「重新安裝伺服器」。請先[建立備份](/docs/gamecloud/backups)。
 </Callout>
-
-遊戲版本不同需要的 Java 版本也不同，啟動失敗時請檢查「執行環境」。

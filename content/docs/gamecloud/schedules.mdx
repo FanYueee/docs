@@ -4,25 +4,45 @@ description: 讓伺服器在固定時間自動執行任務。
 icon: CalendarClock
 ---
 
+import { Callout } from 'fumadocs-ui/components/callout';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 
+排程可以讓伺服器在固定時間自動執行任務，例如每天凌晨重新啟動、定時公告。
+
+<Callout title="時間以台北時間為準" type="info">
 排程時間使用「**台北標準時間（UTC+8）**」。
+</Callout>
 
 <Steps>
 <Step>
+
+### 新增排程
+
 按「**新增排程**」，填寫名稱、頻率與時間，再按「**儲存**」。
 
 <Shot src="/images/gamecloud/schedules-new.png" alt="新增排程" />
 </Step>
 <Step>
-在排程下方按「**新增任務**」，設定動作與內容。
+
+### 新增任務
+
+在排程下方按「**新增任務**」。
 
 <Shot src="/images/gamecloud/schedules-list.png" alt="排程列表" />
 </Step>
 <Step>
-選擇動作（預設為「傳送指令」）、填寫內容，按「**儲存**」。一個排程可以有多個任務，會依序執行。
+
+### 設定任務內容
+
+選擇動作（預設為「傳送指令」），填寫內容後按「**儲存**」。一個排程可以有多個任務，會依序執行。
 
 <Shot src="/images/gamecloud/schedules-task.png" alt="新增任務" />
+
+例如在重新啟動前先公告：
+
+```
+say 伺服器將在 5 分鐘後重新啟動
+```
 </Step>
 </Steps>
 

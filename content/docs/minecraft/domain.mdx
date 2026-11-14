@@ -42,13 +42,20 @@ import { Callout } from 'fumadocs-ui/components/callout';
 
 <Step>
 ### 填寫 SRV 記錄詳細資訊
-根據以下資訊填寫各個欄位：
+根據以下資訊填寫各個欄位（可直接複製）：
 
-1. **名稱**：輸入 `_minecraft._tcp.<您要取的子域名>`
-2. **優先順序**：輸入 `0`
-3. **權重**：輸入 `0`
-4. **連接埠**：輸入您的伺服器端口（例如：`25566`）
-5. **目標**：輸入您的伺服器位址（例如：`edge1.vproxy.hk`）
+```
+類型：SRV
+名稱：_minecraft._tcp.play
+優先順序：0
+權重：0
+連接埠：25566
+目標：edge1.vproxy.hk
+```
+
+- **名稱**：`_minecraft._tcp.<您要取的子域名>`
+- **連接埠**：您的伺服器端口
+- **目標**：您的伺服器位址
 
 <Callout type="warn">
     名稱必須以 `_minecraft._tcp.` 開頭，然後是您想要的子域名（例如：`_minecraft._tcp.play`）。

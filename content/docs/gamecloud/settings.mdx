@@ -5,15 +5,35 @@ icon: Settings
 ---
 
 import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+在「設定」可以修改伺服器名稱、取得 SFTP 連線資訊，或重新安裝伺服器。
+
+<Steps>
+<Step>
+
+### 修改名稱與說明
+
+修改後按「**儲存**」。
 
 <Shot src="/images/gamecloud/settings-01.png" alt="重新命名" />
+</Step>
+<Step>
 
-- **名稱與說明**：修改後按「儲存」
+### 查看連線與除錯資訊
+
 - **SFTP 連線**：位址與使用者名稱，用法見 [SFTP](/docs/gamecloud/sftp)
 - **除錯資訊**：節點與伺服器 ID，聯絡客服時請提供
-- **重新安裝伺服器**：重新執行安裝腳本
 
 <Shot src="/images/gamecloud/settings-02.png" alt="SFTP、除錯資訊與重新安裝" />
+</Step>
+<Step>
+
+### 重新安裝伺服器
+
+按「**重新安裝伺服器**」會重新執行安裝腳本。
+</Step>
+</Steps>
 
 <Callout title="重新安裝前請先備份" type="error">
 重新安裝可能刪除或重置部分檔案。請先[建立備份](/docs/gamecloud/backups)。
