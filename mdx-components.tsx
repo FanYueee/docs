@@ -17,8 +17,18 @@ function resolveSrc(src: unknown): string {
 	return "";
 }
 
-function MdxImage(props: { src?: unknown; alt?: string }) {
-	return <ZoomImage src={resolveSrc(props.src)} alt={props.alt} className="rounded-lg border" />;
+function MdxImage(props: { src?: unknown; alt?: string; width?: unknown; height?: unknown }) {
+	const num = (v: unknown) => (typeof v === "number" ? v : typeof v === "string" && /^\d+$/.test(v) ? Number(v) : undefined);
+	const staticImg = props.src && typeof props.src === "object" ? (props.src as { width?: number; height?: number }) : undefined;
+	return (
+		<ZoomImage
+			src={resolveSrc(props.src)}
+			alt={props.alt}
+			width={num(props.width) ?? staticImg?.width}
+			height={num(props.height) ?? staticImg?.height}
+			className="rounded-lg border"
+		/>
+	);
 }
 
 export function getMDXComponents(components?: MDXComponents): MDXComponents {

@@ -12,10 +12,15 @@ export function ZoomImage({
 	src,
 	alt = "",
 	className = "",
+	width,
+	height,
 }: {
 	src: string;
 	alt?: string;
 	className?: string;
+	/** 原始尺寸（只用來預留版面空間，實際顯示仍是滿版寬度） */
+	width?: number;
+	height?: number;
 }) {
 	const [open, setOpen] = useState(false);
 
@@ -37,6 +42,8 @@ export function ZoomImage({
 			<img
 				src={src}
 				alt={alt}
+				width={width}
+				height={height}
 				loading="lazy"
 				decoding="async"
 				onClick={() => setOpen(true)}

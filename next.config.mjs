@@ -8,6 +8,7 @@ const config = {
 	// 舊版文檔網址導向新位置
 	async redirects() {
 		return [
+			{ source: "/", destination: "/docs", permanent: true },
 			{ source: "/docs/panel/server", destination: "/docs/gamecloud", permanent: true },
 			{ source: "/docs/panel/server/:path*", destination: "/docs/gamecloud/:path*", permanent: true },
 			{ source: "/docs/panel/account", destination: "/docs/account/profile", permanent: true },

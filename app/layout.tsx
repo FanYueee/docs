@@ -4,6 +4,7 @@ import { defineI18nUI } from "fumadocs-ui/i18n";
 import { defineI18n } from "fumadocs-core/i18n";
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
+import { BRAND_NAME, HOME_TITLE, OG_IMAGE, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/seo";
 
 const { provider } = defineI18nUI(
 	defineI18n({ defaultLanguage: "zh-TW", languages: ["zh-TW"] }),
@@ -40,11 +41,55 @@ const { provider } = defineI18nUI(
 );
 
 export const metadata: Metadata = {
+	metadataBase: new URL(SITE_URL),
 	title: {
-		template: "%s - vProxy Cloud",
-		default: "vProxy Cloud 文檔中心",
+		template: `%s | ${SITE_NAME}`,
+		default: HOME_TITLE,
 	},
-	description: "vProxy Cloud 文檔中心",
+	description: SITE_DESCRIPTION,
+	applicationName: SITE_NAME,
+	generator: "Next.js",
+	keywords: [
+		"vProxy Cloud",
+		"遊戲主機",
+		"Minecraft 伺服器",
+		"Minecraft 主機",
+		"遊戲伺服器租用",
+		"SFTP",
+		"SRV 記錄",
+		"文檔",
+		"教學",
+	],
+	authors: [{ name: BRAND_NAME, url: "https://vproxy.cloud" }],
+	publisher: BRAND_NAME,
+	alternates: { canonical: "/docs" },
+	openGraph: {
+		type: "website",
+		siteName: SITE_NAME,
+		locale: "zh_TW",
+		title: SITE_NAME,
+		description: SITE_DESCRIPTION,
+		url: "/docs",
+		images: [OG_IMAGE],
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: SITE_NAME,
+		description: SITE_DESCRIPTION,
+		images: [OG_IMAGE.url],
+	},
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+	},
+	// 在 Vercel 設定環境變數後，網站驗證碼會自動輸出
+	verification: {
+		google: process.env.GOOGLE_SITE_VERIFICATION,
+		other: process.env.BING_SITE_VERIFICATION
+			? { "msvalidate.01": process.env.BING_SITE_VERIFICATION }
+			: undefined,
+	},
 };
 
 export default function Layout({ children }: { children: ReactNode }) {

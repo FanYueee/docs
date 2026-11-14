@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import marks from "@/lib/shot-marks.json";
 import { ZoomImage } from "@/components/zoom-image";
+import { pngSize } from "@/lib/image-size";
 
 type Registry = Record<string, { marks: { box: number[]; label: string }[] }>;
 const REGISTRY = marks as Registry;
@@ -33,10 +34,13 @@ export function Shot({
 		.filter(Boolean)
 		.map((m) => m.label);
 
+	const finalSrc = bakedSrc(src, labels.length ? pick : undefined);
+	const size = pngSize(finalSrc);
+
 	return (
 		<figure className="not-prose my-5 max-md:-mx-4">
 			<div className="overflow-hidden border-y bg-fd-card md:rounded-lg md:border">
-				<ZoomImage src={bakedSrc(src, labels.length ? pick : undefined)} alt={alt} />
+				<ZoomImage src={finalSrc} alt={alt} width={size?.width} height={size?.height} />
 			</div>
 			{labels.length > 0 ? (
 				<ol className="mt-3 space-y-1.5 text-sm max-md:px-4">
