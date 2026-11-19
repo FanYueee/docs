@@ -86,6 +86,8 @@ export const SEO_DESCRIPTIONS: Record<string, string> = {
 		"使用 FileZilla 以 SFTP 連線遊戲伺服器，上傳與下載大型檔案或整個資料夾，包含取得連線資訊與重設 SFTP 密碼。",
 	"gamecloud/databases":
 		"查看遊戲主機的 MySQL 資料庫額度，說明尚未購買額度時如何加購，供外掛與模組使用。",
+	"gamecloud/plugins-vs-mods":
+		"說明外掛、模組與模組包的差別：該選 Paper、Fabric 還是 Forge、玩家需不需要另外安裝，以及從選版本到安裝、重新啟動的完整流程與常見問題。",
 	"gamecloud/versions":
 		"一步步安裝或更換 Minecraft 伺服器版本：選擇官方原版、Paper、Purpur、Forge 或 Fabric，並自動切換 Java，世界與設定檔都會保留。",
 	"gamecloud/plugins":

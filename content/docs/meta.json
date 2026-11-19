@@ -16,6 +16,7 @@
     "gamecloud/console",
     "gamecloud/files",
     "gamecloud/sftp",
+    "gamecloud/plugins-vs-mods",
     "gamecloud/versions",
     "gamecloud/plugins",
     "gamecloud/modpacks",
