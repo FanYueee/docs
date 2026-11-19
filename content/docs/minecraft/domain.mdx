@@ -8,6 +8,10 @@ import { Callout } from 'fumadocs-ui/components/callout';
 
 透過設定 Cloudflare 的 SRV 記錄，您可以讓玩家使用像 `play.yourdomain.com` 這樣的自訂域名來連接伺服器，而不需要記住複雜的 IP 位址和端口號碼。
 
+<Callout title="沒有自己的網域也能用" type="info">
+每台遊戲主機都會自動取得一個以 `.tw.vproxy.cloud` 結尾的網址，由系統自動產生，不需要任何設定。只有想使用自己的網域（例如 `play.yourdomain.com`）時，才需要做下面的設定。
+</Callout>
+
 <Callout title="基岩板無法使用 SRV 紀錄" type="warn">
     目前 Minecraft 基岩版（Bedrock Edition）不支援 SRV 記錄，玩家仍需使用 IP 位址和端口號碼連接伺服器。或是使用 A 紀錄設定子域名指向伺服器 IP 位址。
 </Callout>
