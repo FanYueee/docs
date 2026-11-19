@@ -94,6 +94,10 @@ export const SEO_DESCRIPTIONS: Record<string, string> = {
 		"在遊戲主機搜尋並一鍵安裝外掛：從 Modrinth、Hangar 或 CurseForge 選擇版本，自動安裝前置外掛，也能停用與移除。",
 	"gamecloud/plugin-upload":
 		"在遊戲主機手動上傳外掛 .jar 檔：下載外掛、放進 plugins 資料夾、重新啟動並確認載入，適用 Paper、Purpur、Spigot 等插件伺服器，以 Chunky 為例。",
+	"gamecloud/luckperms":
+		"用主控台指令設定 LuckPerms 權限：建立群組、替群組加上權限、把玩家加進群組，並使用網頁編輯器，附常用指令與注意事項。",
+	"gamecloud/essentials":
+		"在遊戲主機用網頁編輯器修改 EssentialsX 的 config.yml：調整傳送等待時間與家的數量，用 essentials reload 立即套用，並說明設定檔壞掉時怎麼辦。",
 	"gamecloud/modpacks":
 		"從 Modrinth 或 CurseForge 一鍵安裝 Minecraft 模組包，自動切換對應的伺服器版本與 Java，並說明玩家端需要安裝的內容。",
 	"gamecloud/mods-manual":

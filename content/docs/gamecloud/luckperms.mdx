@@ -1,0 +1,89 @@
+---
+title: LuckPerms 權限設定
+description: 用主控台指令建立群組、設定權限，並把玩家加進群組。
+icon: KeyRound
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+[LuckPerms](https://luckperms.net) 是管理權限的外掛：決定誰可以使用哪些指令。做法是先建立群組（例如 VIP）、把權限設定在群組上，再把玩家加進群組，比一個一個玩家設定好管理。所有指令都在[主控台](/docs/gamecloud/console)輸入。
+
+<Callout title="先安裝 LuckPerms" type="info">
+LuckPerms 是外掛，需要 Paper、Purpur 這類插件伺服器。請先到 [LuckPerms 官方網站](https://luckperms.net)下載 .jar 檔，用[手動上傳外掛](/docs/gamecloud/plugin-upload)的方式裝好並重新啟動，再開始下面的步驟。
+</Callout>
+
+{/* tutorial:start */}
+<Steps>
+<Step>
+
+<Shot src="/images/tutorials/luckperms/01.webp" alt="LuckPerms 權限設定 步驟 1：先用「手動上傳外掛」或「單一外掛」裝好 LuckPerms 並重新啟動" width={2800} height={1800} caption="先用「手動上傳外掛」或「單一外掛」裝好 LuckPerms 並重新啟動。LuckPerms 的指令都在主控台輸入，開頭是 lp（主控台不用加斜線）。第一步先建立一個群組，例如 VIP：輸入 lp creategroup vip 按 Enter。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/luckperms/02.webp" alt="LuckPerms 權限設定 步驟 2：主控台顯示 vip was successfully created 就建立好了" width={2800} height={1800} caption="主控台顯示 vip was successfully created 就建立好了。之後把權限設定在群組上，再把玩家加進群組，比一個一個玩家設定好管理。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/luckperms/03.webp" alt="LuckPerms 權限設定 步驟 3：替群組加權限：lp group &lt;群組&gt; permission set &lt;權限節點&gt; true" width={2800} height={1800} caption="替群組加權限：lp group &lt;群組&gt; permission set &lt;權限節點&gt; true。這裡讓 VIP 可以使用 /gamemode：lp group vip permission set minecraft.command.gamemode true。每個外掛的權限節點寫在它的說明文件裡。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/luckperms/04.webp" alt="LuckPerms 權限設定 步驟 4：看到 Set minecraft.command.gamemode to true 就代表權限已加入" width={2800} height={1800} caption="看到 Set minecraft.command.gamemode to true 就代表權限已加入。要拿掉權限，把 set ... true 改成 unset 即可。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/luckperms/05.webp" alt="LuckPerms 權限設定 步驟 5：把玩家加入群組：lp user &lt;玩家名稱&gt; parent add &lt;群組&gt;" width={2800} height={1800} caption="把玩家加入群組：lp user &lt;玩家名稱&gt; parent add &lt;群組&gt;。這裡用範例玩家 Steve，請換成你的玩家名稱（大小寫要正確）。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/luckperms/06.webp" alt="LuckPerms 權限設定 步驟 6：如果出現 A user for Steve could not be found，代表這位玩家還沒進過這台伺服器" width={2800} height={1800} caption="如果出現 A user for Steve could not be found，代表這位玩家還沒進過這台伺服器。LuckPerms 只認得進來過的玩家，請玩家先登入一次再執行；玩家已經進過伺服器的話，這一步會直接成功。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/luckperms/07.webp" alt="LuckPerms 權限設定 步驟 7：玩家還沒進過伺服器時，也可以改用玩家的 UUID（可以在 mcuuid.net 這類網站用玩家名稱查到）：lp user &lt;UUID&gt; pa" width={2800} height={1800} caption="玩家還沒進過伺服器時，也可以改用玩家的 UUID（可以在 mcuuid.net 這類網站用玩家名稱查到）：lp user &lt;UUID&gt; parent add vip。這裡是範例 UUID。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/luckperms/08.webp" alt="LuckPerms 權限設定 步驟 8：看到 now inherits permissions from vip 就完成了" width={2800} height={1800} caption="看到 now inherits permissions from vip 就完成了。玩家在線上時會立刻生效，不用重新啟動。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/luckperms/09.webp" alt="LuckPerms 權限設定 步驟 9：想確認玩家有哪些群組，輸入 lp user &lt;玩家名稱或 UUID&gt; info" width={2800} height={1800} caption="想確認玩家有哪些群組，輸入 lp user &lt;玩家名稱或 UUID&gt; info。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/luckperms/10.webp" alt="LuckPerms 權限設定 步驟 10：「Parent Groups」底下會列出玩家所在的群組，這裡可以看到 vip" width={2800} height={1800} caption="「Parent Groups」底下會列出玩家所在的群組，這裡可以看到 vip。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/luckperms/11.webp" alt="LuckPerms 權限設定 步驟 11：權限很多時，可以用網頁編輯器：輸入 lp editor" width={2800} height={1800} caption="權限很多時，可以用網頁編輯器：輸入 lp editor。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/luckperms/12.webp" alt="LuckPerms 權限設定 步驟 12：主控台會給一個 luckperms.net 的網址，用瀏覽器打開就能用滑鼠新增群組和權限" width={2800} height={1800} caption="主控台會給一個 luckperms.net 的網址，用瀏覽器打開就能用滑鼠新增群組和權限。改完按網頁上的 Save，再把網頁給的 lp applyedits 指令貼回主控台執行就會套用。" />
+</Step>
+</Steps>
+{/* tutorial:end */}
+
+## 常用指令
+
+在主控台輸入時不用加斜線；在遊戲內輸入則要加，例如 `/lp editor`。
+
+| 指令 | 用途 |
+| --- | --- |
+| `lp creategroup <群組>` | 建立群組 |
+| `lp listgroups` | 列出所有群組 |
+| `lp group <群組> permission set <權限> true` | 替群組加上權限 |
+| `lp group <群組> permission unset <權限>` | 拿掉群組的權限 |
+| `lp user <玩家> parent add <群組>` | 把玩家加進群組 |
+| `lp user <玩家> parent remove <群組>` | 把玩家移出群組 |
+| `lp user <玩家> info` | 查看玩家的群組與資料 |
+| `lp editor` | 開啟網頁編輯器 |
+
+## 注意事項
+
+- **玩家必須進來過一次**：LuckPerms 只認得登入過這台伺服器的玩家。玩家還沒進來過時，請他先登入一次，或改用 UUID。
+- **大小寫要正確**：玩家名稱、群組名稱與權限節點都要照原樣輸入。
+- **權限節點在哪裡找**：每個外掛的權限節點都寫在它的說明文件裡，例如 EssentialsX 的 `essentials.home`。官方的[說明文件](https://luckperms.net/wiki/Home)也有完整教學。
+- **權限很重要**：給別人權限前請想清楚，尤其是管理員等級的權限。需要的時候可以到[玩家管理](/docs/gamecloud/players)（即將推出）或用 `op` 指令設定管理員。

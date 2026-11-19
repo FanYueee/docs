@@ -1,0 +1,67 @@
+---
+title: EssentialsX 設定
+description: 修改 EssentialsX 的傳送等待時間、家的數量，並套用設定。
+icon: Compass
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+[EssentialsX](https://essentialsx.net) 提供 `/home`、`/spawn`、`/tpa`、`/kit` 等許多常用指令。這頁示範在網頁上修改 `config.yml`：把傳送前的等待時間改成 3 秒、每位玩家可以設定的家改成 5 個，並直接套用，不用重新啟動伺服器。
+
+<Callout title="先安裝 EssentialsX" type="info">
+EssentialsX 是外掛，需要 Paper、Purpur 這類插件伺服器。請先到[官方網站](https://essentialsx.net)下載 .jar 檔，用[手動上傳外掛](/docs/gamecloud/plugin-upload)的方式裝好並重新啟動一次，外掛才會產生設定檔。
+</Callout>
+
+<Callout title="修改前先備份" type="warn">
+設定檔改壞了可能要重新設定。建議先到[備份](/docs/gamecloud/backups)建立一份，需要時可以還原。
+</Callout>
+
+{/* tutorial:start */}
+<Steps>
+<Step>
+
+<Shot src="/images/tutorials/essentials/01.webp" alt="EssentialsX 設定（傳送、家、禮包） 步驟 1：先用「手動上傳外掛」或「單一外掛」裝好 EssentialsX，並重新啟動一次" width={2800} height={1800} caption="先用「手動上傳外掛」或「單一外掛」裝好 EssentialsX，並重新啟動一次。外掛第一次啟動後，plugins 裡會出現 Essentials 資料夾，點進去。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/essentials/02.webp" alt="EssentialsX 設定（傳送、家、禮包） 步驟 2：EssentialsX 的主要設定都在 config.yml，點檔名就會用網頁編輯器打開" width={2800} height={1800} caption="EssentialsX 的主要設定都在 config.yml，點檔名就會用網頁編輯器打開。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/essentials/03.webp" alt="EssentialsX 設定（傳送、家、禮包） 步驟 3：設定檔很長，點一下編輯區後按 Ctrl+F（Mac 是 ⌘+F）開啟搜尋，輸入要找的設定名稱，例如 teleport-de" width={2800} height={1800} caption="設定檔很長，點一下編輯區後按 Ctrl+F（Mac 是 ⌘+F）開啟搜尋，輸入要找的設定名稱，例如 teleport-delay，按 Enter 就會跳到那一行。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/essentials/04.webp" alt="EssentialsX 設定（傳送、家、禮包） 步驟 4：teleport-delay 是玩家用 /home、/spawn、/tpa 傳送前要等待的秒數（等待時移動會取消）" width={2800} height={1800} caption="teleport-delay 是玩家用 /home、/spawn、/tpa 傳送前要等待的秒數（等待時移動會取消）。把 0 改成 3。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/essentials/05.webp" alt="EssentialsX 設定（傳送、家、禮包） 步驟 5：用同樣方法搜尋 sethome-multiple，下一行的 default 是每位玩家可以設定幾個家（/sethome）" width={2800} height={1800} caption="用同樣方法搜尋 sethome-multiple，下一行的 default 是每位玩家可以設定幾個家（/sethome）。把 3 改成 5。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/essentials/06.webp" alt="EssentialsX 設定（傳送、家、禮包） 步驟 6：改好後按「儲存」" width={2800} height={1800} caption="改好後按「儲存」。YAML 設定檔的縮排（前面的空格）不能亂動，否則外掛會讀不到設定。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/essentials/07.webp" alt="EssentialsX 設定（傳送、家、禮包） 步驟 7：同一個資料夾裡的 kits.yml 是禮包設定（/kit），修改方法相同" width={2800} height={1800} caption="同一個資料夾裡的 kits.yml 是禮包設定（/kit），修改方法相同。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/essentials/08.webp" alt="EssentialsX 設定（傳送、家、禮包） 步驟 8：回到「主控台」輸入 essentials reload 按 Enter，新設定就會套用，不用重新啟動伺服器" width={2800} height={1800} caption="回到「主控台」輸入 essentials reload 按 Enter，新設定就會套用，不用重新啟動伺服器。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/essentials/09.webp" alt="EssentialsX 設定（傳送、家、禮包） 步驟 9：看到 Essentials reloaded 就完成了" width={2800} height={1800} caption="看到 Essentials reloaded 就完成了。如果設定檔格式有錯（例如縮排被改壞），EssentialsX 會把它改名成 config.yml.broken 開頭的檔案並改用預設設定，主控台會出現錯誤訊息，請照訊息裡的行號修正。" />
+</Step>
+</Steps>
+{/* tutorial:end */}
+
+## 其他說明
+
+- **YAML 格式要小心**：縮排（行首的空格）不能亂動，也不要用 Tab。改壞時 EssentialsX 會把設定檔改名成 `config.yml.broken.<數字>`，並改用預設設定，主控台會顯示錯誤與行號，照著修正即可。
+- **設定檔裡有說明**：`config.yml` 裡以 `#` 開頭的行是說明文字，不會影響設定。官方[說明文件](https://essentialsx.net/wiki/Home.html)也有各項設定的介紹。
+- **`/spawn` 與 `/setspawn`**：這兩個指令屬於 EssentialsXSpawn 模組，需要另外下載並上傳 .jar 檔才有。
+- **其他設定檔**：`kits.yml`（禮包）、`worth.yml`（物品價格）等都在同一個 `Essentials` 資料夾，修改方式相同，改完輸入 `essentials reload` 就會套用。
+- **權限**：玩家能使用哪些指令由權限決定，可以搭配 [LuckPerms 權限設定](/docs/gamecloud/luckperms) 管理。

@@ -20,6 +20,8 @@
     "gamecloud/versions",
     "gamecloud/plugins",
     "gamecloud/plugin-upload",
+    "gamecloud/luckperms",
+    "gamecloud/essentials",
     "gamecloud/modpacks",
     "gamecloud/mods-manual",
     "gamecloud/worlds",
