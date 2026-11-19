@@ -96,6 +96,8 @@ export const SEO_DESCRIPTIONS: Record<string, string> = {
 		"在遊戲主機手動上傳外掛 .jar 檔：下載外掛、放進 plugins 資料夾、重新啟動並確認載入，適用 Paper、Purpur、Spigot 等插件伺服器，以 Chunky 為例。",
 	"gamecloud/modpacks":
 		"從 Modrinth 或 CurseForge 一鍵安裝 Minecraft 模組包，自動切換對應的伺服器版本與 Java，並說明玩家端需要安裝的內容。",
+	"gamecloud/mods-manual":
+		"在遊戲主機安裝 Fabric 伺服器並手動上傳模組 .jar：切換版本、建立 mods 資料夾、上傳 Fabric API 與 Lithium、重新啟動並確認載入，也說明玩家端需要安裝的內容。",
 	"gamecloud/worlds":
 		"把電腦上的 Minecraft 世界上傳到伺服器、換回上一個世界，或把伺服器的世界打包下載，換世界前會自動保存備份。",
 	"gamecloud/players":

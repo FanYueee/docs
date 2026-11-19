@@ -21,6 +21,7 @@
     "gamecloud/plugins",
     "gamecloud/plugin-upload",
     "gamecloud/modpacks",
+    "gamecloud/mods-manual",
     "gamecloud/worlds",
     "gamecloud/players",
     "gamecloud/schedules",

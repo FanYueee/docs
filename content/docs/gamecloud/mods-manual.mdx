@@ -1,0 +1,92 @@
+---
+title: 手動安裝模組
+description: 換成 Fabric 伺服器，再把模組的 .jar 檔上傳到 mods 資料夾。
+icon: Boxes
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+模組是一個 .jar 檔，放進伺服器的 `mods` 資料夾、重新啟動就會載入。這頁用 Fabric 示範：先把伺服器換成 Fabric，再上傳 Fabric API（多數 Fabric 模組都需要的前置模組）和 Lithium（效能優化模組）。
+
+<Callout title="找不到「軟體」選單？" type="info">
+第 1、2 步是「軟體 → 版本安裝」。部分畫面會直接顯示「版本安裝」分頁，找到後直接點它就可以了。
+</Callout>
+
+<Callout title="玩家也要安裝相同的模組" type="warn">
+新增方塊、物品、生物的內容模組，玩家要用同一種載入器，並安裝相同版本的模組，才進得了伺服器。像 Lithium 這種只裝在伺服器就有效的優化模組，玩家不用安裝。玩家可以用 [Modrinth App](https://modrinth.com/app) 或 [Prism Launcher](https://prismlauncher.org/wiki/) 管理模組，操作方式請看它們的官方說明。
+</Callout>
+
+{/* tutorial:start */}
+<Steps>
+<Step>
+
+<Shot src="/images/tutorials/mods-manual/01.webp" alt="手動安裝模組（Fabric） 步驟 1：模組要裝在模組伺服器上，原版和 Paper 這類插件伺服器不能載入模組" width={2800} height={1800} caption="模組要裝在模組伺服器上，原版和 Paper 這類插件伺服器不能載入模組。先把伺服器換成 Fabric：在伺服器頁面上方點「軟體」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/mods-manual/02.webp" alt="手動安裝模組（Fabric） 步驟 2：選「版本安裝」" width={2800} height={1800} caption="選「版本安裝」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/mods-manual/03.webp" alt="手動安裝模組（Fabric） 步驟 3：點「模組伺服器」分類，再選「Fabric」" width={2800} height={1800} caption="點「模組伺服器」分類，再選「Fabric」。Forge、NeoForge、Quilt 也在這裡，請選模組作者標明支援的那一種，Fabric 模組不能裝在 Forge 上，反之亦然。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/mods-manual/04.webp" alt="手動安裝模組（Fabric） 步驟 4：選擇 Minecraft 版本" width={2800} height={1800} caption="選擇 Minecraft 版本。要和模組支援的版本一致，也要和玩家的遊戲版本相同，這裡選 1.21.4。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/mods-manual/05.webp" alt="手動安裝模組（Fabric） 步驟 5：「Build」維持預設即可" width={2800} height={1800} caption="「Build」維持預設即可。下方「安裝資訊」會列出要下載的檔案和需要的 Java 版本，系統會自動切換。按「開始安裝」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/mods-manual/06.webp" alt="手動安裝模組（Fabric） 步驟 6：確認視窗說明會做的變更，世界和設定檔都會保留" width={2800} height={1800} caption="確認視窗說明會做的變更，世界和設定檔都會保留。按「開始安裝」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/mods-manual/07.webp" alt="手動安裝模組（Fabric） 步驟 7：等每個步驟都打勾、出現「版本檔案已安裝」就完成了" width={2800} height={1800} caption="等每個步驟都打勾、出現「版本檔案已安裝」就完成了。按「前往主控台啟動」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/mods-manual/08.webp" alt="手動安裝模組（Fabric） 步驟 8：按「啟動」" width={2800} height={1800} caption="按「啟動」。第一次啟動 Fabric 會先下載需要的檔案，並建立 mods 資料夾，等主控台出現 Done 再繼續。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/mods-manual/09.webp" alt="手動安裝模組（Fabric） 步驟 9：到 Modrinth 或 CurseForge 下載模組，篩選條件選 Fabric 和 1.21.4" width={2800} height={1800} caption="到 Modrinth 或 CurseForge 下載模組，篩選條件選 Fabric 和 1.21.4。這裡示範 Fabric API（多數 Fabric 模組需要的前置模組）和 Lithium（只裝在伺服器就有效的效能優化模組）。下載後點「檔案」裡的「mods」資料夾。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/mods-manual/10.webp" alt="手動安裝模組（Fabric） 步驟 10：確認路徑是 /mods，按「上傳」選擇下載的 .jar 檔，可以一次選多個" width={2800} height={1800} caption="確認路徑是 /mods，按「上傳」選擇下載的 .jar 檔，可以一次選多個。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/mods-manual/11.webp" alt="手動安裝模組（Fabric） 步驟 11：上傳完成後兩個 .jar 都會出現在 mods 裡" width={2800} height={1800} caption="上傳完成後兩個 .jar 都會出現在 mods 裡。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/mods-manual/12.webp" alt="手動安裝模組（Fabric） 步驟 12：回到「主控台」按「啟動」" width={2800} height={1800} caption="回到「主控台」按「啟動」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/mods-manual/13.webp" alt="手動安裝模組（Fabric） 步驟 13：啟動時主控台會列出這次載入的模組（Loading N mods），第一個就是 fabric-api" width={2800} height={1800} caption="啟動時主控台會列出這次載入的模組（Loading N mods），第一個就是 fabric-api。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/mods-manual/14.webp" alt="手動安裝模組（Fabric） 步驟 14：往下捲動主控台，清單裡也能找到 lithium，代表兩個模組都已載入" width={2800} height={1800} caption="往下捲動主控台，清單裡也能找到 lithium，代表兩個模組都已載入。看到 Done 就可以連線了。" />
+</Step>
+</Steps>
+{/* tutorial:end */}
+
+<Callout title="只下載可信任的來源" type="warn">
+.jar 檔會直接在伺服器上執行。請只從 [Modrinth](https://modrinth.com)、CurseForge 或作者的官方網站下載。
+</Callout>
+
+## 其他說明
+
+- **用 Forge、NeoForge 或 Quilt**：流程相同，只是在第 3 步選你要的載入器，並下載標明支援它的模組。不同載入器的模組不能混用。
+- **伺服器起不來**：到[主控台](/docs/gamecloud/console)看日誌最後出現的錯誤，常見原因是模組版本和伺服器不符，或缺少前置模組。也可以參考[透過 AI 解決伺服器問題](/docs/troubleshooting/ai)。
+- **移除模組**：刪掉 `mods` 裡的 .jar 檔，重新啟動即可。
+- **上傳很多或很大的檔案**：改用 [SFTP](/docs/gamecloud/sftp) 會比較方便。
+- **想一次裝一整套**：可以用[模組包](/docs/gamecloud/modpacks)（即將推出）。
+- **不確定要用外掛還是模組**：見[外掛、模組怎麼選](/docs/gamecloud/plugins-vs-mods)。
