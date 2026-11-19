@@ -92,6 +92,8 @@ export const SEO_DESCRIPTIONS: Record<string, string> = {
 		"一步步安裝或更換 Minecraft 伺服器版本：選擇官方原版、Paper、Purpur、Forge 或 Fabric，並自動切換 Java，世界與設定檔都會保留。",
 	"gamecloud/plugins":
 		"在遊戲主機搜尋並一鍵安裝外掛：從 Modrinth、Hangar 或 CurseForge 選擇版本，自動安裝前置外掛，也能停用與移除。",
+	"gamecloud/plugin-upload":
+		"在遊戲主機手動上傳外掛 .jar 檔：下載外掛、放進 plugins 資料夾、重新啟動並確認載入，適用 Paper、Purpur、Spigot 等插件伺服器，以 Chunky 為例。",
 	"gamecloud/modpacks":
 		"從 Modrinth 或 CurseForge 一鍵安裝 Minecraft 模組包，自動切換對應的伺服器版本與 Java，並說明玩家端需要安裝的內容。",
 	"gamecloud/worlds":

@@ -19,6 +19,7 @@
     "gamecloud/plugins-vs-mods",
     "gamecloud/versions",
     "gamecloud/plugins",
+    "gamecloud/plugin-upload",
     "gamecloud/modpacks",
     "gamecloud/worlds",
     "gamecloud/players",

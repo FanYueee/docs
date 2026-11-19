@@ -10,7 +10,7 @@ import { Step, Steps } from 'fumadocs-ui/components/steps';
 想讓伺服器多一些功能，有三種方式：**外掛**、**模組**、**模組包**。它們用的伺服器類型不同，也不能混著用，所以安裝前先決定想要什麼。
 
 <Callout title="部分功能即將推出" type="info">
-「軟體 → 單一外掛」「單一模組」「模組包」目前還在測試中，正式站的遊戲主機尚未開放。現在可以用[手動上傳 .jar 檔](#找不到想要的外掛或模組)的方式安裝外掛與模組。
+「軟體 → 單一外掛」「單一模組」「模組包」目前還在測試中，正式站的遊戲主機尚未開放。現在可以用[手動上傳 .jar 檔](/docs/gamecloud/plugin-upload)的方式安裝外掛與模組。
 </Callout>
 
 ## 三者的差別
@@ -71,7 +71,7 @@ Paper 這類插件伺服器只能載入外掛，不能載入模組。Fabric 的�
 
 ## 找不到想要的外掛或模組？
 
-Modrinth、Hangar、CurseForge 搜尋不到時，可以到作者的官方網站下載 .jar 檔，再到「[檔案](/docs/gamecloud/files)」手動上傳：外掛放進 `plugins` 資料夾，模組放進 `mods` 資料夾，然後重新啟動伺服器。檔案很多時，可以改用 [SFTP](/docs/gamecloud/sftp)。
+Modrinth、Hangar、CurseForge 搜尋不到時，可以到作者的官方網站下載 .jar 檔，再到「[檔案](/docs/gamecloud/files)」手動上傳：外掛放進 `plugins` 資料夾，模組放進 `mods` 資料夾，然後重新啟動伺服器。外掛的圖文步驟見[手動上傳外掛](/docs/gamecloud/plugin-upload)；檔案很多時，可以改用 [SFTP](/docs/gamecloud/sftp)。
 
 <Callout title="只下載可信任的來源" type="warn">
 .jar 檔會直接在伺服器上執行。請只從 Modrinth、Hangar、CurseForge、SpigotMC 或作者官方網站下載，避免來路不明的檔案。
@@ -81,6 +81,6 @@ Modrinth、Hangar、CurseForge 搜尋不到時，可以到作者的官方網站�
 
 **伺服器裝了模組之後起不來？** 到[主控台](/docs/gamecloud/console)看日誌最後出現的錯誤，通常是模組版本與伺服器不符，或缺少前置模組。可以先移除最近安裝的模組再啟動。也可以參考[透過 AI 解決伺服器問題](/docs/troubleshooting/ai)，把日誌貼給 AI 協助判斷。
 
-**可以外掛和模組一起用嗎？** 一般的伺服器類型不行，請依想要的功能選其中一種。
+**可以外掛和模組一起用嗎？** 一般的插件伺服器與模組伺服器不行，請依想要的功能選其中一種。版本安裝裡有少數混合型伺服器（例如 Mohist、Arclight）兩種都能載入，但相容性問題比較多，新手建議先不要選。
 
 **玩家進不去模組伺服器？** 確認玩家安裝的載入器、Minecraft 版本與模組都和伺服器相同，最簡單的方法是請玩家安裝同一個模組包。
