@@ -7,10 +7,10 @@ icon: Fence
 import { Callout } from 'fumadocs-ui/components/callout';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 
-WorldGuard 可以把一塊區域圈成「領地」，設定誰能建造、能不能互相攻擊、爆炸會不會破壞地形。圈範圍要靠 WorldEdit 的選取工具，所以**兩個外掛都要安裝**。安裝在面板上完成，圈領地與設定則是進遊戲輸入指令。
+WorldGuard 可以把一塊區域圈成「領地」，設定誰能建造、能不能互相攻擊、爆炸會不會破壞地形。圈範圍要靠 WorldEdit 的選取工具，所以**兩個插件都要安裝**。安裝在面板上完成，圈領地與設定則是進遊戲輸入指令。
 
 <Callout title="需要插件伺服器" type="info">
-WorldEdit 與 WorldGuard 是外掛，需要 Paper、Spigot 這類插件伺服器。Fabric、Forge 這類模組伺服器不能使用 WorldGuard，見[外掛、模組怎麼選](/docs/gamecloud/plugins-vs-mods)。
+WorldEdit 與 WorldGuard 是插件，需要 Paper、Spigot 這類插件伺服器。Fabric、Forge 這類模組伺服器不能使用 WorldGuard，見[插件、模組怎麼選](/docs/gamecloud/plugins-vs-mods)。
 </Callout>
 
 ## 安裝
@@ -18,7 +18,7 @@ WorldEdit 與 WorldGuard 是外掛，需要 Paper、Spigot 這類插件伺服器
 <Steps>
 <Step>
 
-### 下載兩個外掛
+### 下載兩個插件
 
 到 EngineHub 官方網站的 [WorldEdit](https://enginehub.org/worldedit) 與 [WorldGuard](https://enginehub.org/worldguard) 頁面，下載 Bukkit（Paper、Spigot）版的 .jar 檔。兩個都要支援伺服器的 Minecraft 版本。
 </Step>
@@ -26,7 +26,7 @@ WorldEdit 與 WorldGuard 是外掛，需要 Paper、Spigot 這類插件伺服器
 
 ### 上傳到 plugins 資料夾
 
-兩個檔案都放進 `plugins`，圖文步驟見[手動上傳外掛](/docs/gamecloud/plugin-upload)。
+兩個檔案都放進 `plugins`，圖文步驟見[手動上傳插件](/docs/gamecloud/plugin-upload)。
 </Step>
 <Step>
 
@@ -38,7 +38,7 @@ WorldEdit 與 WorldGuard 是外掛，需要 Paper、Spigot 這類插件伺服器
 
 ### 把自己設為 OP
 
-預設沒有人能使用這兩個外掛，OP 可以。在主控台輸入 `op 你的遊戲名稱`。想讓非 OP 的管理員也能使用，可以用 [LuckPerms](/docs/gamecloud/luckperms) 授權，權限名稱見 [WorldEdit](https://worldedit.enginehub.org/en/latest/permissions/) 與 [WorldGuard](https://worldguard.enginehub.org/en/latest/permissions/) 的官方文件。
+預設沒有人能使用這兩個插件，OP 可以。在主控台輸入 `op 你的遊戲名稱`。想讓非 OP 的管理員也能使用，可以用 [LuckPerms](/docs/gamecloud/luckperms) 授權，權限名稱見 [WorldEdit](https://worldedit.enginehub.org/en/latest/permissions/) 與 [WorldGuard](https://worldguard.enginehub.org/en/latest/permissions/) 的官方文件。
 </Step>
 </Steps>
 

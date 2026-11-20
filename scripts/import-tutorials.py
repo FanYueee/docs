@@ -33,6 +33,16 @@ def convert(job):
     return im.size
 
 
+# 台灣用語：「外掛」在台灣通常指作弊軟體，一律寫成「插件」（來源 manifest 的標題與說明都會經過這裡）
+TERMS = {"外掛": "插件"}
+
+
+def tw(s: str) -> str:
+    for a, b in TERMS.items():
+        s = s.replace(a, b)
+    return s
+
+
 def mdx_text(s: str) -> str:
     return s.replace("\\", "\\\\").replace("{", "\\{").replace("}", "\\}").replace("<", "&lt;").replace(">", "&gt;")
 
@@ -59,7 +69,7 @@ def main():
 
     jobs, meta = [], {}
     for tid in ids:
-        m = json.loads((src_root / tid / "manifest.json").read_text(encoding="utf-8"))
+        m = json.loads(tw((src_root / tid / "manifest.json").read_text(encoding="utf-8")))
         meta[tid] = m
         for s in m["steps"]:
             jobs.append((src_root / tid / s["annotated"], IMAGES / tid / f"{s['step']:02d}.webp"))

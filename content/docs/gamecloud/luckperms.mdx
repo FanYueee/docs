@@ -7,17 +7,17 @@ icon: KeyRound
 import { Callout } from 'fumadocs-ui/components/callout';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 
-[LuckPerms](https://luckperms.net) 是管理權限的外掛：決定誰可以使用哪些指令。做法是先建立群組（例如 VIP）、把權限設定在群組上，再把玩家加進群組，比一個一個玩家設定好管理。所有指令都在[主控台](/docs/gamecloud/console)輸入。
+[LuckPerms](https://luckperms.net) 是管理權限的插件：決定誰可以使用哪些指令。做法是先建立群組（例如 VIP）、把權限設定在群組上，再把玩家加進群組，比一個一個玩家設定好管理。所有指令都在[主控台](/docs/gamecloud/console)輸入。
 
 <Callout title="先安裝 LuckPerms" type="info">
-LuckPerms 是外掛，需要 Paper、Purpur 這類插件伺服器。請先到 [LuckPerms 官方網站](https://luckperms.net)下載 .jar 檔，用[手動上傳外掛](/docs/gamecloud/plugin-upload)的方式裝好並重新啟動，再開始下面的步驟。
+LuckPerms 是插件，需要 Paper、Purpur 這類插件伺服器。請先到 [LuckPerms 官方網站](https://luckperms.net)下載 .jar 檔，用[手動上傳插件](/docs/gamecloud/plugin-upload)的方式裝好並重新啟動，再開始下面的步驟。
 </Callout>
 
 {/* tutorial:start */}
 <Steps>
 <Step>
 
-<Shot src="/images/tutorials/luckperms/01.webp" alt="LuckPerms 權限設定 步驟 1：先用「手動上傳外掛」或「單一外掛」裝好 LuckPerms 並重新啟動" width={2800} height={1800} caption="先用「手動上傳外掛」或「單一外掛」裝好 LuckPerms 並重新啟動。LuckPerms 的指令都在主控台輸入，開頭是 lp（主控台不用加斜線）。第一步先建立一個群組，例如 VIP：輸入 lp creategroup vip 按 Enter。" />
+<Shot src="/images/tutorials/luckperms/01.webp" alt="LuckPerms 權限設定 步驟 1：先用「手動上傳插件」或「單一插件」裝好 LuckPerms 並重新啟動" width={2800} height={1800} caption="先用「手動上傳插件」或「單一插件」裝好 LuckPerms 並重新啟動。LuckPerms 的指令都在主控台輸入，開頭是 lp（主控台不用加斜線）。第一步先建立一個群組，例如 VIP：輸入 lp creategroup vip 按 Enter。" />
 </Step>
 <Step>
 
@@ -25,7 +25,7 @@ LuckPerms 是外掛，需要 Paper、Purpur 這類插件伺服器。請先到 [L
 </Step>
 <Step>
 
-<Shot src="/images/tutorials/luckperms/03.webp" alt="LuckPerms 權限設定 步驟 3：替群組加權限：lp group &lt;群組&gt; permission set &lt;權限節點&gt; true" width={2800} height={1800} caption="替群組加權限：lp group &lt;群組&gt; permission set &lt;權限節點&gt; true。這裡讓 VIP 可以使用 /gamemode：lp group vip permission set minecraft.command.gamemode true。每個外掛的權限節點寫在它的說明文件裡。" />
+<Shot src="/images/tutorials/luckperms/03.webp" alt="LuckPerms 權限設定 步驟 3：替群組加權限：lp group &lt;群組&gt; permission set &lt;權限節點&gt; true" width={2800} height={1800} caption="替群組加權限：lp group &lt;群組&gt; permission set &lt;權限節點&gt; true。這裡讓 VIP 可以使用 /gamemode：lp group vip permission set minecraft.command.gamemode true。每個插件的權限節點寫在它的說明文件裡。" />
 </Step>
 <Step>
 
@@ -85,5 +85,5 @@ LuckPerms 是外掛，需要 Paper、Purpur 這類插件伺服器。請先到 [L
 
 - **玩家必須進來過一次**：LuckPerms 只認得登入過這台伺服器的玩家。玩家還沒進來過時，請他先登入一次，或改用 UUID。
 - **大小寫要正確**：玩家名稱、群組名稱與權限節點都要照原樣輸入。
-- **權限節點在哪裡找**：每個外掛的權限節點都寫在它的說明文件裡，例如 EssentialsX 的 `essentials.home`。官方的[說明文件](https://luckperms.net/wiki/Home)也有完整教學。
+- **權限節點在哪裡找**：每個插件的權限節點都寫在它的說明文件裡，例如 EssentialsX 的 `essentials.home`。官方的[說明文件](https://luckperms.net/wiki/Home)也有完整教學。
 - **權限很重要**：給別人權限前請想清楚，尤其是管理員等級的權限。需要的時候可以到[玩家管理](/docs/gamecloud/players)（即將推出）或用 `op` 指令設定管理員。

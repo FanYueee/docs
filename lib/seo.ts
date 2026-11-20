@@ -85,15 +85,15 @@ export const SEO_DESCRIPTIONS: Record<string, string> = {
 	"gamecloud/sftp":
 		"使用 FileZilla 以 SFTP 連線遊戲伺服器，上傳與下載大型檔案或整個資料夾，包含取得連線資訊與重設 SFTP 密碼。",
 	"gamecloud/databases":
-		"查看遊戲主機的 MySQL 資料庫額度，說明尚未購買額度時如何加購，供外掛與模組使用。",
+		"查看遊戲主機的 MySQL 資料庫額度，說明尚未購買額度時如何加購，供插件與模組使用。",
 	"gamecloud/plugins-vs-mods":
-		"說明外掛、模組與模組包的差別：該選 Paper、Fabric 還是 Forge、玩家需不需要另外安裝，以及從選版本到安裝、重新啟動的完整流程與常見問題。",
+		"說明插件、模組與模組包的差別：該選 Paper、Fabric 還是 Forge、玩家需不需要另外安裝，以及從選版本到安裝、重新啟動的完整流程與常見問題。",
 	"gamecloud/versions":
 		"一步步安裝或更換 Minecraft 伺服器版本：選擇官方原版、Paper、Purpur、Forge 或 Fabric，並自動切換 Java，世界與設定檔都會保留。",
 	"gamecloud/plugins":
-		"在遊戲主機搜尋並一鍵安裝外掛：從 Modrinth、Hangar 或 CurseForge 選擇版本，自動安裝前置外掛，也能停用與移除。",
+		"在遊戲主機搜尋並一鍵安裝插件：從 Modrinth、Hangar 或 CurseForge 選擇版本，自動安裝前置插件，也能停用與移除。",
 	"gamecloud/plugin-upload":
-		"在遊戲主機手動上傳外掛 .jar 檔：下載外掛、放進 plugins 資料夾、重新啟動並確認載入，適用 Paper、Purpur、Spigot 等插件伺服器，以 Chunky 為例。",
+		"在遊戲主機手動上傳插件 .jar 檔：下載插件、放進 plugins 資料夾、重新啟動並確認載入，適用 Paper、Purpur、Spigot 等插件伺服器，以 Chunky 為例。",
 	"gamecloud/luckperms":
 		"用主控台指令設定 LuckPerms 權限：建立群組、替群組加上權限、把玩家加進群組，並使用網頁編輯器，附常用指令與注意事項。",
 	"gamecloud/essentials":

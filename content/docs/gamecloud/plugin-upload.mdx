@@ -1,55 +1,55 @@
 ---
-title: 手動上傳外掛
-description: 在網頁上傳外掛的 .jar 檔，不需要任何額外設定。
+title: 手動上傳插件
+description: 在網頁上傳插件的 .jar 檔，不需要任何額外設定。
 icon: Upload
 ---
 
 import { Callout } from 'fumadocs-ui/components/callout';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 
-外掛是一個 .jar 檔，把它放進伺服器的 `plugins` 資料夾、重新啟動，就會載入。這個方法適合任何外掛，包含 Modrinth、Hangar、SpigotMC 或作者網站下載的檔案。這裡以預先生成地圖的外掛 Chunky 為例。
+插件是一個 .jar 檔，把它放進伺服器的 `plugins` 資料夾、重新啟動，就會載入。這個方法適合任何插件，包含 Modrinth、Hangar、SpigotMC 或作者網站下載的檔案。這裡以預先生成地圖的插件 Chunky 為例。
 
 <Callout title="先確認伺服器類型與版本" type="warn">
-外掛只能用在 Paper、Purpur、Spigot 這類插件伺服器，而且要支援伺服器的 Minecraft 版本。不確定的話，先看[外掛、模組怎麼選](/docs/gamecloud/plugins-vs-mods)，需要更換類型時見[版本安裝](/docs/gamecloud/versions)。
+插件只能用在 Paper、Purpur、Spigot 這類插件伺服器，而且要支援伺服器的 Minecraft 版本。不確定的話，先看[插件、模組怎麼選](/docs/gamecloud/plugins-vs-mods)，需要更換類型時見[版本安裝](/docs/gamecloud/versions)。
 </Callout>
 
 {/* tutorial:start */}
 <Steps>
 <Step>
 
-<Shot src="/images/tutorials/plugin-upload/01.webp" alt="手動上傳外掛（.jar） 步驟 1：先到 Modrinth、Hangar、SpigotMC 或外掛作者的網站，下載符合伺服器類型與 Minecraft 版本的外掛 .jar 檔" width={2800} height={1800} caption="先到 Modrinth、Hangar、SpigotMC 或外掛作者的網站，下載符合伺服器類型與 Minecraft 版本的外掛 .jar 檔。這裡以地圖預先生成外掛 Chunky（Chunky-Bukkit-1.4.40.jar）為例。接著在伺服器頁面上方點「檔案」。" />
+<Shot src="/images/tutorials/plugin-upload/01.webp" alt="手動上傳插件（.jar） 步驟 1：先到 Modrinth、Hangar、SpigotMC 或插件作者的網站，下載符合伺服器類型與 Minecraft 版本的插件 .jar 檔" width={2800} height={1800} caption="先到 Modrinth、Hangar、SpigotMC 或插件作者的網站，下載符合伺服器類型與 Minecraft 版本的插件 .jar 檔。這裡以地圖預先生成插件 Chunky（Chunky-Bukkit-1.4.40.jar）為例。接著在伺服器頁面上方點「檔案」。" />
 </Step>
 <Step>
 
-<Shot src="/images/tutorials/plugin-upload/02.webp" alt="手動上傳外掛（.jar） 步驟 2：點「plugins」資料夾進入" width={2800} height={1800} caption="點「plugins」資料夾進入。外掛一定要放在這個資料夾裡；Paper、Purpur、Spigot 這類插件伺服器第一次啟動後就會自動建立它。" />
+<Shot src="/images/tutorials/plugin-upload/02.webp" alt="手動上傳插件（.jar） 步驟 2：點「plugins」資料夾進入" width={2800} height={1800} caption="點「plugins」資料夾進入。插件一定要放在這個資料夾裡；Paper、Purpur、Spigot 這類插件伺服器第一次啟動後就會自動建立它。" />
 </Step>
 <Step>
 
-<Shot src="/images/tutorials/plugin-upload/03.webp" alt="手動上傳外掛（.jar） 步驟 3：確認上方路徑是 /plugins，再按「上傳」選擇剛下載的 .jar 檔，也可以直接把檔案拖曳到列表上" width={2800} height={1800} caption="確認上方路徑是 /plugins，再按「上傳」選擇剛下載的 .jar 檔，也可以直接把檔案拖曳到列表上。" />
+<Shot src="/images/tutorials/plugin-upload/03.webp" alt="手動上傳插件（.jar） 步驟 3：確認上方路徑是 /plugins，再按「上傳」選擇剛下載的 .jar 檔，也可以直接把檔案拖曳到列表上" width={2800} height={1800} caption="確認上方路徑是 /plugins，再按「上傳」選擇剛下載的 .jar 檔，也可以直接把檔案拖曳到列表上。" />
 </Step>
 <Step>
 
-<Shot src="/images/tutorials/plugin-upload/04.webp" alt="手動上傳外掛（.jar） 步驟 4：上傳完成後 .jar 檔會出現在列表中" width={2800} height={1800} caption="上傳完成後 .jar 檔會出現在列表中。外掛要等伺服器重新啟動才會載入。" />
+<Shot src="/images/tutorials/plugin-upload/04.webp" alt="手動上傳插件（.jar） 步驟 4：上傳完成後 .jar 檔會出現在列表中" width={2800} height={1800} caption="上傳完成後 .jar 檔會出現在列表中。插件要等伺服器重新啟動才會載入。" />
 </Step>
 <Step>
 
-<Shot src="/images/tutorials/plugin-upload/05.webp" alt="手動上傳外掛（.jar） 步驟 5：回到「主控台」按「重新啟動」" width={2800} height={1800} caption="回到「主控台」按「重新啟動」。伺服器關機時直接按「啟動」即可。" />
+<Shot src="/images/tutorials/plugin-upload/05.webp" alt="手動上傳插件（.jar） 步驟 5：回到「主控台」按「重新啟動」" width={2800} height={1800} caption="回到「主控台」按「重新啟動」。伺服器關機時直接按「啟動」即可。" />
 </Step>
 <Step>
 
-<Shot src="/images/tutorials/plugin-upload/06.webp" alt="手動上傳外掛（.jar） 步驟 6：啟動過程中主控台會顯示「Loading」和「Enabling」外掛名稱的訊息，代表外掛已被載入" width={2800} height={1800} caption="啟動過程中主控台會顯示「Loading」和「Enabling」外掛名稱的訊息，代表外掛已被載入。看到 Done 就完成了。" />
+<Shot src="/images/tutorials/plugin-upload/06.webp" alt="手動上傳插件（.jar） 步驟 6：啟動過程中主控台會顯示「Loading」和「Enabling」插件名稱的訊息，代表插件已被載入" width={2800} height={1800} caption="啟動過程中主控台會顯示「Loading」和「Enabling」插件名稱的訊息，代表插件已被載入。看到 Done 就完成了。" />
 </Step>
 <Step>
 
-<Shot src="/images/tutorials/plugin-upload/07.webp" alt="手動上傳外掛（.jar） 步驟 7：想確認已安裝哪些外掛，在主控台輸入 plugins 按 Enter" width={2800} height={1800} caption="想確認已安裝哪些外掛，在主控台輸入 plugins 按 Enter。" />
+<Shot src="/images/tutorials/plugin-upload/07.webp" alt="手動上傳插件（.jar） 步驟 7：想確認已安裝哪些插件，在主控台輸入 plugins 按 Enter" width={2800} height={1800} caption="想確認已安裝哪些插件，在主控台輸入 plugins 按 Enter。" />
 </Step>
 <Step>
 
-<Shot src="/images/tutorials/plugin-upload/08.webp" alt="手動上傳外掛（.jar） 步驟 8：清單中出現 Chunky 就代表安裝成功" width={2800} height={1800} caption="清單中出現 Chunky 就代表安裝成功。名稱顯示紅色表示外掛載入失敗，請往上查看主控台的錯誤訊息，最常見的原因是外掛版本和伺服器版本不符。" />
+<Shot src="/images/tutorials/plugin-upload/08.webp" alt="手動上傳插件（.jar） 步驟 8：清單中出現 Chunky 就代表安裝成功" width={2800} height={1800} caption="清單中出現 Chunky 就代表安裝成功。名稱顯示紅色表示插件載入失敗，請往上查看主控台的錯誤訊息，最常見的原因是插件版本和伺服器版本不符。" />
 </Step>
 <Step>
 
-<Shot src="/images/tutorials/plugin-upload/09.webp" alt="手動上傳外掛（.jar） 步驟 9：外掛第一次啟動後，plugins 裡會多一個同名資料夾（這裡是 Chunky），設定檔 config.yml 就在裡面，點檔名就能在網頁上編輯" width={2800} height={1800} caption="外掛第一次啟動後，plugins 裡會多一個同名資料夾（這裡是 Chunky），設定檔 config.yml 就在裡面，點檔名就能在網頁上編輯。要移除外掛，刪除 .jar 檔後重新啟動即可；同名資料夾裡是外掛的資料，確定不用再刪。" />
+<Shot src="/images/tutorials/plugin-upload/09.webp" alt="手動上傳插件（.jar） 步驟 9：插件第一次啟動後，plugins 裡會多一個同名資料夾（這裡是 Chunky），設定檔 config.yml 就在裡面，點檔名就能在網頁上編輯" width={2800} height={1800} caption="插件第一次啟動後，plugins 裡會多一個同名資料夾（這裡是 Chunky），設定檔 config.yml 就在裡面，點檔名就能在網頁上編輯。要移除插件，刪除 .jar 檔後重新啟動即可；同名資料夾裡是插件的資料，確定不用再刪。" />
 </Step>
 </Steps>
 {/* tutorial:end */}
@@ -61,5 +61,5 @@ import { Step, Steps } from 'fumadocs-ui/components/steps';
 ## 其他說明
 
 - **上傳很多或很大的檔案**：改用 [SFTP](/docs/gamecloud/sftp) 會比較方便。
-- **外掛要更新**：先在[備份](/docs/gamecloud/backups)留一份，再刪掉舊的 .jar，上傳新版本並重新啟動。
-- **想裝模組而不是外掛**：模組放進 `mods` 資料夾，做法和這頁相同，但伺服器要是 Fabric、Forge 等模組伺服器，見[外掛、模組怎麼選](/docs/gamecloud/plugins-vs-mods)。
+- **插件要更新**：先在[備份](/docs/gamecloud/backups)留一份，再刪掉舊的 .jar，上傳新版本並重新啟動。
+- **想裝模組而不是插件**：模組放進 `mods` 資料夾，做法和這頁相同，但伺服器要是 Fabric、Forge 等模組伺服器，見[插件、模組怎麼選](/docs/gamecloud/plugins-vs-mods)。

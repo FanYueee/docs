@@ -10,14 +10,14 @@ import { Step, Steps } from 'fumadocs-ui/components/steps';
 [CoreProtect](https://coreprotect.net) 會自動記錄每個方塊是誰放的、誰破壞的，箱子裡的物品也會記錄。被炸、被亂拆的時候，可以先查是誰做的，再用指令把範圍內的方塊回復原狀。這頁的指令都在[主控台](/docs/gamecloud/console)輸入。
 
 <Callout title="先安裝 CoreProtect" type="info">
-CoreProtect 是外掛，需要 Paper、Purpur 這類插件伺服器。請先到 [CoreProtect 官方網站](https://coreprotect.net)下載 .jar 檔，用[手動上傳外掛](/docs/gamecloud/plugin-upload)的方式裝好並重新啟動，再開始下面的步驟。CoreProtect 只會記錄安裝**之後**發生的事，安裝前被破壞的方塊無法回復。
+CoreProtect 是插件，需要 Paper、Purpur 這類插件伺服器。請先到 [CoreProtect 官方網站](https://coreprotect.net)下載 .jar 檔，用[手動上傳插件](/docs/gamecloud/plugin-upload)的方式裝好並重新啟動，再開始下面的步驟。CoreProtect 只會記錄安裝**之後**發生的事，安裝前被破壞的方塊無法回復。
 </Callout>
 
 {/* tutorial:start */}
 <Steps>
 <Step>
 
-<Shot src="/images/tutorials/coreprotect/01.webp" alt="CoreProtect 查詢與回復破壞 步驟 1：先用「手動上傳外掛」或「單一外掛」裝好 CoreProtect 並重新啟動" width={2800} height={1800} caption="先用「手動上傳外掛」或「單一外掛」裝好 CoreProtect 並重新啟動。之後它會自動記錄每個方塊是誰放的、誰破壞的。在主控台輸入 co help 可以看到所有指令。" />
+<Shot src="/images/tutorials/coreprotect/01.webp" alt="CoreProtect 查詢與回復破壞 步驟 1：先用「手動上傳插件」或「單一插件」裝好 CoreProtect 並重新啟動" width={2800} height={1800} caption="先用「手動上傳插件」或「單一插件」裝好 CoreProtect 並重新啟動。之後它會自動記錄每個方塊是誰放的、誰破壞的。在主控台輸入 co help 可以看到所有指令。" />
 </Step>
 <Step>
 
@@ -71,4 +71,4 @@ co restore u:玩家名稱 t:2h r:#global
 - **回復錯了**：用相同的參數執行 `co restore`，就能取消這次回復。大範圍回復前，建議先到[備份](/docs/gamecloud/backups)建立一份。
 - **在遊戲裡查**：玩家輸入 `/co i` 開啟檢查模式，點擊方塊就會顯示那個方塊的紀錄，再輸入一次關閉。預設只有 OP 能使用，其他人的權限可以用 [LuckPerms](/docs/gamecloud/luckperms) 設定，權限名稱請看 [CoreProtect 官方文件](https://docs.coreprotect.net/)。
 - **清除舊紀錄**：紀錄會一直累積，佔用硬碟空間。`co purge t:30d` 會刪除 30 天以前的紀錄，刪除後就查不到那段時間的資料。在主控台只能清除 24 小時以前的紀錄，在遊戲裡只能清除 30 天以前的。
-- **不確定要用外掛還是模組**：見[外掛、模組怎麼選](/docs/gamecloud/plugins-vs-mods)。
+- **不確定要用插件還是模組**：見[插件、模組怎麼選](/docs/gamecloud/plugins-vs-mods)。
