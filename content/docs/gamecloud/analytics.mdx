@@ -6,17 +6,44 @@ icon: ChartLine
 
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 
-在「**紀錄**」→「**分析**」可以查看伺服器的 CPU、記憶體、硬碟與網路使用量，方便判斷是否需要升級。
+在「**紀錄**」→「**分析**」可以用圖表查看伺服器的 CPU、記憶體、硬碟與網路使用量，方便判斷是否需要[升級方案](/docs/store/products)。
 
+{/* tutorial:start */}
 <Steps>
 <Step>
 
-### 查看使用量
+<Shot src="/images/tutorials/analytics/01.webp" alt="查看伺服器資源分析 步驟 1：在伺服器頁面上方點「紀錄」，打開選單" width={2800} height={1800} caption="在伺服器頁面上方點「紀錄」，打開選單。" />
+</Step>
+<Step>
 
-可切換 3 小時、24 小時、7 天、30 天。系統每分鐘取樣一次，剛開通時會顯示「尚無資料」。
+<Shot src="/images/tutorials/analytics/02.webp" alt="查看伺服器資源分析 步驟 2：選「分析」" width={2800} height={1800} caption="選「分析」。" />
+</Step>
+<Step>
 
-<Shot src="/images/gamecloud/analytics.png" alt="分析" />
+<Shot src="/images/tutorials/analytics/03.webp" alt="查看伺服器資源分析 步驟 3：「資源分析」用圖表顯示這台伺服器的 CPU、記憶體、硬碟和網路用量，系統每分鐘取樣一次" width={2800} height={1800} caption="「資源分析」用圖表顯示這台伺服器的 CPU、記憶體、硬碟和網路用量，系統每分鐘取樣一次。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/analytics/04.webp" alt="查看伺服器資源分析 步驟 4：CPU、記憶體和硬碟圖表最上方的刻度就是方案上限，可以看出伺服器是否經常用滿、需要升級方案" width={2800} height={1800} caption="CPU、記憶體和硬碟圖表最上方的刻度就是方案上限，可以看出伺服器是否經常用滿、需要升級方案。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/analytics/05.webp" alt="查看伺服器資源分析 步驟 5：把滑鼠移到圖表上，可以看到該時間點的數值" width={2800} height={1800} caption="把滑鼠移到圖表上，可以看到該時間點的數值。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/analytics/06.webp" alt="查看伺服器資源分析 步驟 6：網路圖表分別顯示下載和上傳的流量" width={2800} height={1800} caption="網路圖表分別顯示下載和上傳的流量。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/analytics/07.webp" alt="查看伺服器資源分析 步驟 7：用上方的按鈕切換時間範圍：3 小時、24 小時、7 天或 30 天" width={2800} height={1800} caption="用上方的按鈕切換時間範圍：3 小時、24 小時、7 天或 30 天。" />
 </Step>
 </Steps>
+{/* tutorial:end */}
 
-觀察歷史用量，可以判斷是否需要[升級方案](/docs/store/products)。
+## 其他說明
+
+- **取樣與時間範圍**：系統每分鐘取樣一次，可切換 3 小時、24 小時、7 天、30 天。
+- **剛開通時沒有圖**：剛開通的伺服器還沒有累積資料，會顯示「尚無資料」，過幾分鐘再看。
+- **判斷要不要升級**：如果 CPU、記憶體或硬碟的曲線經常貼近最上方的刻度，代表資源常常用滿，可以考慮[升級方案](/docs/store/products)。
+- **想在資源用量太高時收到通知**：見[告警](/docs/gamecloud/alerts)。

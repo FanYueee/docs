@@ -828,32 +828,6 @@
    ]
   }
  },
- "/images/gamecloud/analytics.png": {
-  "size": [
-   1400,
-   900
-  ],
-  "marks": [
-   {
-    "box": [
-     1072,
-     184,
-     264,
-     34
-    ],
-    "label": "切換 3 小時、24 小時、7 天、30 天"
-   },
-   {
-    "box": [
-     279,
-     237,
-     1057,
-     600
-    ],
-    "label": "CPU、記憶體、硬碟與網路使用量"
-   }
-  ]
- },
  "/images/gamecloud/menu-network.png": {
   "size": [
    1400,
