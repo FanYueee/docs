@@ -64,7 +64,7 @@ const fontFace = process.env.OG_FONT
 
 function html({ title, description, section, home }) {
 	const len = [...title].length;
-	const titleSize = home ? 150 : len <= 8 ? 104 : len <= 12 ? 88 : len <= 18 ? 74 : 62;
+	const titleSize = home ? 150 : len <= 8 ? 104 : len <= 11 ? 88 : len <= 18 ? 74 : 62;
 	return `<!doctype html><html><head><meta charset="utf-8"><style>
 ${fontFace}
 *{box-sizing:border-box;margin:0}

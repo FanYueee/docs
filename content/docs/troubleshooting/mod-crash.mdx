@@ -1,0 +1,91 @@
+---
+title: 模組版本不合導致無法啟動
+description: 從主控台與 latest.log 找出出錯的模組，換成正確的版本。
+icon: Bug
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+伺服器裝了模組之後起不來，最常見的原因是模組的版本和伺服器不符。這頁示範怎麼從錯誤訊息找出是哪個模組，再換成正確的版本。範例是在 NeoForge 1.21.1 伺服器放了只支援 1.21.4 的 FerriteCore。
+
+<Callout title="先到主控台看錯誤" type="info">
+啟動失敗時，主控台最後會出現 `Failed to start the minecraft server`，下面幾行就是原因。系統會自動重試一次，再失敗就停在「已離線」。重新整理頁面後主控台會清空，之後要再看錯誤，就用第 3～5 步打開 `logs/latest.log`。
+</Callout>
+
+{/* tutorial:start */}
+<Steps>
+<Step>
+
+<Shot src="/images/tutorials/mod-crash/01.webp" alt="模組版本不合導致無法啟動 步驟 1：上傳模組後按「啟動」" width={2800} height={1800} caption="上傳模組後按「啟動」。這個例子在 NeoForge 1.21.1 伺服器放了只支援 1.21.4 的 ferritecore-7.1.3，伺服器會無法啟動。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/mod-crash/02.webp" alt="模組版本不合導致無法啟動 步驟 2：主控台出現 Failed to start the minecraft server" width={2800} height={1800} caption="主控台出現 Failed to start the minecraft server，下面幾行說明原因：「Mod ferritecore requires minecraft 1.21.4 or above」表示 ferritecore 需要 Minecraft 1.21.4 以上，這台是 1.21.1。啟動失敗時系統會自動重試一次，再失敗就停在「已離線」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/mod-crash/03.webp" alt="模組版本不合導致無法啟動 步驟 3：重新整理頁面後主控台會清空" width={2800} height={1800} caption="重新整理頁面後主控台會清空。之後要再看錯誤，到「檔案」打開 logs 資料夾。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/mod-crash/04.webp" alt="模組版本不合導致無法啟動 步驟 4：latest.log 是最近一次啟動的完整紀錄" width={2800} height={1800} caption="latest.log 是最近一次啟動的完整紀錄。點檔名打開。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/mod-crash/05.webp" alt="模組版本不合導致無法啟動 步驟 5：點一下內容後按 Ctrl+F（Mac 是 ⌘+F），搜尋 requires，就會跳到出錯的那一行" width={2800} height={1800} caption="點一下內容後按 Ctrl+F（Mac 是 ⌘+F），搜尋 requires，就會跳到出錯的那一行。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/mod-crash/06.webp" alt="模組版本不合導致無法啟動 步驟 6：要修正，回到「檔案」打開 mods 資料夾" width={2800} height={1800} caption="要修正，回到「檔案」打開 mods 資料夾。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/mod-crash/07.webp" alt="模組版本不合導致無法啟動 步驟 7：按版本不合的模組右邊的「⋯」，選「刪除」" width={2800} height={1800} caption="按版本不合的模組右邊的「⋯」，選「刪除」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/mod-crash/08.webp" alt="模組版本不合導致無法啟動 步驟 8：選「刪除」" width={2800} height={1800} caption="選「刪除」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/mod-crash/09.webp" alt="模組版本不合導致無法啟動 步驟 9：確認要刪除的檔名，按「刪除」" width={2800} height={1800} caption="確認要刪除的檔名，按「刪除」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/mod-crash/10.webp" alt="模組版本不合導致無法啟動 步驟 10：到模組頁面（例如 Modrinth、CurseForge）下載同時標示 1.21.1 和 NeoForge 的版本" width={2800} height={1800} caption="到模組頁面（例如 Modrinth、CurseForge）下載同時標示 1.21.1 和 NeoForge 的版本，這裡是 ferritecore-7.0.3-neoforge.jar。按「上傳」放進 mods。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/mod-crash/11.webp" alt="模組版本不合導致無法啟動 步驟 11：正確版本上傳完成" width={2800} height={1800} caption="正確版本上傳完成。回到「主控台」按「啟動」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/mod-crash/12.webp" alt="模組版本不合導致無法啟動 步驟 12：這次主控台列出 Found mod file 'ferritecore-7.0.3-neoforge.jar'" width={2800} height={1800} caption="這次主控台列出 Found mod file &quot;ferritecore-7.0.3-neoforge.jar&quot;，表示模組有讀到；往下捲到出現 Done，伺服器就正常啟動了。" />
+</Step>
+</Steps>
+{/* tutorial:end */}
+
+## 怎麼看懂錯誤訊息
+
+範例畫面裡有兩段關鍵訊息：
+
+```
+Mod ferritecore requires minecraft 1.21.4 or above, and below 1.22
+  Currently, minecraft is 1.21.1
+```
+
+意思是 FerriteCore 這個版本只能在 Minecraft 1.21.4 到 1.22 之間使用，而伺服器是 1.21.1。下面如果還有一行 `requires neoforge ... or above`，表示它也要求更新版的載入器，原因相同：這個模組版本太新了。
+
+解法有兩個：
+
+1. **換成符合伺服器的模組版本**（這頁示範的做法）：到模組頁面，下載同時標示伺服器的 Minecraft 版本和載入器的檔案。
+2. **把伺服器升級到模組要求的版本**：到[版本安裝](/docs/gamecloud/versions)更換。所有玩家也要跟著升級遊戲版本，升級前請先建立[備份](/docs/gamecloud/backups)。
+
+## 其他常見原因
+
+- **缺少前置模組**：日誌會出現 `Missing or unsupported mandatory dependencies`，後面列出缺少哪個模組。到作者的頁面下載前置模組，一起放進 `mods`。
+- **載入器不對**：Fabric、Forge、NeoForge 的模組不能混用，請下載標示伺服器所用載入器的檔案，見[安裝 NeoForge 模組伺服器](/docs/gamecloud/neoforge)與[手動安裝模組](/docs/gamecloud/mods-manual)。
+- **一次出錯好幾個**：日誌會把所有出錯的模組列在 `Loading errors encountered` 底下，逐一處理即可。
+- **不知道是哪個模組**：先把最近上傳的模組移出 `mods`，伺服器能啟動的話就是它；再一個一個放回去測試。
+- **看不懂日誌**：可以參考[透過 AI 解決伺服器問題](/docs/troubleshooting/ai)，把錯誤貼給 AI 協助判斷，或到[客戶支援](/docs/support/tickets)開客服單。

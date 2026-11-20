@@ -22,8 +22,11 @@
     "gamecloud/plugin-upload",
     "gamecloud/luckperms",
     "gamecloud/essentials",
+    "gamecloud/coreprotect",
+    "gamecloud/worldguard",
     "gamecloud/modpacks",
     "gamecloud/mods-manual",
+    "gamecloud/neoforge",
     "gamecloud/worlds",
     "gamecloud/players",
     "gamecloud/schedules",
@@ -43,6 +46,7 @@
     "minecraft/domain",
     "---障礙排除---",
     "troubleshooting/tracert",
-    "troubleshooting/ai"
+    "troubleshooting/ai",
+    "troubleshooting/mod-crash"
   ]
 }

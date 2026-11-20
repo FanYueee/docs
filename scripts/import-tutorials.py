@@ -6,7 +6,7 @@
 
 做的事：
   1. 把 NN-annotated.png 轉成「無損 WebP」放到 public/images/tutorials/<id>/NN.webp（像素完全相同，檔案約為 PNG 的 1/3）。
-  2. 把對應頁面 content/docs/gamecloud/<id>.mdx 裡
+  2. 把對應頁面 content/docs/gamecloud/<id>.mdx（或 content/docs/troubleshooting/<id>.mdx）裡
        {/* tutorial:start */} 與 {/* tutorial:end */}
      之間的內容，換成最新的步驟（圖片在上、說明在下）。標記外的簡介與提示框是手寫的，不會被動到。
 
@@ -20,6 +20,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / "content/docs/gamecloud"
+PAGE_DIRS = [PAGES, ROOT / "content/docs/troubleshooting"]  # 教學代號 = 檔名，依序尋找
 IMAGES = ROOT / "public/images/tutorials"
 START, END = "{/* tutorial:start */}", "{/* tutorial:end */}"
 
@@ -40,7 +41,14 @@ def alt_text(title: str, n: int, caption: str) -> str:
     first = re.split(r"[。！？]", caption)[0]
     if first.count("「") > first.count("」"):  # 句子在引號中間被切開時補上右引號
         first += "」"
-    return f"{title} 步驟 {n}：{first}".replace('"', "'")[:90]
+    text = f"{title} 步驟 {n}：{first}".replace('"', "'")
+    if len(text) > 90:  # 太長時盡量在逗號處截斷，避免停在字詞中間
+        cut = text[:90]
+        k = max(cut.rfind("，"), cut.rfind("、"))
+        text = cut[:k] if k > len(title) + 12 else cut
+        if text.count("「") > text.count("」"):
+            text += "」"
+    return text
 
 
 def main():
@@ -60,7 +68,7 @@ def main():
     size_of = {dst: sz for (_, dst), sz in zip(jobs, sizes)}
 
     for tid in ids:
-        page = PAGES / f"{tid}.mdx"
+        page = next((d / f"{tid}.mdx" for d in PAGE_DIRS if (d / f"{tid}.mdx").exists()), PAGES / f"{tid}.mdx")
         if not page.exists():
             print("缺少頁面，略過：", page)
             continue

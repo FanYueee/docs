@@ -1,0 +1,128 @@
+---
+title: 領地保護（WorldEdit 與 WorldGuard）
+description: 安裝 WorldEdit 與 WorldGuard，圈出領地並設定誰能建造、PVP 與爆炸。
+icon: Fence
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+WorldGuard 可以把一塊區域圈成「領地」，設定誰能建造、能不能互相攻擊、爆炸會不會破壞地形。圈範圍要靠 WorldEdit 的選取工具，所以**兩個外掛都要安裝**。安裝在面板上完成，圈領地與設定則是進遊戲輸入指令。
+
+<Callout title="需要插件伺服器" type="info">
+WorldEdit 與 WorldGuard 是外掛，需要 Paper、Spigot 這類插件伺服器。Fabric、Forge 這類模組伺服器不能使用 WorldGuard，見[外掛、模組怎麼選](/docs/gamecloud/plugins-vs-mods)。
+</Callout>
+
+## 安裝
+
+<Steps>
+<Step>
+
+### 下載兩個外掛
+
+到 EngineHub 官方網站的 [WorldEdit](https://enginehub.org/worldedit) 與 [WorldGuard](https://enginehub.org/worldguard) 頁面，下載 Bukkit（Paper、Spigot）版的 .jar 檔。兩個都要支援伺服器的 Minecraft 版本。
+</Step>
+<Step>
+
+### 上傳到 plugins 資料夾
+
+兩個檔案都放進 `plugins`，圖文步驟見[手動上傳外掛](/docs/gamecloud/plugin-upload)。
+</Step>
+<Step>
+
+### 重新啟動並確認
+
+到[主控台](/docs/gamecloud/console)重新啟動，啟動後輸入 `plugins`，列表裡要同時有 WorldEdit 與 WorldGuard。
+</Step>
+<Step>
+
+### 把自己設為 OP
+
+預設沒有人能使用這兩個外掛，OP 可以。在主控台輸入 `op 你的遊戲名稱`。想讓非 OP 的管理員也能使用，可以用 [LuckPerms](/docs/gamecloud/luckperms) 授權，權限名稱見 [WorldEdit](https://worldedit.enginehub.org/en/latest/permissions/) 與 [WorldGuard](https://worldguard.enginehub.org/en/latest/permissions/) 的官方文件。
+</Step>
+</Steps>
+
+## 用 WorldEdit 選取範圍
+
+以下指令都在遊戲內輸入，WorldEdit 的指令要加**兩條斜線**。
+
+1. 輸入 `//wand` 拿到選取工具（預設是木斧頭）。
+2. 用木斧頭**左鍵**點一個方塊，是第一個角；**右鍵**點另一個方塊，是對角的第二個角。也可以站在位置上輸入 `//pos1`、`//pos2`。
+3. 選好的範圍是立方體，之後的指令都會作用在這個範圍。
+
+選好範圍後，常用的 WorldEdit 指令：
+
+| 指令 | 作用 |
+| --- | --- |
+| `//set stone` | 把範圍內全部填成石頭 |
+| `//replace dirt grass_block` | 把範圍內的泥土換成草方塊 |
+| `//copy`、`//paste` | 複製範圍，再貼到你站的位置 |
+| `//rotate 90` | 把複製的內容旋轉 90 度 |
+| `//undo`、`//redo` | 復原上一步、重做 |
+
+<Callout title="大範圍修改前先備份" type="warn">
+`//set` 與 `//replace` 一下就能改動很多方塊。大範圍修改前，建議先到[備份](/docs/gamecloud/backups)建立一份。
+</Callout>
+
+## 用 WorldGuard 圈出領地
+
+<Steps>
+<Step>
+
+### 選好範圍
+
+用上一節的方法選好要保護的範圍。
+</Step>
+<Step>
+
+### 建立領地
+
+輸入 `/rg define spawn`，`spawn` 是領地的名稱，可以自己取。新建立的領地預設會**禁止其他人在裡面建造**。
+</Step>
+<Step>
+
+### 加入擁有者與成員
+
+`/rg addowner spawn 玩家名稱` 加入擁有者，`/rg addmember spawn 玩家名稱` 加入成員。擁有者與成員可以在領地內建造。
+</Step>
+<Step>
+
+### 設定旗標
+
+用旗標（flag）決定領地裡能做什麼，格式是 `/rg flag 領地名稱 旗標 值`，值是 `allow`（允許）或 `deny`（禁止）。例如禁止互相攻擊：`/rg flag spawn pvp deny`。
+</Step>
+</Steps>
+
+常用的旗標：
+
+| 旗標 | 控制什麼 |
+| --- | --- |
+| `pvp` | 玩家能不能互相攻擊 |
+| `tnt` | TNT 爆炸會不會破壞方塊 |
+| `creeper-explosion` | 苦力怕爆炸會不會造成破壞 |
+| `chest-access` | 能不能開箱子等有物品欄的方塊 |
+| `use` | 能不能使用門、拉桿、按鈕（不含箱子） |
+| `entry` | 能不能進入領地，預設的限制對象是非成員 |
+| `build` | 能不能建造，一般不用改，直接用成員名單管理 |
+
+旗標只輸入 `/rg flag 領地名稱 旗標`、不寫值，就是移除這個設定。
+
+管理領地的其他指令：
+
+| 指令 | 作用 |
+| --- | --- |
+| `/rg list` | 列出所有領地 |
+| `/rg info spawn` | 查看領地的範圍、成員與旗標，不寫名稱則查看你所在位置的領地 |
+| `/rg redefine spawn` | 用目前選取的範圍取代領地的範圍 |
+| `/rg remove spawn` | 刪除領地 |
+
+<Callout title="OP 不受領地保護限制" type="warn">
+OP 和擁有所有權限的人會直接繞過領地保護，看起來就像保護沒有生效。要測試領地，請用沒有 OP 的帳號。
+</Callout>
+
+## 其他說明
+
+- **從主控台操作**：已經建好的領地可以在主控台管理，指令不用加斜線，並且可能要加上世界名稱，例如 `rg flag spawn pvp -w world deny`。圈範圍需要選取工具，只能在遊戲內做。
+- **領地建好但朋友不能建造**：把朋友加進成員名單（`/rg addmember`）。
+- **指令沒反應或顯示沒有權限**：確認自己是 OP，或已被授權。
+- **完整指令與旗標**：見 [WorldGuard 官方文件](https://worldguard.enginehub.org/en/latest/) 與 [WorldEdit 官方文件](https://worldedit.enginehub.org/en/latest/)。

@@ -1,0 +1,92 @@
+---
+title: 安裝 NeoForge 模組伺服器
+description: 把伺服器換成 NeoForge，再上傳模組並確認載入。
+icon: Hammer
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+NeoForge 是一種模組載入器（從 Forge 分出來的）。伺服器換成 NeoForge 之後，把 NeoForge 版的模組 .jar 放進 `mods` 資料夾、重新啟動就會載入。這頁以 Minecraft 1.21.1 和 FerriteCore（降低記憶體用量的優化模組）示範。
+
+<Callout title="找不到「軟體」選單？" type="info">
+第 1、2 步是「軟體 → 版本安裝」。部分畫面會直接顯示「版本安裝」分頁，找到後直接點它就可以了。
+</Callout>
+
+<Callout title="玩家也要安裝相同的模組" type="warn">
+新增方塊、物品、生物的內容模組，玩家要用同一個載入器（NeoForge）和相同版本的模組，才進得了伺服器。像 FerriteCore 這種只裝在伺服器也有效的優化模組，玩家不用安裝。玩家可以用 [Modrinth App](https://modrinth.com/app) 或 [Prism Launcher](https://prismlauncher.org/wiki/) 管理模組，操作方式請看它們的官方說明。
+</Callout>
+
+## 選 Forge、NeoForge 還是 Fabric
+
+- **以想玩的模組為準**：模組頁面會標示支援的載入器和 Minecraft 版本，標示哪一種就選哪一種。模組包也一樣，照它指定的載入器。
+- **三種不能混用**：Fabric、Forge、NeoForge 的模組彼此不相容，細節見[外掛、模組怎麼選](/docs/gamecloud/plugins-vs-mods)。
+- **Forge 與 NeoForge**：Minecraft 1.20.2 之後不少模組改用 NeoForge，1.20.1 的模組很多仍標示 Forge。流程相同，只是在第 3 步選不同的項目。
+
+{/* tutorial:start */}
+<Steps>
+<Step>
+
+<Shot src="/images/tutorials/neoforge/01.webp" alt="安裝 NeoForge 模組伺服器 步驟 1：在伺服器頁面上方點「軟體」（有些畫面「版本安裝」直接是上方的分頁）" width={2800} height={1800} caption="在伺服器頁面上方點「軟體」（有些畫面「版本安裝」直接是上方的分頁）。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/neoforge/02.webp" alt="安裝 NeoForge 模組伺服器 步驟 2：選「版本安裝」" width={2800} height={1800} caption="選「版本安裝」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/neoforge/03.webp" alt="安裝 NeoForge 模組伺服器 步驟 3：點「模組伺服器」分類，再選「NeoForge」" width={2800} height={1800} caption="點「模組伺服器」分類，再選「NeoForge」。NeoForge 是從 Forge 分出來的載入器，1.20.2 之後不少模組改用它；請依模組頁面標示的載入器選擇，標示 Forge 的（例如 1.20.1 的模組）就選「Forge」，步驟相同。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/neoforge/04.webp" alt="安裝 NeoForge 模組伺服器 步驟 4：選擇模組支援的 Minecraft 版本，這裡選 1.21.1" width={2800} height={1800} caption="選擇模組支援的 Minecraft 版本，這裡選 1.21.1。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/neoforge/05.webp" alt="安裝 NeoForge 模組伺服器 步驟 5：「Build」維持預設的最新版即可，系統會自動換成需要的 Java 版本" width={2800} height={1800} caption="「Build」維持預設的最新版即可，系統會自動換成需要的 Java 版本。按「開始安裝」，再在確認視窗按「開始安裝」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/neoforge/06.webp" alt="安裝 NeoForge 模組伺服器 步驟 6：等每個步驟都打勾、出現「版本檔案已安裝」就完成了" width={2800} height={1800} caption="等每個步驟都打勾、出現「版本檔案已安裝」就完成了。按「前往主控台啟動」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/neoforge/07.webp" alt="安裝 NeoForge 模組伺服器 步驟 7：按「啟動」" width={2800} height={1800} caption="按「啟動」。NeoForge 第一次啟動比較久（約 1～2 分鐘），等主控台出現 Done 再繼續。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/neoforge/08.webp" alt="安裝 NeoForge 模組伺服器 步驟 8：到 Modrinth 或 CurseForge 下載模組，篩選條件選 NeoForge 和 1.21.1" width={2800} height={1800} caption="到 Modrinth 或 CurseForge 下載模組，篩選條件選 NeoForge 和 1.21.1。這裡用 FerriteCore（降低記憶體用量，只裝在伺服器也有效）示範。到「檔案」點「mods」資料夾。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/neoforge/09.webp" alt="安裝 NeoForge 模組伺服器 步驟 9：按「上傳」選擇下載的 .jar 檔" width={2800} height={1800} caption="按「上傳」選擇下載的 .jar 檔。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/neoforge/10.webp" alt="安裝 NeoForge 模組伺服器 步驟 10：上傳完成後 .jar 會出現在 mods 裡" width={2800} height={1800} caption="上傳完成後 .jar 會出現在 mods 裡。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/neoforge/11.webp" alt="安裝 NeoForge 模組伺服器 步驟 11：回到「主控台」按「啟動」" width={2800} height={1800} caption="回到「主控台」按「啟動」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/neoforge/12.webp" alt="安裝 NeoForge 模組伺服器 步驟 12：啟動時主控台會列出找到的模組檔案" width={2800} height={1800} caption="啟動時主控台會列出找到的模組檔案，看到 Found mod file &quot;ferritecore-7.0.3-neoforge.jar&quot;，最後出現 Done，就代表模組已載入。" />
+</Step>
+</Steps>
+{/* tutorial:end */}
+
+## 其他說明
+
+- **用 Forge**：第 3 步改選「Forge」，其餘步驟相同，並下載標示 Forge 的模組。
+- **第一次啟動比較久**：NeoForge 第一次啟動要準備檔案，約 1～2 分鐘，等主控台出現 `Done` 再操作。
+- **Java 版本**：安裝時系統會自動換成需要的 Java，不用自己設定。
+- **放錯載入器的模組**：把 Fabric 的模組放進 NeoForge，伺服器不會當機，但日誌會出現警告，那個模組也不會生效。請下載標示 NeoForge 的版本。
+- **伺服器起不來**：通常是模組版本和伺服器的 Minecraft 版本不符，或缺少前置模組，做法見[模組版本不合導致無法啟動](/docs/troubleshooting/mod-crash)。
+- **移除模組**：刪掉 `mods` 裡的 .jar 檔，重新啟動即可。
+- **上傳很多或很大的檔案**：改用 [SFTP](/docs/gamecloud/sftp) 會比較方便。
+- **用 Fabric 的圖文步驟**：見[手動安裝模組](/docs/gamecloud/mods-manual)。
+
+<Callout title="只下載可信任的來源" type="warn">
+.jar 檔會直接在伺服器上執行。請只從 [Modrinth](https://modrinth.com)、CurseForge 或作者的官方網站下載。
+</Callout>

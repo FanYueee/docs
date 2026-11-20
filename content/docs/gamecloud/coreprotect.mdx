@@ -1,0 +1,74 @@
+---
+title: CoreProtect 查詢與回復破壞
+description: 查出是誰破壞了方塊，並用一行指令把破壞回復原狀。
+icon: History
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+[CoreProtect](https://coreprotect.net) 會自動記錄每個方塊是誰放的、誰破壞的，箱子裡的物品也會記錄。被炸、被亂拆的時候，可以先查是誰做的，再用指令把範圍內的方塊回復原狀。這頁的指令都在[主控台](/docs/gamecloud/console)輸入。
+
+<Callout title="先安裝 CoreProtect" type="info">
+CoreProtect 是外掛，需要 Paper、Purpur 這類插件伺服器。請先到 [CoreProtect 官方網站](https://coreprotect.net)下載 .jar 檔，用[手動上傳外掛](/docs/gamecloud/plugin-upload)的方式裝好並重新啟動，再開始下面的步驟。CoreProtect 只會記錄安裝**之後**發生的事，安裝前被破壞的方塊無法回復。
+</Callout>
+
+{/* tutorial:start */}
+<Steps>
+<Step>
+
+<Shot src="/images/tutorials/coreprotect/01.webp" alt="CoreProtect 查詢與回復破壞 步驟 1：先用「手動上傳外掛」或「單一外掛」裝好 CoreProtect 並重新啟動" width={2800} height={1800} caption="先用「手動上傳外掛」或「單一外掛」裝好 CoreProtect 並重新啟動。之後它會自動記錄每個方塊是誰放的、誰破壞的。在主控台輸入 co help 可以看到所有指令。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/coreprotect/02.webp" alt="CoreProtect 查詢與回復破壞 步驟 2：指令清單會出現在主控台" width={2800} height={1800} caption="指令清單會出現在主控台。最常用的是 lookup（查詢）、rollback（回復破壞）和 restore（取消回復）。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/coreprotect/03.webp" alt="CoreProtect 查詢與回復破壞 步驟 3：示範用：這裡在主控台用指令於地圖中央引爆一顆 TNT，製造一些破壞" width={2800} height={1800} caption="示範用：這裡在主控台用指令於地圖中央引爆一顆 TNT，製造一些破壞。實際使用時不需要這一步。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/coreprotect/04.webp" alt="CoreProtect 查詢與回復破壞 步驟 4：查詢最近的破壞紀錄：co lookup u:&lt;玩家名稱&gt; t:&lt;時間&gt;" width={2800} height={1800} caption="查詢最近的破壞紀錄：co lookup u:&lt;玩家名稱&gt; t:&lt;時間&gt;。t:10m 是 10 分鐘內，也可以用 t:2h、t:3d。TNT 爆炸記錄在 #tnt 底下，查玩家時換成玩家名稱。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/coreprotect/05.webp" alt="CoreProtect 查詢與回復破壞 步驟 5：結果會列出每個方塊被誰、在多久前、在哪個座標破壞" width={2800} height={1800} caption="結果會列出每個方塊被誰、在多久前、在哪個座標破壞。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/coreprotect/06.webp" alt="CoreProtect 查詢與回復破壞 步驟 6：把破壞回復原狀：co rollback u:&lt;玩家名稱&gt; t:&lt;時間&gt; r:#global" width={2800} height={1800} caption="把破壞回復原狀：co rollback u:&lt;玩家名稱&gt; t:&lt;時間&gt; r:#global。在主控台執行時範圍要寫 r:#global（全部世界）或 r:#world_nether 這類世界名稱。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/coreprotect/07.webp" alt="CoreProtect 查詢與回復破壞 步驟 7：看到 Rollback completed 就完成了，下方會顯示回復了幾個方塊" width={2800} height={1800} caption="看到 Rollback completed 就完成了，下方會顯示回復了幾個方塊。回復錯了可以用相同參數執行 co restore 取消。玩家在遊戲裡輸入 /co i 可以點方塊查看紀錄。" />
+</Step>
+</Steps>
+{/* tutorial:end */}
+
+## 常用參數
+
+查詢（`co lookup`）、回復（`co rollback`）和取消回復（`co restore`）用同一組參數，用空格分開，順序不拘。
+
+| 參⁠數 | 意思 | 範例 |
+| --- | --- | --- |
+| `u:` | 玩家，或爆炸等來源；多個用逗號分開 | `u:Steve`、`u:Steve,Alex`、`u:#tnt`、`u:#creeper` |
+| `t:` | 多久以內：w 週、d 天、h 小時、m 分、s 秒，可以組合 | `t:30m`、`t:2h`、`t:3d`、`t:5d2h` |
+| `r:` | 範圍：數字是以你為中心的格數；主控台沒有所在位置，要寫 `#global`（全部世界）或世界名稱 | `r:#global`、`r:#world_nether` |
+| `a:` | 只看某一種動作 | `a:block`（方塊）、`a:container`（箱子） |
+
+常用的組合：
+
+```
+co lookup u:玩家名稱 t:1h r:#global
+co rollback u:玩家名稱 t:2h r:#global
+co restore u:玩家名稱 t:2h r:#global
+```
+
+## 其他說明
+
+- **先查再回復**：先用 `co lookup` 確認查到的內容沒錯，再用相同的參數執行 `co rollback`。時間或範圍寫太大，會連不該動的地方一起回復。
+- **回復錯了**：用相同的參數執行 `co restore`，就能取消這次回復。大範圍回復前，建議先到[備份](/docs/gamecloud/backups)建立一份。
+- **在遊戲裡查**：玩家輸入 `/co i` 開啟檢查模式，點擊方塊就會顯示那個方塊的紀錄，再輸入一次關閉。預設只有 OP 能使用，其他人的權限可以用 [LuckPerms](/docs/gamecloud/luckperms) 設定，權限名稱請看 [CoreProtect 官方文件](https://docs.coreprotect.net/)。
+- **清除舊紀錄**：紀錄會一直累積，佔用硬碟空間。`co purge t:30d` 會刪除 30 天以前的紀錄，刪除後就查不到那段時間的資料。在主控台只能清除 24 小時以前的紀錄，在遊戲裡只能清除 30 天以前的。
+- **不確定要用外掛還是模組**：見[外掛、模組怎麼選](/docs/gamecloud/plugins-vs-mods)。

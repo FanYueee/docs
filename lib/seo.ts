@@ -98,10 +98,16 @@ export const SEO_DESCRIPTIONS: Record<string, string> = {
 		"用主控台指令設定 LuckPerms 權限：建立群組、替群組加上權限、把玩家加進群組，並使用網頁編輯器，附常用指令與注意事項。",
 	"gamecloud/essentials":
 		"在遊戲主機用網頁編輯器修改 EssentialsX 的 config.yml：調整傳送等待時間與家的數量，用 essentials reload 立即套用，並說明設定檔壞掉時怎麼辦。",
+	"gamecloud/coreprotect":
+		"用 CoreProtect 查出是誰破壞了方塊，並在主控台用 co lookup、co rollback 把破壞回復原狀，說明 u:、t:、r: 參數與 co restore、co purge。",
+	"gamecloud/worldguard":
+		"安裝 WorldEdit 與 WorldGuard，用木斧頭選取範圍、建立領地，並設定擁有者、成員，以及 pvp、tnt、chest-access 等旗標保護伺服器。",
 	"gamecloud/modpacks":
 		"從 Modrinth 或 CurseForge 一鍵安裝 Minecraft 模組包，自動切換對應的伺服器版本與 Java，並說明玩家端需要安裝的內容。",
 	"gamecloud/mods-manual":
 		"在遊戲主機安裝 Fabric 伺服器並手動上傳模組 .jar：切換版本、建立 mods 資料夾、上傳 Fabric API 與 Lithium、重新啟動並確認載入，也說明玩家端需要安裝的內容。",
+	"gamecloud/neoforge":
+		"在遊戲主機安裝 NeoForge 模組伺服器：切換版本、上傳模組 .jar 到 mods 資料夾、重新啟動並確認載入，也說明 Forge、NeoForge、Fabric 怎麼選。",
 	"gamecloud/worlds":
 		"把電腦上的 Minecraft 世界上傳到伺服器、換回上一個世界，或把伺服器的世界打包下載，換世界前會自動保存備份。",
 	"gamecloud/players":
@@ -132,6 +138,8 @@ export const SEO_DESCRIPTIONS: Record<string, string> = {
 		"用 Cloudflare 新增 SRV 記錄，讓玩家以自訂域名（例如 play.example.com）連線 Minecraft Java 版伺服器，不必輸入 IP 與埠號。",
 	"troubleshooting/tracert":
 		"使用 Windows 內建的 tracert 指令追蹤網路路由，並查詢自己的 IP，提供給技術人員診斷連線問題。",
+	"troubleshooting/mod-crash":
+		"模組版本和伺服器不符、伺服器無法啟動時，從主控台與 logs/latest.log 找出出錯的模組（搜尋 requires），換成正確版本再啟動。",
 	"troubleshooting/ai":
 		"教你用 ChatGPT、Gemini 等 AI 工具分析 Minecraft 伺服器的錯誤日誌，快速診斷並解決伺服器問題。",
 };
