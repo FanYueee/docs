@@ -880,32 +880,6 @@
    }
   ]
  },
- "/images/gamecloud/activity-01.png": {
-  "size": [
-   1400,
-   900
-  ],
-  "marks": [
-   {
-    "box": [
-     1233,
-     97,
-     103,
-     38
-    ],
-    "label": "按「重新整理」載入最新紀錄"
-   },
-   {
-    "box": [
-     279,
-     153,
-     1057,
-     46
-    ],
-    "label": "一筆紀錄：時間、操作帳號、操作內容與狀態"
-   }
-  ]
- },
  "/images/gamecloud/menu-network.png": {
   "size": [
    1400,

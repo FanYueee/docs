@@ -6,21 +6,39 @@ icon: History
 
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 
-在「**紀錄**」→「**操作紀錄**」會記下這台伺服器上發生過的操作，方便追查是誰、在什麼時候做了什麼。
+「**紀錄**」→「**操作紀錄**」會記下這台伺服器上發生過的操作：誰、在什麼時候、做了什麼。和朋友[共用伺服器](/docs/gamecloud/users)時，可以在這裡查是誰做了哪些變更。
 
+{/* tutorial:start */}
 <Steps>
 <Step>
 
-### 查看紀錄
-
-每筆紀錄包含時間、操作帳號、操作內容與狀態（例如「已送出」「成功」）。
-
-<Shot src="/images/gamecloud/activity-01.png" alt="操作紀錄" />
+<Shot src="/images/tutorials/activity/01.webp" alt="查看伺服器操作紀錄 步驟 1：在伺服器頁面上方點「紀錄」，打開選單" width={2800} height={1800} caption="在伺服器頁面上方點「紀錄」，打開選單。" />
 </Step>
 <Step>
 
-### 載入更多
+<Shot src="/images/tutorials/activity/02.webp" alt="查看伺服器操作紀錄 步驟 2：選「操作紀錄」" width={2800} height={1800} caption="選「操作紀錄」。" />
+</Step>
+<Step>
 
-往下按「**載入更多**」可看更早的紀錄，右上角「**重新整理**」載入最新內容。
+<Shot src="/images/tutorials/activity/03.webp" alt="查看伺服器操作紀錄 步驟 3：這裡列出這台伺服器的操作：時間、操作者、做了什麼、從哪裡操作（網頁面板、SFTP…）和結果，最新的在最上面" width={2800} height={1800} caption="這裡列出這台伺服器的操作：時間、操作者、做了什麼、從哪裡操作（網頁面板、SFTP…）和結果，最新的在最上面。共用伺服器時，可以在這裡查是誰做了哪些變更。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/activity/04.webp" alt="查看伺服器操作紀錄 步驟 4：點任一筆紀錄可以展開詳細內容，這裡以「安裝模組／插件」為例" width={2800} height={1800} caption="點任一筆紀錄可以展開詳細內容，這裡以「安裝模組／插件」為例。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/activity/05.webp" alt="查看伺服器操作紀錄 步驟 5：展開後會顯示操作的來源 IP、使用的瀏覽器，以及這次操作的細節，例如裝了哪個檔案、放在哪個資料夾，以及每個步驟的結果" width={2800} height={1800} caption="展開後會顯示操作的來源 IP、使用的瀏覽器，以及這次操作的細節，例如裝了哪個檔案、放在哪個資料夾，以及每個步驟的結果。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/activity/06.webp" alt="查看伺服器操作紀錄 步驟 6：按「重新整理」可以載入最新的紀錄" width={2800} height={1800} caption="按「重新整理」可以載入最新的紀錄。" />
 </Step>
 </Steps>
+{/* tutorial:end */}
+
+## 其他說明
+
+- **欄位**：每筆紀錄有時間、操作帳號、操作內容、操作來源（例如網頁面板、SFTP）和狀態（例如「已送出」「成功」）。
+- **更早的紀錄**：紀錄很多時，往下按「載入更多」可以看更早的內容。
+- **想在出問題時收到通知**：見[告警](/docs/gamecloud/alerts)；想看資源用量的歷史變化，見[分析](/docs/gamecloud/analytics)。
