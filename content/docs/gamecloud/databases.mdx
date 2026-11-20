@@ -1,26 +1,31 @@
 ---
 title: 資料庫
-description: 查看資料庫額度。
+description: 查看資料庫額度，沒有額度時如何加購。
 icon: Database
 ---
 
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 
-部分插件或模組需要 MySQL 資料庫。資料庫在下拉選單「**網路**」→「**資料庫**」。
+LuckPerms、CoreProtect 等插件，以及部分模組，可以把資料存在 MySQL 資料庫。資料庫在「**網路**」→「**資料庫**」，要先有資料庫額度才能建立。
 
+{/* tutorial:start */}
 <Steps>
 <Step>
 
-### 查看資料庫額度
-
-進入「**網路**」→「**資料庫**」。尚未購買額度時，頁面會顯示「尚未購買資料庫額度」。
-
-<Shot src="/images/gamecloud/databases.png" alt="資料庫" />
+<Shot src="/images/tutorials/databases/01.webp" alt="資料庫 步驟 1：在伺服器頁面上方點「網路」，打開選單" width={2800} height={1800} caption="在伺服器頁面上方點「網路」，打開選單。" />
 </Step>
 <Step>
 
-### 加購額度
+<Shot src="/images/tutorials/databases/02.webp" alt="資料庫 步驟 2：選「資料庫」" width={2800} height={1800} caption="選「資料庫」。" />
+</Step>
+<Step>
 
-按「**前往加購**」，也可以在[購買服務](/docs/store/buy)時一併選擇。
+<Shot src="/images/tutorials/databases/03.webp" alt="資料庫 步驟 3：資料庫可以給 LuckPerms、CoreProtect 等插件存放資料" width={2800} height={1800} caption="資料庫可以給 LuckPerms、CoreProtect 等插件存放資料。畫面顯示「尚未購買資料庫額度」時，代表這台主機還沒有資料庫額度，按「前往加購」購買後就能在這裡建立資料庫。" />
 </Step>
 </Steps>
+{/* tutorial:end */}
+
+## 其他說明
+
+- **沒有額度**：頁面會顯示「尚未購買資料庫額度」，按「前往加購」購買。也可以在[購買服務](/docs/store/buy)時一併選擇。
+- **不一定要用資料庫**：多數插件預設把資料存在檔案裡，不需要資料庫。只有插件的說明要你填資料庫連線資訊時才需要。

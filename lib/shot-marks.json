@@ -828,32 +828,6 @@
    ]
   }
  },
- "/images/gamecloud/databases.png": {
-  "size": [
-   1400,
-   900
-  ],
-  "marks": [
-   {
-    "box": [
-     279,
-     495,
-     1057,
-     65
-    ],
-    "label": "尚未購買額度時，會顯示這個提示"
-   },
-   {
-    "box": [
-     1218,
-     508,
-     103,
-     38
-    ],
-    "label": "按「前往加購」"
-   }
-  ]
- },
  "/images/gamecloud/analytics.png": {
   "size": [
    1400,
