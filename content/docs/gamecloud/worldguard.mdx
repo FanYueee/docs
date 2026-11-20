@@ -20,7 +20,7 @@ WorldEdit 與 WorldGuard 是插件，需要 Paper、Spigot 這類插件伺服器
 
 ### 下載兩個插件
 
-到 EngineHub 官方網站的 [WorldEdit](https://enginehub.org/worldedit) 與 [WorldGuard](https://enginehub.org/worldguard) 頁面，下載 Bukkit（Paper、Spigot）版的 .jar 檔。兩個都要支援伺服器的 Minecraft 版本。
+到 EngineHub 官方網站的 [WorldEdit](https://enginehub.org/worldedit) 與 [WorldGuard](https://enginehub.org/worldguard) 頁面，下載 Bukkit（Paper、Spigot）版的 .jar 檔。兩個都要支援伺服器的 Minecraft 版本，WorldEdit 的版本還要留意下方的 Java 提醒。
 </Step>
 <Step>
 
@@ -41,6 +41,10 @@ WorldEdit 與 WorldGuard 是插件，需要 Paper、Spigot 這類插件伺服器
 預設沒有人能使用這兩個插件，OP 可以。在主控台輸入 `op 你的遊戲名稱`。想讓非 OP 的管理員也能使用，可以用 [LuckPerms](/docs/gamecloud/luckperms) 授權，權限名稱見 [WorldEdit](https://worldedit.enginehub.org/en/latest/permissions/) 與 [WorldGuard](https://worldguard.enginehub.org/en/latest/permissions/) 的官方文件。
 </Step>
 </Steps>
+
+<Callout title="WorldEdit 要選對版本" type="warn">
+新版 WorldEdit（7.4.3 以後）需要 Java 25，伺服器用 Java 21 時無法載入，主控台會出現 `UnsupportedClassVersionError`。截至 2026 年 11 月，Java 21 的伺服器（例如 Minecraft 1.21.4）請安裝 [WorldEdit 7.4.2](https://modrinth.com/plugin/worldedit/versions?l=bukkit)，它是 Java 21 能用的最後一版。Modrinth 預設顯示的是最新版，請在版本列表自己選。WorldGuard 7.0.13 在 Java 21 可以正常載入。伺服器的 Java 版本可以在[啟動設定](/docs/gamecloud/startup)查看。
+</Callout>
 
 ## 用 WorldEdit 選取範圍
 
@@ -122,7 +126,9 @@ OP 和擁有所有權限的人會直接繞過領地保護，看起來就像保�
 
 ## 其他說明
 
-- **從主控台操作**：已經建好的領地可以在主控台管理，指令不用加斜線，並且可能要加上世界名稱，例如 `rg flag spawn pvp -w world deny`。圈範圍需要選取工具，只能在遊戲內做。
+- **從主控台操作**：已經建好的領地可以在主控台管理，指令不用加斜線，但**一定要加世界名稱**，沒加會顯示 `Please specify the world with -w world_name.`。`-w` 要緊接在子指令後面，例如 `rg flag -w world spawn pvp deny`、`rg info -w world spawn`、`rg list -w world`；把 `-w world` 寫在 `deny` 後面會失敗。預設世界的名稱通常是 `world`。
+- **建立領地只能在遊戲內做**：主控台的 `rg define` 會顯示 `Please select an area first`，因為要先用 `//wand` 選範圍。
+- **測試環境**：以上主控台指令在 Paper 1.21.4、WorldEdit 7.4.2、WorldGuard 7.0.13 實測過。
 - **領地建好但朋友不能建造**：把朋友加進成員名單（`/rg addmember`）。
 - **指令沒反應或顯示沒有權限**：確認自己是 OP，或已被授權。
 - **完整指令與旗標**：見 [WorldGuard 官方文件](https://worldguard.enginehub.org/en/latest/) 與 [WorldEdit 官方文件](https://worldedit.enginehub.org/en/latest/)。

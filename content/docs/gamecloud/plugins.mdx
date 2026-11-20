@@ -1,6 +1,6 @@
 ---
-title: 單一插件
-description: 搜尋並一鍵安裝插件（或模組）。
+title: 安裝插件
+description: 搜尋並一鍵安裝插件，也能停用與移除。
 icon: Puzzle
 ---
 
@@ -8,68 +8,80 @@ import { Callout } from 'fumadocs-ui/components/callout';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 
 <Callout title="即將推出" type="info">
-「單一插件」與「單一模組」目前還在測試中，正式站的遊戲主機尚未開放，畫面可能與正式上線時略有不同。現在可以先[手動上傳插件的 .jar 檔](/docs/gamecloud/plugin-upload)。
+「插件」與「模組」選單目前是實驗性功能，正式站的遊戲主機尚未開放，畫面可能與正式上線時略有不同。現在可以先[手動上傳插件的 .jar 檔](/docs/gamecloud/plugin-upload)。
 </Callout>
 
-在「軟體 → 單一插件」可以從 Modrinth、Hangar 或 CurseForge 搜尋插件並一鍵安裝，需要的前置插件會自動一起安裝。模組伺服器這裡會顯示「單一模組」。
+在「軟體 → 插件」可以從 Modrinth、Hangar 或 CurseForge 搜尋插件並一鍵安裝，需要的前置插件會自動一起安裝。模組伺服器這裡會顯示「模組」。
 
 {/* tutorial:start */}
 <Steps>
 <Step>
 
-<Shot src="/images/tutorials/plugins/01.webp" alt="安裝單一插件 步驟 1：在伺服器頁面上方點「軟體」，打開選單" width={2800} height={1800} caption="在伺服器頁面上方點「軟體」，打開選單。" />
+<Shot src="/images/tutorials/plugins/01.webp" alt="安裝插件 步驟 1：在伺服器頁面上方點「軟體」，打開選單" width={2800} height={1800} caption="在伺服器頁面上方點「軟體」，打開選單。" />
 </Step>
 <Step>
 
-<Shot src="/images/tutorials/plugins/02.webp" alt="安裝單一插件 步驟 2：選「單一插件」" width={2800} height={1800} caption="選「單一插件」。（模組伺服器這裡會顯示「單一模組」）" />
+<Shot src="/images/tutorials/plugins/02.webp" alt="安裝插件 步驟 2：選「插件」" width={2800} height={1800} caption="選「插件」。（模組伺服器這裡會顯示「模組」）" />
 </Step>
 <Step>
 
-<Shot src="/images/tutorials/plugins/03.webp" alt="安裝單一插件 步驟 3：上方卡片會顯示系統自動判斷的伺服器類型、Minecraft 版本和安裝位置" width={2800} height={1800} caption="上方卡片會顯示系統自動判斷的伺服器類型、Minecraft 版本和安裝位置。判斷錯誤時可以按「不對嗎？手動選擇」修正。" />
+<Shot src="/images/tutorials/plugins/03.webp" alt="安裝插件 步驟 3：插件管理目前是實驗性功能，第一次打開會先出現提醒" width={2800} height={1800} caption="插件管理目前是實驗性功能，第一次打開會先出現提醒。使用前建議先建立備份，按「我了解」繼續。" />
 </Step>
 <Step>
 
-<Shot src="/images/tutorials/plugins/04.webp" alt="安裝單一插件 步驟 4：點「找新插件」" width={2800} height={1800} caption="點「找新插件」。" />
+<Shot src="/images/tutorials/plugins/04.webp" alt="安裝插件 步驟 4：上方卡片會顯示系統自動判斷的伺服器類型、Minecraft 版本和安裝位置" width={2800} height={1800} caption="上方卡片會顯示系統自動判斷的伺服器類型、Minecraft 版本和安裝位置。判斷錯誤時可以按「不對嗎？手動選擇」修正。" />
 </Step>
 <Step>
 
-<Shot src="/images/tutorials/plugins/05.webp" alt="安裝單一插件 步驟 5：選擇下載來源：Modrinth、Hangar 或 CurseForge" width={2800} height={1800} caption="選擇下載來源：Modrinth、Hangar 或 CurseForge。這裡以 Modrinth 為例。" />
+<Shot src="/images/tutorials/plugins/05.webp" alt="安裝插件 步驟 5：點「找新插件」" width={2800} height={1800} caption="點「找新插件」。" />
 </Step>
 <Step>
 
-<Shot src="/images/tutorials/plugins/06.webp" alt="安裝單一插件 步驟 6：輸入插件名稱，例如 LuckPerms，按 Enter 或「搜尋」" width={2800} height={1800} caption="輸入插件名稱，例如 LuckPerms，按 Enter 或「搜尋」。" />
+<Shot src="/images/tutorials/plugins/06.webp" alt="安裝插件 步驟 6：選擇下載來源：Modrinth、Hangar 或 CurseForge" width={2800} height={1800} caption="選擇下載來源：Modrinth、Hangar 或 CurseForge。這裡以 Modrinth 為例。" />
 </Step>
 <Step>
 
-<Shot src="/images/tutorials/plugins/07.webp" alt="安裝單一插件 步驟 7：在搜尋結果中點選要安裝的插件" width={2800} height={1800} caption="在搜尋結果中點選要安裝的插件。" />
+<Shot src="/images/tutorials/plugins/07.webp" alt="安裝插件 步驟 7：輸入插件名稱，例如 LuckPerms，按 Enter 或「搜尋」" width={2800} height={1800} caption="輸入插件名稱，例如 LuckPerms，按 Enter 或「搜尋」。" />
 </Step>
 <Step>
 
-<Shot src="/images/tutorials/plugins/08.webp" alt="安裝單一插件 步驟 8：選擇要安裝的版本" width={2800} height={1800} caption="選擇要安裝的版本。每個版本會列出支援的 Minecraft 版本，請選擇符合伺服器版本（這台是 1.21.4）的那一個。" />
+<Shot src="/images/tutorials/plugins/08.webp" alt="安裝插件 步驟 8：在搜尋結果中點選要安裝的插件" width={2800} height={1800} caption="在搜尋結果中點選要安裝的插件。" />
 </Step>
 <Step>
 
-<Shot src="/images/tutorials/plugins/09.webp" alt="安裝單一插件 步驟 9：確認要安裝的檔案與大小" width={2800} height={1800} caption="確認要安裝的檔案與大小。需要的前置插件會一起列出並自動安裝。沒問題就按確認安裝。" />
+<Shot src="/images/tutorials/plugins/09.webp" alt="安裝插件 步驟 9：選擇要安裝的版本" width={2800} height={1800} caption="選擇要安裝的版本。每個版本會列出支援的 Minecraft 版本，請選擇符合伺服器版本（這台是 1.21.4）的那一個。" />
 </Step>
 <Step>
 
-<Shot src="/images/tutorials/plugins/10.webp" alt="安裝單一插件 步驟 10：安裝進度會顯示在這裡" width={2800} height={1800} caption="安裝進度會顯示在這裡。完成後依提示重新啟動伺服器，插件就會載入。" />
+<Shot src="/images/tutorials/plugins/10.webp" alt="安裝插件 步驟 10：確認要安裝的檔案與大小" width={2800} height={1800} caption="確認要安裝的檔案與大小。需要的前置插件會一起列出並自動安裝。沒問題就按「安裝插件」。" />
 </Step>
 <Step>
 
-<Shot src="/images/tutorials/plugins/11.webp" alt="安裝單一插件 步驟 11：點「已安裝的插件」可以看到伺服器上所有插件" width={2800} height={1800} caption="點「已安裝的插件」可以看到伺服器上所有插件。" />
+<Shot src="/images/tutorials/plugins/11.webp" alt="安裝插件 步驟 11：出現「安裝完成」就裝好了" width={2800} height={1800} caption="出現「安裝完成」就裝好了。插件要等下次啟動伺服器才會載入。" />
 </Step>
 <Step>
 
-<Shot src="/images/tutorials/plugins/12.webp" alt="安裝單一插件 步驟 12：每個插件右側可以「停用」（暫時不載入，檔案保留）或「移除」" width={2800} height={1800} caption="每個插件右側可以「停用」（暫時不載入，檔案保留）或「移除」。有新版本時也會顯示「更新」。" />
+<Shot src="/images/tutorials/plugins/12.webp" alt="安裝插件 步驟 12：點「已安裝的插件」可以看到伺服器上所有插件" width={2800} height={1800} caption="點「已安裝的插件」可以看到伺服器上所有插件。" />
 </Step>
 <Step>
 
-<Shot src="/images/tutorials/plugins/13.webp" alt="安裝單一插件 步驟 13：要刪除插件時按「移除」" width={2800} height={1800} caption="要刪除插件時按「移除」。" />
+<Shot src="/images/tutorials/plugins/13.webp" alt="安裝插件 步驟 13：每個插件右側可以「停用」（暫時不載入，檔案保留）或「移除」" width={2800} height={1800} caption="每個插件右側可以「停用」（暫時不載入，檔案保留）或「移除」。有新版本時也會顯示「更新」。" />
 </Step>
 <Step>
 
-<Shot src="/images/tutorials/plugins/14.webp" alt="安裝單一插件 步驟 14：確認視窗會顯示要刪除的檔案" width={2800} height={1800} caption="確認視窗會顯示要刪除的檔案。只想暫時不用的話建議改用「停用」。確定刪除就按移除。" />
+<Shot src="/images/tutorials/plugins/14.webp" alt="安裝插件 步驟 14：要刪除插件時按「移除」" width={2800} height={1800} caption="要刪除插件時按「移除」。" />
+</Step>
+<Step>
+
+<Shot src="/images/tutorials/plugins/15.webp" alt="安裝插件 步驟 15：確認視窗會顯示要刪除的檔案" width={2800} height={1800} caption="確認視窗會顯示要刪除的檔案。只想暫時不用的話建議改用「停用」。確定刪除就按移除。" />
 </Step>
 </Steps>
 {/* tutorial:end */}
+
+## 其他說明
+
+- **要重新啟動才生效**：安裝、停用、啟用或移除插件後，都要重新啟動伺服器才會生效。
+- **停用與移除**：停用只是暫時不載入，檔案保留，隨時可以再啟用；移除會把檔案從伺服器刪除，無法復原。
+- **上方卡片判斷錯誤**：卡片顯示的是系統依啟動檔判斷的伺服器類型與 Minecraft 版本，不對時按「不對嗎？手動選擇」修正。
+- **找不到想要的插件**：可以到作者的官方網站下載 .jar 檔，用[手動上傳插件](/docs/gamecloud/plugin-upload)的方式安裝。
+- **不確定要用插件還是模組**：見[插件、模組怎麼選](/docs/gamecloud/plugins-vs-mods)。
